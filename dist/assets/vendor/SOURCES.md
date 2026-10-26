@@ -1,1 +1,3 @@
 GSAP and ScrollTrigger 3.15.0, from the official gsap npm package via jsDelivr. Original license headers retained. Source: https://www.npmjs.com/package/gsap and https://gsap.com/standard-license/.
+
+Motion 14.6.0: vanilla browser build from the official `motion` npm package, https://www.npmjs.com/package/motion (https://motion.dev/). Installed via npm pack with registry integrity verification; unmodified dist/motion.js is vendored as motion.14.6.0.js. MIT license retained in motion-LICENSE.md. Used by strategy-motion.js; no React or runtime CDN dependency. Registry package integrity: sha512-qqaZbyubgk7x3zxjPgP1l3Br/KQXol/IIV1uqb358SoN4ApcqNuV7+wyDPg/XLErmuyQL5lL8JVI/fOmDsmBKQ==.

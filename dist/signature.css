@@ -307,3 +307,23 @@ html{scroll-padding-top:90px}
 @media(max-width:600px){.signature-ui .partnership-showcase{padding-block:44px 32px}.partnership-fan{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a5bde5 transparent;gap:16px;padding:16px 8px 24px;margin-top:24px}.partnership-slot{flex:0 0 76%;scroll-snap-align:center}.partnership-card{min-height:270px}.partnership-card summary{min-height:260px;padding:20px}.partnership-monogram{margin-bottom:48px}.partnership-card-name{font-size:25px}.partnership-card-detail{padding-inline:20px}.partnership-prompt{font-size:12px}.partnership-slot:focus-within,.partnership-slot:has(.partnership-card[open]){transform:none}.partnership-hint{margin-top:0}}
 @media(prefers-reduced-motion:reduce){.partnership-slot{transition:none}.partnership-slot:hover,.partnership-slot:focus-within,.partnership-slot:has(.partnership-card[open]){transform:translateY(var(--fan-y)) rotate(var(--fan-angle))}}
 .motion-paused .partnership-slot{transition:none}
+/* Open expertise grid: fine rails and restrained icon motion. */
+.signature-ui .strategy-heading{display:block;max-width:720px;margin-bottom:36px}
+.strategy-heading .learning-eyebrow{margin-bottom:16px;font-size:11px;color:#91465d}
+.signature-ui .strategy-heading h2{font-size:clamp(36px,4vw,58px);line-height:1.08}
+.signature-ui .strategy-heading .section-intro{margin-top:18px;font-size:16px;color:var(--muted);max-width:520px}
+.strategy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-block:1px solid #e4d9dc}
+.strategy-feature{display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 28px 28px;text-decoration:none;position:relative;min-height:245px;color:var(--ink)}
+.strategy-feature:nth-child(odd){border-right:1px solid #e4d9dc}
+.strategy-feature:nth-child(-n+2){border-bottom:1px solid #e4d9dc}
+.strategy-icon{position:relative;display:grid;place-items:center;width:56px;height:56px;margin-bottom:22px;background:#fff;border:1px solid #eee4e7;border-radius:16px;color:#a66072;box-shadow:0 3px 4px #40283107}
+.signature-ui .strategy-feature h3{font-family:Manrope,Arial,sans-serif;font-size:17px;font-weight:600;line-height:1.4;letter-spacing:-.02em}
+.strategy-feature>p{max-width:280px;font-size:14px;line-height:1.6;color:var(--muted);margin-top:8px}
+.strategy-action{display:flex;align-items:center;gap:8px;font-size:11px;color:#91465d;margin-top:14px;min-height:20px}
+.strategy-feature:hover .strategy-action,.strategy-feature:focus-visible .strategy-action{text-decoration:underline;text-underline-offset:4px}
+.strategy-feature:focus-visible{z-index:1;outline-offset:-4px}
+.strategy-sparks{position:absolute;inset:0;pointer-events:none}
+.strategy-sparks i{position:absolute;width:4px;height:4px;background:#be858f;border-radius:50%;opacity:0;left:26px;top:26px}
+.signature-ui .focus>.expertise-disclosure{margin-top:20px;border:0;padding-top:0}
+@media(max-width:600px){.signature-ui .strategy-heading{margin-bottom:28px}.strategy-feature{padding:28px 14px 22px;min-height:235px}.signature-ui .strategy-feature h3{font-size:15px}.strategy-feature>p{font-size:13px}.strategy-icon{width:48px;height:48px;border-radius:13px;margin-bottom:20px}.strategy-icon>svg{width:28px;height:28px}.strategy-action{font-size:10px}.strategy-sparks i{left:22px;top:22px}}
+@media(max-width:359px){.strategy-grid{grid-template-columns:minmax(0,1fr)}.strategy-feature:nth-child(odd){border-right:0}.strategy-feature:not(:last-child){border-bottom:1px solid #e4d9dc}.strategy-feature{min-height:215px}}
