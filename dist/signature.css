@@ -399,3 +399,22 @@ html{scroll-padding-top:90px}
 .hero-actions .button{white-space:nowrap}
 @media(max-width:700px){.signature-ui .hero-actions .button{font-size:13px;padding:12px;gap:8px}}
 @media(max-width:359px){.signature-ui .hero-actions .button{flex-basis:100%;max-width:none}}
+/* A connected marketing network replaces the decorative orbit. */
+.hero-network-canvas{position:absolute;inset:0;pointer-events:none}
+.marketing-connections{width:100%;height:100%;display:block;overflow:visible}
+.marketing-light{transform-box:view-box;transform-origin:0 0}
+.marketing-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;width:170px;height:135px;background:var(--paper);border:1px solid #ddbdc8;border-radius:26px;box-shadow:0 12px 40px #a660720c}
+.marketing-hub-icon{font-family:var(--display);font-size:42px;line-height:1;letter-spacing:-.13em;padding-right:.1em;color:var(--ink)}
+.marketing-hub-icon>span{color:#a66072}
+.marketing-hub-word{font-size:16px;font-weight:600;line-height:1.4;margin-top:12px;color:var(--ink)}
+.marketing-topic{position:absolute;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:10px 13px;background:var(--paper);border:1px solid #e3ccd4;border-radius:12px;font-size:12px;line-height:1.4;text-decoration:none;white-space:nowrap}
+.marketing-topic:hover,.marketing-topic:focus-visible{border-color:#a66072;text-decoration:underline;text-underline-offset:4px}
+.marketing-topic-influencer{left:0;top:10%}.marketing-topic-social{right:0;top:18%}.marketing-topic-collaboration{left:0;top:43%}.marketing-topic-content{right:0;bottom:22%}.marketing-topic-leads{left:5%;bottom:6%}
+.marketing-network .hero-motion-toggle{bottom:-10px;right:0}
+@media(max-width:1000px) and (min-width:701px){.marketing-topic{font-size:10px;gap:6px;padding:8px}.marketing-topic svg{display:none}.marketing-hub{width:120px;height:105px;border-radius:20px}.marketing-hub-word{font-size:14px;margin-top:8px}.marketing-hub-icon{font-size:32px}.marketing-topic-collaboration{top:38%;left:-4%}.marketing-topic-content{bottom:17%}}
+@media(max-width:700px){.marketing-network{width:100%;max-width:440px;margin-block:8px 16px}.marketing-topic{font-size:11px;padding:8px 10px;gap:7px}.marketing-topic svg{display:none}.marketing-hub{width:135px;height:112px;border-radius:22px}.marketing-hub-word{font-size:14px;margin-top:8px}.marketing-hub-icon{font-size:36px}.marketing-topic-collaboration{top:38%}.marketing-topic-content{bottom:18%}.marketing-network .hero-motion-toggle{bottom:-18px}}
+@media(max-width:359px){.marketing-topic{font-size:10px;padding:7px;gap:5px}.marketing-hub{width:112px;height:100px}.marketing-topic-collaboration{top:33%}.marketing-topic-social{top:13%}.marketing-hub-word{font-size:13px}}
+@media(max-width:700px){.marketing-network{aspect-ratio:auto;height:420px}.marketing-topic-influencer{top:0;left:0}.marketing-topic-social{top:16%;right:0}.marketing-topic-collaboration{top:auto;bottom:17%;left:0}.marketing-topic-content{bottom:0;right:0}.marketing-topic-leads{bottom:0;left:0}}
+@media(min-width:701px) and (max-width:1200px){.marketing-network{aspect-ratio:auto;height:440px}.marketing-topic-influencer{top:0;left:0}.marketing-topic-social{top:16%;right:0}.marketing-topic-collaboration{top:auto;bottom:17%;left:0}.marketing-topic-content{bottom:0;right:0}.marketing-topic-leads{bottom:0;left:0}}
+@media(max-width:700px){.marketing-network{margin-bottom:44px}.marketing-network .hero-motion-toggle{bottom:-48px}}
+@media(min-width:701px) and (max-width:1200px){.marketing-network{margin-bottom:44px}.marketing-network .hero-motion-toggle{bottom:-48px}}

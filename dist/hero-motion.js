@@ -3,8 +3,7 @@
   const hero = document.querySelector('.split-hero');
   if (!hero || !window.Motion) return;
   const { animate } = window.Motion;
-  const ring = hero.querySelector('.hero-ring');
-  const satellite = hero.querySelector('.hero-satellite');
+  const paths = [...hero.querySelectorAll('.marketing-branch')];
   const toggle = hero.querySelector('.hero-motion-toggle');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let visible = false, paused = false, loops = [], entrance;
@@ -13,7 +12,15 @@
     toggle.hidden = quiet();
     const play = visible && !document.hidden && !paused && !quiet();
     if (play && !loops.length) {
-      loops = [animate(ring,{rotate:[0,360]},{duration:48,repeat:Infinity,ease:'linear'}),animate(satellite,{rotate:[0,-360]},{duration:32,repeat:Infinity,ease:'linear'})];
+      loops = paths.map((path,index) => {
+        const light = hero.querySelector(`[data-light="${path.dataset.branch}"]`);
+        const length = path.getTotalLength();
+        const points = Array.from({length:61},(_,i) => path.getPointAtLength(length*i/60));
+        return animate(light, {
+          x:points.map(point=>point.x), y:points.map(point=>point.y),
+          opacity:points.map((_,i)=>i<4 ? i/4 : i>53 ? (60-i)/7 : 1)
+        }, {duration:3.2,delay:index*.55,repeat:Infinity,repeatDelay:1.2,ease:'linear'});
+      });
     }
     loops.forEach(animation => play ? animation.play() : animation.pause());
     if (quiet() && entrance) entrance.complete();
@@ -32,5 +39,26 @@
     new IntersectionObserver(entries => {visible = entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
   }
   if (!quiet()) entrance = animate(hero.querySelector('.hero-copy'),{opacity:[.4,1],y:[14,0]},{duration:.5,ease:'easeOut'});
+  // Anchor each branch to its topic after responsive layout is measured.
+  function layoutBranches() {
+    const svg = hero.querySelector('.marketing-connections');
+    const matrix = svg.getScreenCTM();
+    if (!matrix) return;
+    const inverse = matrix.inverse();
+    const points = paths.map(path => {
+      const bounds = hero.querySelector(`.marketing-topic-${path.dataset.branch}`).getBoundingClientRect();
+      return new DOMPoint(bounds.x + bounds.width/2,bounds.y + bounds.height/2).matrixTransform(inverse);
+    });
+    paths.forEach((path,index) => {
+      const point = points[index];
+      const bend = point.x < 300 ? 225 : 375;
+      path.setAttribute('d',`M${point.x} ${point.y}C${bend} ${point.y} ${bend} 300 300 300`);
+    });
+    loops.forEach(animation => animation.stop());
+    loops = [];
+    sync();
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(layoutBranches).observe(hero.querySelector('.hero-art'));
+  document.fonts.ready.then(layoutBranches);
   sync();
 })();
