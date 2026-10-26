@@ -39,7 +39,7 @@
     }), {threshold:.12});
     plans.forEach(([selector,kind]) => document.querySelectorAll(selector).forEach((el,i) => { el.dataset.arrival=kind;el.dataset.delay=String((i%3)*65);observer.observe(el); }));
   }
-  if (window.gsap && window.ScrollTrigger) {
+  if (window.gsap && window.ScrollTrigger && document.querySelector('.paper-art')) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
       gsap.fromTo('.paper-art',{scale:1.08,y:0},{scale:1.08,y:-18,ease:'none',scrollTrigger:{trigger:'.paper-story',start:'top bottom',end:'bottom top',scrub:true}});
