@@ -19,7 +19,7 @@
         return animate(light, {
           x:points.map(point=>point.x), y:points.map(point=>point.y),
           opacity:points.map((_,i)=>i<4 ? i/4 : i>53 ? (60-i)/7 : 1)
-        }, {duration:3.2,delay:index*.55,repeat:Infinity,repeatDelay:1.2,ease:'linear'});
+        }, {duration:3.6+(index%3)*.4,delay:[0,1.7,.5,2.3,.9,2.8,1.2,.3,2,1.5,2.6][index],repeat:Infinity,repeatDelay:2.4,ease:'linear'});
       });
     }
     loops.forEach(animation => play ? animation.play() : animation.pause());
@@ -50,14 +50,14 @@
       return new DOMPoint(bounds.x + bounds.width/2,bounds.y + bounds.height/2).matrixTransform(inverse);
     });
     const hub = hero.querySelector('.marketing-hub').getBoundingClientRect();
-    const root = new DOMPoint(hub.x + hub.width/2,hub.top).matrixTransform(inverse);
-    const top = Math.min(...points.map(point=>point.y)) + 26;
-    svg.querySelector('.marketing-trunk').setAttribute('d',`M300 ${root.y}V${top}`);
+    const root = new DOMPoint(hub.right - 12,hub.top + hub.height/2).matrixTransform(inverse);
     paths.forEach((path,index) => {
       const point = points[index];
-      const joint = Math.min(point.y + 34,root.y - 16);
-      const bend = point.x < 300 ? 235 : 365;
-      path.setAttribute('d',`M${point.x} ${point.y}C${bend} ${point.y} ${bend} ${joint} 300 ${joint}L300 ${root.y}`);
+      // Bounded curves flow out from the source without a spine or mirrored limbs.
+      const rightward = point.x > root.x;
+      const reach = 45 + (index % 3) * 12;
+      const controlX = point.x + (rightward ? -70 : 70);
+      path.setAttribute('d',`M${point.x} ${point.y}C${controlX} ${point.y} ${root.x+reach} ${root.y} ${root.x} ${root.y}`);
     });
     loops.forEach(animation => animation.stop());
     loops = [];
