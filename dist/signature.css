@@ -273,3 +273,37 @@ html{scroll-padding-top:90px}
 @media(max-width:600px){.signature-ui .experience-tiles{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 4px 22px;scroll-padding-inline:4px;scrollbar-width:thin;scrollbar-color:#be858f transparent}.signature-ui .experience-tiles button{flex:0 0 82%;scroll-snap-align:start}.experience-swatch{min-height:180px;padding:24px}.experience-tile-name{font-size:14px}.experience-enhanced .experience-panel{min-height:260px}.experience-enhanced .experience-stage{padding-top:0}.experience-enhanced .experience-copy h3{font-size:29px}}
 @media(prefers-reduced-motion:reduce){.signature-ui .experience-tiles button,.experience-swatch{transition:none}.signature-ui .experience-tiles button[aria-pressed=true]{transform:none}.signature-ui .experience-tiles{scroll-behavior:auto}}
 .motion-paused .experience-tiles button,.motion-paused .experience-swatch{transition:none}
+/* A pastel fan for active partnerships, following the supplied reference. */
+.signature-ui .partnership-showcase{position:relative;isolation:isolate;background:#f3f8ff;color:#252d3d;padding-block:64px 48px;overflow:clip}
+.partnership-showcase::before,.partnership-showcase::after{content:'';position:absolute;z-index:-1;pointer-events:none;width:300px;height:250px;top:90px;background-image:radial-gradient(#a5bde5 1px,transparent 1px);background-size:7px 7px;mask-image:radial-gradient(ellipse,#000,transparent 70%);opacity:.6}
+.partnership-showcase::before{left:-130px}.partnership-showcase::after{right:-130px;top:140px}
+.partnership-heading{text-align:center;max-width:660px;margin-inline:auto}
+.partnership-kicker{display:inline-flex;border:1px solid #dce3ef;background:#fff9;padding:5px 14px;border-radius:24px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#536075;margin-bottom:18px}
+.signature-ui .partnership-heading h2{font-size:clamp(34px,3.8vw,54px);color:#252d3d}
+.partnership-heading>p:last-child{margin-top:16px;color:#536075;font-size:15px}
+.partnership-fan{display:flex;justify-content:center;align-items:flex-start;max-width:1120px;margin:56px auto 0;padding:18px 16px 50px}
+.partnership-slot{position:relative;flex:0 0 21%;min-width:0;margin-inline:-.5%;transform:translateY(var(--fan-y)) rotate(var(--fan-angle));transition:transform 200ms ease-out;transform-origin:50% 85%;z-index:1}
+.partnership-slot:nth-child(1){--fan-angle:-10deg;--fan-y:24px}.partnership-slot:nth-child(2){--fan-angle:-5deg;--fan-y:6px}.partnership-slot:nth-child(3){--fan-angle:0deg;--fan-y:0px}.partnership-slot:nth-child(4){--fan-angle:5deg;--fan-y:6px}.partnership-slot:nth-child(5){--fan-angle:10deg;--fan-y:24px}
+.partnership-violet{--card-tint:#e7e4ff;--card-accent:#7430c1;--card-ink:#3a2062}
+.partnership-mint{--card-tint:#dbfce9;--card-accent:#087b53;--card-ink:#14513d}
+.partnership-apricot{--card-tint:#ffecd3;--card-accent:#bd4b08;--card-ink:#743916}
+.partnership-pink{--card-tint:#fce0ea;--card-accent:#bd185a;--card-ink:#7b2646}
+.partnership-blue{--card-tint:#dceaff;--card-accent:#235dcc;--card-ink:#234c89}
+.partnership-card{background:linear-gradient(160deg,var(--card-tint),#fff 95%);border:5px solid #fff;border-radius:10px;box-shadow:0 3px 9px #24395c0c;color:#252d3d;min-height:264px}
+.partnership-card summary{display:flex;flex-direction:column;align-items:flex-start;list-style:none;cursor:pointer;min-height:254px;padding:18px 16px 16px}
+.partnership-card summary::-webkit-details-marker{display:none}
+.partnership-monogram{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--card-accent);color:#fff;font-size:13px;font-family:Manrope,Arial,sans-serif;font-weight:700;margin-bottom:50px}
+.partnership-card-name{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.2;text-wrap:balance}
+.partnership-prompt{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;font-size:11px;color:#536075;margin-top:auto;padding-top:16px}
+.partnership-prompt>span{font-family:Arial,sans-serif;font-size:18px}
+.partnership-card[open] .partnership-prompt>span{transform:rotate(45deg)}
+.partnership-card-detail{padding:0 16px 20px;font-size:14px;color:var(--card-ink);line-height:1.5}
+.partnership-card-detail a{display:inline-flex;gap:8px;align-items:center;min-height:44px;margin-top:8px;font-size:12px}
+.partnership-slot:focus-within,.partnership-slot:has(.partnership-card[open]){z-index:3;transform:translateY(-14px) rotate(0deg)}
+@media(hover:hover){.partnership-slot:hover{z-index:4;transform:translateY(-14px) rotate(0deg)}}
+.partnership-card summary:focus-visible{outline-color:var(--card-accent);outline-offset:6px;border-radius:5px}
+.partnership-hint{text-align:center;font-size:12px;color:#536075;margin-top:12px}
+@media(max-width:1000px){.partnership-fan{flex-wrap:wrap;gap:20px;margin-top:32px;padding-bottom:12px}.partnership-slot{flex:0 0 calc(33.333% - 16px);margin:0;--fan-angle:0deg!important;--fan-y:0px!important}.partnership-monogram{margin-bottom:34px}.partnership-card-name{font-size:21px}.partnership-card summary{min-height:240px}.partnership-card{min-height:250px}}
+@media(max-width:600px){.signature-ui .partnership-showcase{padding-block:44px 32px}.partnership-fan{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a5bde5 transparent;gap:16px;padding:16px 8px 24px;margin-top:24px}.partnership-slot{flex:0 0 76%;scroll-snap-align:center}.partnership-card{min-height:270px}.partnership-card summary{min-height:260px;padding:20px}.partnership-monogram{margin-bottom:48px}.partnership-card-name{font-size:25px}.partnership-card-detail{padding-inline:20px}.partnership-prompt{font-size:12px}.partnership-slot:focus-within,.partnership-slot:has(.partnership-card[open]){transform:none}.partnership-hint{margin-top:0}}
+@media(prefers-reduced-motion:reduce){.partnership-slot{transition:none}.partnership-slot:hover,.partnership-slot:focus-within,.partnership-slot:has(.partnership-card[open]){transform:translateY(var(--fan-y)) rotate(var(--fan-angle))}}
+.motion-paused .partnership-slot{transition:none}
