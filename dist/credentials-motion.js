@@ -7,17 +7,32 @@
   const issuerAnimations = new Set();
   let visible = false;
   const quiet = () => reduced.matches || document.documentElement.classList.contains('motion-paused');
-  section.querySelectorAll('.credential-group').forEach(group => {
-    const duplicate = group.cloneNode(true);
-    duplicate.setAttribute('aria-hidden','true');
-    duplicate.inert = true;
-    duplicate.querySelectorAll('a,summary').forEach(item=>item.tabIndex=-1);
-    group.parentElement.append(duplicate);
-  });
+  const lanes=[...section.querySelectorAll('.credential-lane')];
+  function fillLanes(){
+    if(quiet())return;
+    lanes.forEach(lane=>{
+      const track=lane.querySelector('.credential-track');
+      const original=track.querySelector('.credential-group:not([aria-hidden])');
+      const width=original.offsetWidth;
+      if(!width)return;
+      track.style.setProperty('--credential-cycle',`${width}px`);
+      // Repeat whole sequences far enough to cover any viewport throughout a cycle.
+      const needed=Math.ceil(lane.clientWidth/width)+1;
+      const duplicates=[...track.querySelectorAll('.credential-group[aria-hidden]')];
+      duplicates.slice(needed).forEach(group=>group.remove());
+      for(let i=duplicates.length;i<needed;i++){
+        const duplicate=original.cloneNode(true);
+        duplicate.setAttribute('aria-hidden','true');duplicate.inert=true;
+        duplicate.querySelectorAll('a,summary').forEach(item=>item.tabIndex=-1);
+        track.append(duplicate);
+      }
+    });
+  }
   function sync() {
     if(quiet()) {issuerAnimations.forEach(animation=>animation.complete());issuerAnimations.clear();}
     section.classList.toggle('credentials-moving',!quiet());
     pause.hidden = quiet();
+    fillLanes();
     section.querySelectorAll('.credential-group[aria-hidden]').forEach(group=>group.hidden=quiet());
   }
   pause.addEventListener('click',()=>{
@@ -45,5 +60,7 @@
     card.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')respond();});
     card.addEventListener('focusin',respond);
   });
+  if('ResizeObserver' in window){const observer=new ResizeObserver(fillLanes);lanes.forEach(lane=>observer.observe(lane));}
+  document.fonts.ready.then(fillLanes);
   sync();
 })();

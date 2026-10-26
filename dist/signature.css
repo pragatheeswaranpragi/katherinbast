@@ -470,10 +470,10 @@ html{scroll-padding-top:90px}
 .credentials-moving .credential-lane-2 .credential-track{animation-direction:reverse;animation-duration:42s}
 .credentials-moving .credential-group{display:flex;width:max-content;flex-shrink:0;gap:20px;padding-right:20px}
 .signature-ui .credentials-moving .learning-card{width:340px;flex-shrink:0}
-.credentials-moving:hover .credential-track,.credentials-moving.is-paused .credential-track,.credentials-moving.is-offscreen .credential-track{animation-play-state:paused}
+.credentials-moving.is-paused .credential-track,.credentials-moving.is-offscreen .credential-track{animation-play-state:paused}
 .credentials-moving:focus-within .credential-track{animation:none;transform:none}
 .credentials-moving:focus-within .credential-group[aria-hidden=true]{display:none}
-@keyframes credential-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes credential-drift{from{transform:translateX(0)}to{transform:translateX(calc(-1 * var(--credential-cycle,1080px)))}}
 @media(max-width:1000px){.credential-group{gap:16px}.signature-ui .credential-group .learning-card{padding:22px}.signature-ui .credentials-moving .learning-card{width:310px}}
 @media(max-width:600px){.credential-group{grid-template-columns:minmax(0,1fr)}.signature-ui .credentials-moving .learning-card{width:280px;min-height:280px}.signature-ui .credential-group .learning-card h3{font-size:18px}.credential-controls{align-items:flex-start}.credential-controls>p{max-width:220px}}
 .motion-paused .credential-track{animation:none!important;transform:none!important}
@@ -481,7 +481,7 @@ html{scroll-padding-top:90px}
 @media(prefers-reduced-motion:reduce){.credential-track{animation:none!important;transform:none!important}.credential-group[aria-hidden=true]{display:none}}
 .hero-art.marketing-tree{margin-bottom:56px}
 .marketing-tree .hero-motion-toggle{bottom:-52px}
-.credentials-moving .credential-group{min-width:calc(100vw - var(--pad)*2);justify-content:space-between}
+.credentials-moving .credential-group{min-width:0;justify-content:flex-start}
 /* An asymmetric flow map: one source, offset junctions, no radial body or spine. */
 .hero-art.marketing-flowmap{height:650px;margin-bottom:56px}
 .marketing-flowmap .marketing-hub{top:0;left:0;bottom:auto;transform:none;width:220px;height:84px;flex-direction:row;gap:12px;border-radius:18px;background:linear-gradient(125deg,#f1dfe1,#fbf7f5);box-shadow:none}
@@ -577,3 +577,12 @@ html{scroll-padding-top:90px}
 @media(prefers-reduced-motion:reduce){.smoke-word{filter:none!important;opacity:1!important;transform:none!important}}
 .motion-paused .smoke-word{filter:none!important;opacity:1!important;transform:none!important}
 @media(max-width:600px){.signature-ui .studio-logo .studio-logo-main{font-size:24px}.signature-ui .studio-logo .studio-logo-suffix{font-size:19px}.signature-ui .logo.studio-logo{gap:8px}.signature-ui .logo.studio-logo>.studio-emblem{width:33px;height:38px;font-size:26px}}
+
+/* Compact cards and an even, continuous marquee rhythm. */
+.credentials-moving .credential-group{gap:16px;padding-right:16px}
+.signature-ui .credential-group .learning-card{padding:12px;row-gap:3px}
+.credential-group .learning-card-top{gap:6px}
+.credential-group .learning-link{min-height:24px;padding-top:2px}
+.credential-group .learning-details summary{min-height:20px;padding-block:0}
+.credential-lanes{gap:10px}
+@media(max-width:600px){.signature-ui .credential-group .learning-card{padding:10px;row-gap:3px}}
