@@ -1,3 +1,5 @@
 GSAP and ScrollTrigger 3.15.0, from the official gsap npm package via jsDelivr. Original license headers retained. Source: https://www.npmjs.com/package/gsap and https://gsap.com/standard-license/.
 
 Motion 14.6.0: vanilla browser build from the official `motion` npm package, https://www.npmjs.com/package/motion (https://motion.dev/). Installed via npm pack with registry integrity verification; unmodified dist/motion.js is vendored as motion.14.6.0.js. MIT license retained in motion-LICENSE.md. Used by strategy-motion.js; no React or runtime CDN dependency. Registry package integrity: sha512-qqaZbyubgk7x3zxjPgP1l3Br/KQXol/IIV1uqb358SoN4ApcqNuV7+wyDPg/XLErmuyQL5lL8JVI/fOmDsmBKQ==.
+
+Issuer logo vectors: Meta and Google from Simple Icons 16.7.0; Canva from Simple Icons 11.15.0, fetched over verified HTTPS from cdn.jsdelivr.net/npm/simple-icons@<version>/icons/<name>.svg. Brand colours applied; paths unchanged. Simple Icons CC0 license at assets/issuers/simple-icons-LICENSE.md. Names identify credential issuers; these are not certification badges. HCL GUVI is a text-only issuer treatment, not a reproduced official logo.

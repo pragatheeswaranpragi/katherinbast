@@ -418,3 +418,27 @@ html{scroll-padding-top:90px}
 @media(min-width:701px) and (max-width:1200px){.marketing-network{aspect-ratio:auto;height:440px}.marketing-topic-influencer{top:0;left:0}.marketing-topic-social{top:16%;right:0}.marketing-topic-collaboration{top:auto;bottom:17%;left:0}.marketing-topic-content{bottom:0;right:0}.marketing-topic-leads{bottom:0;left:0}}
 @media(max-width:700px){.marketing-network{margin-bottom:44px}.marketing-network .hero-motion-toggle{bottom:-48px}}
 @media(min-width:701px) and (max-width:1200px){.marketing-network{margin-bottom:44px}.marketing-network .hero-motion-toggle{bottom:-48px}}
+/* Bast is the wordmark only; Katherin's personal identity stays unchanged. */
+.signature-ui .logo.bast-logo{font-family:var(--display);font-size:34px;font-weight:700;letter-spacing:-.06em}
+.marketing-hub .bast-hub-logo{font-family:var(--display);font-size:32px;letter-spacing:-.05em;padding:0}
+/* Faded grid and onion-pink atmosphere, kept behind the readable banner content. */
+.signature-ui .split-hero{position:relative;isolation:isolate}
+.split-hero::before{content:'';position:absolute;inset:76px 0 0;pointer-events:none;z-index:-1;background-image:linear-gradient(#be858f12 1px,transparent 1px),linear-gradient(90deg,#be858f12 1px,transparent 1px),radial-gradient(ellipse at 80% 45%,#ecd0d780,transparent 65%);background-size:40px 40px,40px 40px,100% 100%;mask-image:linear-gradient(transparent,#000 18%,#000 80%,transparent)}
+.hero-art.marketing-network{height:620px;aspect-ratio:auto;width:100%;max-width:720px;margin-bottom:32px}
+.marketing-network .marketing-topic{top:var(--branch-top);left:var(--branch-left);right:var(--branch-right);bottom:auto;max-width:43%;font-size:11px;gap:7px;padding:10px;min-height:46px;border-radius:9px;background:#fbf7f5f5;white-space:normal}
+.marketing-topic>span:not(.hero-node){text-wrap:balance}
+.marketing-topic .hero-node,.marketing-topic svg{flex-shrink:0}
+.marketing-network .hero-motion-toggle{bottom:-28px;right:0}
+@media(max-width:1100px){.signature-ui .split-hero{grid-template-columns:minmax(0,1fr);gap:40px}.hero-art.marketing-network{max-width:700px;height:620px}.hero-copy{max-width:720px}.signature-ui .hero-copy h1{font-size:clamp(44px,7vw,72px)}.marketing-hub{width:150px;height:120px}}
+@media(max-width:700px){.hero-art.marketing-network{height:600px;max-width:480px;margin-bottom:36px}.marketing-network .marketing-topic{font-size:10px;min-height:48px;max-width:none;width:44%;padding:8px;gap:5px}.marketing-topic svg{display:none}.marketing-hub{width:130px;height:110px}.marketing-hub-word{font-size:14px}.marketing-network .hero-motion-toggle{bottom:-30px}.signature-ui .split-hero{gap:32px}}
+/* Issuer-led credential collection, retaining every qualification and date. */
+.learning-issuer{display:flex;align-items:center;gap:12px;min-height:40px}
+.learning-issuer img{width:32px;height:32px;object-fit:contain}
+.guvi-issuer-mark{display:grid;place-content:center;min-width:36px;height:36px;font-family:Arial,sans-serif;font-size:10px;font-weight:700;line-height:1.1;color:#087b53;text-align:center;border-left:2px solid #087b53;padding-left:6px}
+.signature-ui .learning-card{position:relative;padding:24px 8px 20px;isolation:isolate}
+.learning-card::before{content:'';position:absolute;inset:10px -12px;z-index:-1;border-radius:14px;background:#f1dfe1;opacity:0;transition:opacity 180ms ease-out}
+.learning-card:hover::before,.learning-card:focus-within::before{opacity:.5}
+.learning-card-top{min-height:40px}
+.signature-ui .learning-card h3{font-size:19px}
+@media(max-width:600px){.signature-ui .learning-card{padding-inline:0}.learning-card::before{inset:8px -10px}.learning-issuer img{width:30px;height:30px}}
+@media(prefers-reduced-motion:reduce){.learning-card::before{transition:none}}

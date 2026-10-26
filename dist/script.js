@@ -207,21 +207,3 @@ if (collaborationSection) {
     observer.observe(stage);
   }
 }
-
-// Animate credentials once on entry; content stays visible without JS or motion.
-const learningCards = [...document.querySelectorAll('.learning-card')];
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const learningObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      if (!document.documentElement.classList.contains('motion-paused') && typeof entry.target.animate === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        entry.target.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }], {
-          duration: 550, delay: (learningCards.indexOf(entry.target) % 3) * 70,
-          easing: 'cubic-bezier(.16,1,.3,1)'
-        });
-      }
-      learningObserver.unobserve(entry.target);
-    });
-  }, { threshold: .12 });
-  learningCards.forEach(card => learningObserver.observe(card));
-}
