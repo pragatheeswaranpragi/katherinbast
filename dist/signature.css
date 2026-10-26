@@ -142,3 +142,36 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:#91465d
 .learning-card{min-height:300px}
 .learning-link>span{font-family:Arial,sans-serif}
 @media(max-width:600px){.learning-card{min-height:250px}}
+/* Shared spacing, Services navigation and interactive service explorer. */
+.signature-ui .section-wrap{padding-block:64px}
+.signature-ui .signature-hero{padding-top:120px;padding-bottom:0}
+.signature-ui .selected-work{padding-top:40px;padding-bottom:32px}
+.signature-ui .active-partnerships{padding-top:0}
+.signature-ui .approach .section-wrap{padding-block:64px}
+.signature-ui .header nav{gap:24px}
+.services-menu{position:relative}
+.services-menu>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;min-height:44px;font-size:14px}
+.services-menu>summary::-webkit-details-marker{display:none}
+.services-menu[open]>summary>span{transform:rotate(45deg)}
+.services-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:560px;max-width:calc(100vw - 48px);display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;padding:22px;background:var(--paper);border:1px solid #e8cfd5;border-radius:14px;box-shadow:0 16px 40px #40283115;z-index:20}
+.signature-ui .header nav .services-dropdown a{display:flex;align-items:center;min-height:44px;padding:8px;font-size:14px;text-decoration:none;white-space:normal;border-radius:6px}
+.services-dropdown a:hover,.services-dropdown a:focus-visible{background:var(--onion)}
+.service-explorer{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;margin-top:32px;align-items:center}
+.service-live{padding:32px 0;max-width:400px}
+.signature-ui .service-live h3{font-size:clamp(28px,3vw,42px);line-height:1.15;min-height:100px}
+.service-live>p:not(.learning-eyebrow){color:var(--muted);margin-top:20px;min-height:56px}
+.service-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.service-choice{display:grid;grid-template-columns:22px 1fr 15px;gap:10px;align-items:center;text-align:left;background:transparent;border-bottom:1px solid #d9b9c2;padding:16px 12px;min-height:76px;font-size:14px;line-height:1.4;transition:background 220ms,transform 220ms;border-radius:8px 8px 0 0}
+.service-choice-number{font-size:11px;color:var(--muted)}
+.service-choice[aria-pressed=true]{background:#e6bfc6;transform:translateY(-3px)}
+.expertise-disclosure{margin-top:32px;border-top:1px solid #d9b9c2;padding-top:18px}
+.expertise-disclosure>summary{cursor:pointer;min-height:44px;font-size:15px}
+.service-page .service-placeholder{padding-top:130px;min-height:72svh;max-width:1200px;margin-inline:auto}
+.service-placeholder .learning-eyebrow{margin-top:40px}
+.service-placeholder h1{font-family:var(--display);font-size:clamp(40px,6vw,80px);max-width:850px;line-height:1.1;overflow-wrap:anywhere}
+.service-coming{color:var(--muted);margin-top:24px}
+.service-footer{display:flex;justify-content:space-between;gap:24px;padding:32px var(--pad);border-top:1px solid #e8cfd5;font-size:14px}
+@media(max-width:1000px){.signature-ui .header nav{gap:8px}.services-dropdown{position:static;width:100%;max-width:none;box-shadow:none;margin-block:8px}.signature-ui .header nav.is-open{max-height:calc(100svh - 66px);overflow:auto}.service-explorer{gap:28px;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}}
+@media(max-width:600px){.signature-ui .section-wrap,.signature-ui .approach .section-wrap{padding-block:44px}.signature-ui .signature-hero{padding-top:100px;padding-bottom:0}.signature-ui .selected-work{padding-top:28px;padding-bottom:24px}.signature-ui .active-partnerships{padding-top:0}.service-explorer{grid-template-columns:1fr;gap:8px;margin-top:16px}.service-live{padding:16px 0}.signature-ui .service-live h3{min-height:70px;font-size:30px}.service-live>p:not(.learning-eyebrow){min-height:52px;margin-top:12px}.service-choices{gap:8px}.service-choice{font-size:13px;padding:12px 8px;gap:6px;grid-template-columns:18px 1fr 12px;min-height:76px}.services-dropdown{grid-template-columns:1fr;padding:12px}.service-footer{flex-wrap:wrap}.service-page .service-placeholder{padding-top:100px}.learning-heading{margin-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.service-choice{transition:none}.service-choice[aria-pressed=true]{transform:none}}
+.service-choice>span:last-child,.service-live .text-link>span,.services-menu summary>span{font-family:Arial,sans-serif}
