@@ -60,3 +60,26 @@ html{scroll-padding-top:90px}html.motion-paused{scroll-behavior:auto!important}
 @media(max-width:600px){.signature-ui .project-art>p{font-size:42px}}
 @media(max-width:360px){.signature-ui .project-art>p{font-size:34px}}
 @media(max-width:360px){.signature-ui .project-art>p{font-size:30px}}
+
+/* Collaboration showcase: readable content first, progressively enhanced navigation. */
+.signature-ui .collaborations{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:clamp(32px,6vw,96px);background:#e6e9df}
+.collaboration-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.collaboration-intro h2{margin-top:20px}
+.collaboration-summary{max-width:350px;margin-top:24px;font-size:17px;line-height:1.65}
+.collaboration-context{max-width:310px;margin-top:16px;color:var(--muted);font-size:14px}
+.collaboration-controls{display:flex;align-items:center;gap:12px;margin-top:32px}
+.collaboration-controls button{display:grid;place-items:center;width:48px;height:48px;border:1px solid #30213940;border-radius:50%;background:transparent;font-size:23px;transition:background 180ms,color 180ms,transform 180ms}
+.collaboration-controls button:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.collaboration-count{margin-left:10px;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.collaboration-stage{min-width:0;padding:24px 0 24px 24px}
+.collaboration-cards{display:grid;gap:20px;position:relative;isolation:isolate}
+.collaboration-card{position:relative;min-width:0;min-height:310px;padding:36px;background:var(--paper);border:1px solid #3021390d;border-radius:22px;box-shadow:0 8px 24px #30213908;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.collaboration-card-number{position:absolute;right:28px;top:26px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+.collaboration-monogram{display:grid;place-items:center;width:64px;height:64px;background:var(--lavender);border-radius:50%;font-size:22px;letter-spacing:-.04em;margin-bottom:28px}
+.collaboration-card h3{font-size:clamp(28px,3vw,42px);line-height:1.2;margin-top:12px;overflow-wrap:anywhere}
+.collaboration-role{color:var(--muted);margin-top:10px;font-size:15px}
+.collaboration-stage.is-enhanced .collaboration-cards::before{content:'';position:absolute;z-index:-1;inset:16px 28px 16px -24px;background:#f6f2ef80;border:1px solid #30213908;border-radius:22px;transform:rotate(-3deg)}
+.collaboration-stage.is-enhanced .collaboration-card{grid-area:1/1;min-height:350px}
+@media(max-width:1000px){.signature-ui .collaborations{grid-template-columns:1fr;gap:36px}.collaboration-summary{max-width:520px}.collaboration-stage{padding-left:20px}.collaboration-stage.is-enhanced .collaboration-card{min-height:310px}}
+@media(max-width:600px){.signature-ui .collaborations{gap:24px}.collaboration-intro h2{font-size:38px}.collaboration-stage{padding:12px 0 12px 12px}.collaboration-card{padding:28px 24px}.collaboration-stage.is-enhanced .collaboration-card{min-height:300px}.collaboration-stage.is-enhanced .collaboration-cards::before{left:-12px;right:16px}.collaboration-card h3{font-size:30px}.collaboration-controls{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.collaboration-controls button{transition:none}}
