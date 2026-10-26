@@ -18,7 +18,7 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
-const tabs = [...document.querySelectorAll('[role="tab"]')];
+const tabs = [...document.querySelectorAll('#approach [role="tab"]')];
 function selectTab(tab, focus = false) {
   tabs.forEach(item => {
     const selected = item === tab;
@@ -205,7 +205,7 @@ if (collaborationSection) {
     incoming.hidden = false;
     counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
     status.textContent = `${current + 1} of ${cards.length}: ${incoming.querySelector('h3').textContent}`;
-    if (!motionPreference.matches && typeof incoming.animate === 'function') {
+    if (!motionPreference.matches && !document.documentElement.classList.contains('motion-paused') && typeof incoming.animate === 'function') {
       const animation = incoming.animate([
         { opacity: 0, transform: `translateX(${direction * 24}px) scale(.98)` },
         { opacity: 1, transform: 'translateX(0) scale(1)' }
@@ -219,7 +219,7 @@ if (collaborationSection) {
   if ('IntersectionObserver' in window && !motionPreference.matches) {
     const observer = new IntersectionObserver(entries => {
       if (!entries.some(entry => entry.isIntersecting)) return;
-      if (typeof stage.animate === 'function') stage.animate([
+      if (!motionPreference.matches && !document.documentElement.classList.contains('motion-paused') && typeof stage.animate === 'function') stage.animate([
         { opacity: 0, transform: 'translateY(16px)' },
         { opacity: 1, transform: 'translateY(0)' }
       ], { duration: 600, easing: 'cubic-bezier(.16,1,.3,1)' });
@@ -235,7 +235,7 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
   const learningObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      if (typeof entry.target.animate === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (!document.documentElement.classList.contains('motion-paused') && typeof entry.target.animate === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         entry.target.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }], {
           duration: 550, delay: (learningCards.indexOf(entry.target) % 3) * 70,
           easing: 'cubic-bezier(.16,1,.3,1)'

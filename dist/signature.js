@@ -11,7 +11,7 @@
     pause.setAttribute('aria-pressed', String(paused));
     pause.textContent = paused ? 'Enable motion' : 'Pause motion';
     if (window.ScrollTrigger) ScrollTrigger.getAll().forEach(t => quiet() ? t.disable(false) : t.enable());
-    document.getAnimations().forEach(a => { if (quiet()) a.finish(); });
+    document.getAnimations().forEach(a => { if (quiet() && a.effect?.getTiming().iterations !== Infinity) a.finish(); });
   };
   pause.hidden = false;
   pause.addEventListener('click', () => { paused = !paused; sync(); });
@@ -19,12 +19,12 @@
 
   document.querySelectorAll('[data-signature-focus]').forEach(link => link.addEventListener('click', () => {
     const filter = document.querySelector(`[data-service-filter="${link.dataset.signatureFocus}"]`);
-    if (filter) filter.click();
+    if (filter) { filter.closest('details').open = true; filter.click(); }
   }));
 
   const plans = [
     ['.work-heading, .focus-heading, .approach-heading, .about>div:first-child, .credential-heading, .review-section-heading, .contact>h2', 'heading'],
-    ['.selected-case, .beauty-identity, .project-art, .graxi-intro', 'picture'],
+    ['.experience-selector, .service-explorer', 'picture'],
     ['.people-names>li, .partner-register>div, .credential-ledger>li', 'row'],
     ['.practice-pair>article, .steps>article, .about-copy, .doctor-directory, .support-network>details, .faq details', 'copy'],
   ];
@@ -34,8 +34,8 @@
       observer.unobserve(entry.target);
       if (quiet()) return;
       const kind = entry.target.dataset.arrival;
-      const frames = kind === 'picture' ? [{clipPath:'inset(0 0 18% 0)',transform:'scale(.97)'},{clipPath:'inset(0)',transform:'none'}] : kind === 'row' ? [{opacity:.45,transform:'translateX(24px)'},{opacity:1,transform:'none'}] : kind === 'heading' ? [{clipPath:'inset(20% 0 0)',transform:'translateY(22px)'},{clipPath:'inset(0)',transform:'none'}] : [{opacity:.45,transform:'translateY(18px)'},{opacity:1,transform:'none'}];
-      entry.target.animate(frames,{duration:kind==='picture'?1100:750,easing:'cubic-bezier(.16,1,.3,1)',delay:Number(entry.target.dataset.delay || 0)});
+      const frames = [{opacity:.4,transform:'translateY(16px)'},{opacity:1,transform:'none'}];
+      entry.target.animate(frames,{duration:400,easing:'ease-out',delay:Number(entry.target.dataset.delay || 0)});
     }), {threshold:.12});
     plans.forEach(([selector,kind]) => document.querySelectorAll(selector).forEach((el,i) => { el.dataset.arrival=kind;el.dataset.delay=String((i%3)*65);observer.observe(el); }));
   }
