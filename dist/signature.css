@@ -83,3 +83,31 @@ html{scroll-padding-top:90px}html.motion-paused{scroll-behavior:auto!important}
 @media(max-width:1000px){.signature-ui .collaborations{grid-template-columns:1fr;gap:36px}.collaboration-summary{max-width:520px}.collaboration-stage{padding-left:20px}.collaboration-stage.is-enhanced .collaboration-card{min-height:310px}}
 @media(max-width:600px){.signature-ui .collaborations{gap:24px}.collaboration-intro h2{font-size:38px}.collaboration-stage{padding:12px 0 12px 12px}.collaboration-card{padding:28px 24px}.collaboration-stage.is-enhanced .collaboration-card{min-height:300px}.collaboration-stage.is-enhanced .collaboration-cards::before{left:-12px;right:16px}.collaboration-card h3{font-size:30px}.collaboration-controls{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){.collaboration-controls button{transition:none}}
+
+/* Original brand marks on a shared surface, with a continuous optional marquee. */
+.signature-ui .brand-marquee{padding-bottom:45px}
+.brand-window{overflow:hidden;padding-block:30px}
+.brand-track{display:flex;width:100%}
+.brand-group{display:flex;align-items:center;justify-content:space-between;width:100%;gap:48px;flex-shrink:0}
+.brand-logo{display:flex;align-items:center;justify-content:center;height:90px;min-width:0;text-decoration:none;background:none}
+.brand-logo img{width:100%;max-height:70px;object-fit:contain;filter:none}
+.brand-logo-naturals{width:210px;mix-blend-mode:multiply}
+.brand-logo-redbull{width:190px}
+.brand-logo-zenderma{width:210px;mix-blend-mode:multiply}
+.brand-logo-hairtoppings{width:210px;mix-blend-mode:multiply}
+.brand-logo-graxi{width:190px;gap:10px}
+.brand-symbol{width:45px;height:29px;overflow:hidden;flex-shrink:0}
+.brand-symbol img{width:155px;max-width:none;height:28px;object-fit:initial}
+.graxi-wordmark{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:700;white-space:nowrap;letter-spacing:-.04em}
+.brand-motion-controls{display:flex;justify-content:flex-end;min-height:44px;margin-top:14px}
+.marquee-toggle{display:flex;align-items:center;gap:9px;background:none;padding:10px 2px;font-size:13px;color:var(--muted);min-height:44px}
+.brand-marquee.motion-enabled .brand-track{width:max-content;animation:brand-drift 34s linear infinite}
+.brand-marquee.motion-enabled .brand-group{width:auto;justify-content:start;gap:76px;padding-right:76px}
+.brand-marquee.motion-enabled:hover .brand-track,.brand-marquee.motion-enabled:focus-within .brand-track,.brand-marquee.is-paused .brand-track{animation-play-state:paused}
+@keyframes brand-drift{to{transform:translateX(-50%)}}
+@media(max-width:1100px){.brand-group{flex-wrap:wrap;justify-content:center;gap:28px 44px}.brand-marquee.motion-enabled .brand-group{flex-wrap:nowrap;gap:56px;padding-right:56px}}
+@media(max-width:600px){.signature-ui .brand-marquee{padding-bottom:25px}.brand-window{padding-block:20px}.brand-logo{height:75px}.brand-logo-naturals,.brand-logo-zenderma,.brand-logo-hairtoppings{width:165px}.brand-logo-redbull{width:155px}.brand-logo-graxi{width:175px}.brand-group{gap:20px}.brand-marquee.motion-enabled .brand-group{gap:44px;padding-right:44px}}
+@media(prefers-reduced-motion:reduce){.brand-marquee.motion-enabled .brand-track{animation:none;width:100%}.brand-marquee.motion-enabled .brand-group{width:100%;flex-wrap:wrap;justify-content:center;padding-right:0;gap:28px}.brand-group[aria-hidden=true]{display:none}}
+.brand-track,.brand-group{background:var(--paper)}
+.brand-logo-naturals,.brand-logo-zenderma,.brand-logo-hairtoppings{mix-blend-mode:normal}
+.brand-logo-naturals img{mix-blend-mode:multiply}

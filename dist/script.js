@@ -82,9 +82,20 @@ const brandMarquee = document.querySelector('.brand-marquee');
 if (brandMarquee) {
 const marqueeToggle = brandMarquee.querySelector('.marquee-toggle');
 const marqueeMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const brandGroup = brandMarquee.querySelector('.brand-group');
+if (brandGroup) {
+  const duplicate = brandGroup.cloneNode(true);
+  duplicate.setAttribute('aria-hidden', 'true');
+  duplicate.inert = true;
+  duplicate.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+  brandGroup.parentElement.append(duplicate);
+}
+
 function updateMarqueeMotion() {
   marqueeToggle.hidden = marqueeMotion.matches;
   brandMarquee.classList.toggle('motion-enabled', !marqueeMotion.matches);
+  const duplicate = brandMarquee.querySelector('.brand-group[aria-hidden]');
+  if (duplicate) duplicate.hidden = marqueeMotion.matches;
 }
 marqueeToggle.addEventListener('click', () => {
   const paused = marqueeToggle.getAttribute('aria-pressed') !== 'true';
