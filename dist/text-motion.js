@@ -46,7 +46,7 @@
     const words=split(element);if(!words.length)return;
     const animation=Motion.animate(words,{
       opacity:[.08,1],filter:['blur(4px)','blur(0px)'],y:[7,0]
-    },{duration:3,delay:index=>Math.min(index*.025,.2),ease:'easeInOut'});
+    },{duration:2,delay:index=>Math.min(index*.025,.2),ease:'easeInOut'});
     running.set(animation,words);
     animation.finished.then(()=>{
       animation.cancel();

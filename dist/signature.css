@@ -636,3 +636,15 @@ html{scroll-padding-top:90px}
 .motion-paused .team-toggle{transition:none}
 .team-panel summary{display:block}
 .signature-ui .team-panel summary h3{width:100%}
+/* An open team directory, replacing the boxed grid. */
+.team-directory{border-top:1px solid #e2d6db}
+.team-directory-row{display:flex;align-items:flex-start;gap:40px;padding:26px 0;border-bottom:1px solid #e2d6db}
+.signature-ui .team-directory-row h3{flex:0 0 240px;font-family:var(--display);font-size:26px;line-height:1.3;letter-spacing:-.035em}
+.team-directory-doctors h3{color:#395f91}.team-directory-vendors h3{color:#3b7058}.team-directory-talent h3{color:#9b5838}
+.team-directory-content{flex:1;min-width:0}
+.team-directory-content ul{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:baseline}
+.team-directory-content li{display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.6;max-width:100%;overflow-wrap:anywhere}
+.team-directory-content .team-list-dot{background:#b78b9a;width:3px;height:3px}
+.team-directory-content .team-footnote{color:var(--muted);border:0;padding:0;margin-top:16px;font-size:12px}
+@media(max-width:800px){.team-directory-row{gap:24px}.signature-ui .team-directory-row h3{flex-basis:190px;font-size:24px}}
+@media(max-width:600px){.team-directory-row{flex-direction:column;gap:16px;padding-block:22px}.signature-ui .team-directory-row h3{flex:auto;font-size:25px}.team-directory-content ul{gap:12px 22px}.team-directory-content li{font-size:14px}}
