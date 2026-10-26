@@ -442,3 +442,43 @@ html{scroll-padding-top:90px}
 .signature-ui .learning-card h3{font-size:19px}
 @media(max-width:600px){.signature-ui .learning-card{padding-inline:0}.learning-card::before{inset:8px -10px}.learning-issuer img{width:30px;height:30px}}
 @media(prefers-reduced-motion:reduce){.learning-card::before{transition:none}}
+/* The Bast Studio wordmark and a rooted, upward-growing service tree. */
+.signature-ui .logo.studio-logo{display:inline-flex;align-items:baseline;gap:5px;font-size:26px;letter-spacing:-.055em;white-space:nowrap}
+.studio-logo-prefix,.studio-logo-suffix{font-size:17px;letter-spacing:-.03em}
+.signature-ui .logo.studio-logo>.studio-logo-dot{margin-left:-5px}
+.marketing-tree .marketing-hub{top:auto;bottom:0;transform:translateX(-50%);height:88px;width:190px;border-radius:18px}
+.marketing-tree .bast-hub-logo{font-size:22px;letter-spacing:-.04em}
+.marketing-tree .marketing-hub-word{font-size:12px;margin-top:8px}
+.marketing-tree .marketing-topic{border-radius:14px 14px 14px 3px}
+.marketing-tree .marketing-topic:nth-of-type(even){border-radius:14px 14px 3px 14px}
+@media(max-width:1000px){.signature-ui .header nav{gap:18px}}
+@media(max-width:700px){.signature-ui .logo.studio-logo{font-size:25px}.studio-logo-prefix,.studio-logo-suffix{font-size:16px}.marketing-tree .marketing-hub{width:180px;height:88px}}
+/* Two counter-moving credential marquees. Static readable lists are the fallback. */
+.credential-lanes{display:grid;gap:20px}
+.credential-track{width:100%}
+.credential-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.signature-ui .credential-group .learning-card{border:1px solid #e8cfd5;border-radius:18px;background:#fff9;padding:26px;min-height:290px;margin:0}
+.credential-group .learning-card::before{inset:0}
+.credential-group .learning-issuer{font-size:14px}
+.signature-ui .credential-group .learning-featured{background:#f1dfe180;border-color:#d6a6b2}
+.credential-lane{min-width:0}
+.credential-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;font-size:12px;color:var(--muted)}
+.credential-controls>p{max-width:400px}
+.credential-pause{font-size:12px;color:var(--muted);background:none;min-height:44px;padding:4px 0;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.credentials-moving .credential-lane{overflow-x:auto;scrollbar-width:thin;scrollbar-color:#d6a6b2 transparent;padding-block:4px 12px}
+.credentials-moving .credential-track{display:flex;width:max-content;animation:credential-drift 36s linear infinite}
+.credentials-moving .credential-lane-2 .credential-track{animation-direction:reverse;animation-duration:42s}
+.credentials-moving .credential-group{display:flex;width:max-content;flex-shrink:0;gap:20px;padding-right:20px}
+.signature-ui .credentials-moving .learning-card{width:340px;flex-shrink:0}
+.credentials-moving:hover .credential-track,.credentials-moving.is-paused .credential-track,.credentials-moving.is-offscreen .credential-track{animation-play-state:paused}
+.credentials-moving:focus-within .credential-track{animation:none;transform:none}
+.credentials-moving:focus-within .credential-group[aria-hidden=true]{display:none}
+@keyframes credential-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:1000px){.credential-group{gap:16px}.signature-ui .credential-group .learning-card{padding:22px}.signature-ui .credentials-moving .learning-card{width:310px}}
+@media(max-width:600px){.credential-group{grid-template-columns:minmax(0,1fr)}.signature-ui .credentials-moving .learning-card{width:280px;min-height:280px}.signature-ui .credential-group .learning-card h3{font-size:18px}.credential-controls{align-items:flex-start}.credential-controls>p{max-width:220px}}
+.motion-paused .credential-track{animation:none!important;transform:none!important}
+.motion-paused .credential-group[aria-hidden=true]{display:none}
+@media(prefers-reduced-motion:reduce){.credential-track{animation:none!important;transform:none!important}.credential-group[aria-hidden=true]{display:none}}
+.hero-art.marketing-tree{margin-bottom:56px}
+.marketing-tree .hero-motion-toggle{bottom:-52px}
+.credentials-moving .credential-group{min-width:calc(100vw - var(--pad)*2);justify-content:space-between}

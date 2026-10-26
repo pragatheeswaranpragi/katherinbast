@@ -15,7 +15,7 @@
       loops = paths.map((path,index) => {
         const light = hero.querySelector(`[data-light="${path.dataset.branch}"]`);
         const length = path.getTotalLength();
-        const points = Array.from({length:61},(_,i) => path.getPointAtLength(length*i/60));
+        const points = Array.from({length:61},(_,i) => path.getPointAtLength(length*(1-i/60)));
         return animate(light, {
           x:points.map(point=>point.x), y:points.map(point=>point.y),
           opacity:points.map((_,i)=>i<4 ? i/4 : i>53 ? (60-i)/7 : 1)
@@ -49,10 +49,15 @@
       const bounds = hero.querySelector(`.marketing-topic-${path.dataset.branch}`).getBoundingClientRect();
       return new DOMPoint(bounds.x + bounds.width/2,bounds.y + bounds.height/2).matrixTransform(inverse);
     });
+    const hub = hero.querySelector('.marketing-hub').getBoundingClientRect();
+    const root = new DOMPoint(hub.x + hub.width/2,hub.top).matrixTransform(inverse);
+    const top = Math.min(...points.map(point=>point.y)) + 26;
+    svg.querySelector('.marketing-trunk').setAttribute('d',`M300 ${root.y}V${top}`);
     paths.forEach((path,index) => {
       const point = points[index];
-      const bend = point.x < 300 ? 225 : 375;
-      path.setAttribute('d',`M${point.x} ${point.y}C${bend} ${point.y} ${bend} 300 300 300`);
+      const joint = Math.min(point.y + 34,root.y - 16);
+      const bend = point.x < 300 ? 235 : 365;
+      path.setAttribute('d',`M${point.x} ${point.y}C${bend} ${point.y} ${bend} ${joint} 300 ${joint}L300 ${root.y}`);
     });
     loops.forEach(animation => animation.stop());
     loops = [];
