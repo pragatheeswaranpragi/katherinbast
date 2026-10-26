@@ -567,3 +567,13 @@ html{scroll-padding-top:90px}
 .partnership-bento .partnership-card summary:focus-visible{outline:none}
 .partnership-bento summary>.bento-art{z-index:-1}
 .partnership-bento .partnership-slot{--fan-angle:0deg!important;--fan-y:0px!important}
+/* Personal wordmark; content identity stays Katherin Bast. */
+.studio-wordmark{display:flex;align-items:baseline;gap:7px}
+.signature-ui .studio-logo .studio-logo-main{font-size:27px;line-height:1;color:var(--ink)}
+.signature-ui .studio-logo .studio-logo-suffix{font-family:var(--display);font-size:21px;line-height:1;font-weight:500;letter-spacing:-.04em;text-transform:none;color:#91465d}
+.marketing-flowmap .marketing-hub-icon{max-width:110px;font-size:20px}
+/* Short, local blur reveals. Content is never hidden by a stylesheet. */
+.smoke-word{display:inline-block;vertical-align:baseline}
+@media(prefers-reduced-motion:reduce){.smoke-word{filter:none!important;opacity:1!important;transform:none!important}}
+.motion-paused .smoke-word{filter:none!important;opacity:1!important;transform:none!important}
+@media(max-width:600px){.signature-ui .studio-logo .studio-logo-main{font-size:24px}.signature-ui .studio-logo .studio-logo-suffix{font-size:19px}.signature-ui .logo.studio-logo{gap:8px}.signature-ui .logo.studio-logo>.studio-emblem{width:33px;height:38px;font-size:26px}}

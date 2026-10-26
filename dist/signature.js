@@ -23,7 +23,6 @@
   }));
 
   const plans = [
-    ['.work-heading, .focus-heading, .approach-heading, .about>div:first-child, .credential-heading, .review-section-heading, .contact>h2', 'heading'],
     ['.experience-selector, .service-explorer', 'picture'],
     ['.people-names>li, .partner-register>div, .credential-ledger>li', 'row'],
     ['.practice-pair>article, .steps>article, .about-copy, .doctor-directory, .support-network>details, .faq details', 'copy'],

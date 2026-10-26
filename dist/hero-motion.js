@@ -38,7 +38,7 @@
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {visible = entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
   }
-  if (!quiet()) entrance = animate(hero.querySelector('.hero-copy'),{opacity:[.4,1],y:[14,0]},{duration:.5,ease:'easeOut'});
+  // Banner text entrance is owned by text-motion.js.
   // Anchor each branch to its topic after responsive layout is measured.
   function layoutBranches() {
     const svg = hero.querySelector('.marketing-connections');
