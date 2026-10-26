@@ -51,11 +51,15 @@ if (experienceSelector) {
     const changed = panel.hidden;
     choices.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
     panels.forEach((item, i) => { item.hidden = i !== index; });
+    if (matchMedia('(max-width: 600px)').matches) {
+      experienceSelector.scrollTo({left: choices[index].offsetLeft - experienceSelector.offsetLeft - 4, behavior: 'instant'});
+    }
     if (animate && changed && !matchMedia('(prefers-reduced-motion: reduce)').matches && !document.documentElement.classList.contains('motion-paused')) {
       panel.animate([{opacity:.25,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}], {duration:200,easing:'ease-out'});
     }
   };
   experienceSelector.hidden = false;
+  experienceSelector.closest('#work').classList.add('experience-enhanced');
   const fromHash = () => {
     const index = panels.findIndex(panel => '#' + panel.id === location.hash);
     if (index !== -1) choose(index);
@@ -70,6 +74,8 @@ if (experienceSelector) {
   }));
   choices.forEach((button, index) => {
     button.addEventListener('click', () => choose(index, true));
+    button.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') choose(index, true); });
+    button.addEventListener('focus', () => choose(index, true));
     button.addEventListener('keydown', event => {
       const keys = {ArrowRight:(index+1)%choices.length,ArrowLeft:(index+choices.length-1)%choices.length,Home:0,End:choices.length-1};
       if (event.key in keys) { event.preventDefault(); choices[keys[event.key]].focus(); choose(keys[event.key], true); }
