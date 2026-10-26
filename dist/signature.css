@@ -608,3 +608,31 @@ html{scroll-padding-top:90px}
 @media(max-width:1100px){.workflow-diagram .marketing-topic{font-size:12px;min-height:52px}.workflow-surface{height:610px}}
 @media(max-width:700px){.workflow-surface{width:610px;height:610px}.workflow-diagram .marketing-topic{font-size:12px;min-height:52px}.workflow-diagram .marketing-hub-icon{font-size:14px}.workflow-diagram .marketing-hub-word{font-size:11px}.workflow-hint{display:block;margin-top:8px;font-size:10px;color:var(--muted)}.workflow-diagram .hero-motion-toggle{bottom:-30px}.hero-art.marketing-flowmap.workflow-diagram{margin-bottom:34px}}
 .workflow-diagram .marketing-hub-icon{letter-spacing:0}
+/* The support network, composed on a twelve-column grid. */
+.signature-ui .operations.team-section{background:var(--paper)}
+.team-section .review-section-heading{align-items:end;margin-bottom:30px}
+.team-section .learning-eyebrow{margin-top:0;margin-bottom:16px}
+.team-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:start}
+.team-doctors{--team-bg:#e5edf9;--team-accent:#395f91;--team-border:#cddcf0;grid-column:span 5}
+.team-vendors{--team-bg:#e1efe7;--team-accent:#3b7058;--team-border:#c5ddce;grid-column:span 4}
+.team-talent{--team-bg:#f8e5d9;--team-accent:#9b5838;--team-border:#eccfbd;grid-column:span 3}
+.team-panel{background:var(--team-bg);border:1px solid var(--team-border);border-radius:20px;min-width:0;padding:24px;color:var(--ink)}
+.team-panel summary{cursor:pointer;list-style:none;min-height:48px}
+.team-panel summary::-webkit-details-marker{display:none}
+.signature-ui .team-panel h3{display:flex;align-items:center;gap:12px;min-width:0;font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.02em}
+.team-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;color:var(--team-accent);background:#ffffff80;flex-shrink:0}
+.team-toggle{margin-left:auto;font:22px/1 Arial,sans-serif;color:var(--team-accent);width:22px;flex-shrink:0;text-align:center;transform:rotate(0deg);transition:transform 180ms ease-out}
+.team-panel[open] .team-toggle{transform:rotate(45deg)}
+.team-panel summary:focus-visible{outline:2px solid var(--team-accent);outline-offset:6px;border-radius:7px}
+.team-content{padding-top:20px}
+.team-content ul{display:grid;gap:0}
+.team-content li{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--team-border);font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.team-list-dot{width:5px;height:5px;border-radius:50%;background:var(--team-accent);flex-shrink:0;opacity:.7}
+.team-doctors .team-content li{padding-block:20px}
+.team-footnote{font-size:12px;line-height:1.65;color:var(--team-accent);border-top:1px solid var(--team-border);margin-top:6px;padding-top:18px}
+@media(max-width:1100px){.team-doctors{grid-column:span 6}.team-vendors{grid-column:span 6}.team-talent{grid-column:span 12}.team-talent .team-content ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.team-panel{padding:22px}.team-doctors .team-content li{padding-block:18px}}
+@media(max-width:600px){.team-grid{gap:14px}.team-grid .team-panel{grid-column:span 12;padding:22px}.team-talent .team-content ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.signature-ui .team-panel h3{font-size:19px}.team-content li,.team-doctors .team-content li{font-size:14px;padding-block:14px}.team-content{padding-top:16px}}
+@media(prefers-reduced-motion:reduce){.team-toggle{transition:none}}
+.motion-paused .team-toggle{transition:none}
+.team-panel summary{display:block}
+.signature-ui .team-panel summary h3{width:100%}
