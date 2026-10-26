@@ -1,0 +1,2880 @@
+@font-face{
+  font-family:Manrope;
+  src:url('/assets/fonts/manrope.a30ddcd349.woff2') format('woff2');
+  font-weight:400 800;
+  font-display:swap}
+
+:root{
+  --ground:#1c1724;
+  --surface:#2a2233;
+  --surface-light:#3a2e46;
+  --ink:#faf5fc;
+  --secondary:#d3c8dc;
+  --peach:#f5cbb1;
+  --violet:#c6abdf;
+  --cream:#faf1e9;
+  --dark:#291d33;
+  --light-ink:#513c5b;
+  --gutter:clamp(24px,5vw,88px);
+  --content:1440px;
+  --sans:Manrope,Arial,sans-serif;
+  --display:Manrope,Arial,sans-serif}
+
+*{
+  box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font:17px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased}
+button,a{
+  -webkit-tap-highlight-color:transparent}
+a{
+  color:inherit;
+  text-decoration:none}
+button,input{
+  font:inherit}
+button{
+  cursor:pointer}
+img{
+  display:block;
+  max-width:100%;
+  height:auto}
+svg{
+  width:24px;
+  height:24px}
+p,h1,h2,h3,h4,figure{
+  margin:0}
+p{
+  text-wrap:pretty}
+h1,h2,h3,h4{
+  font-family:var(--display);
+  font-weight:500;
+  text-wrap:balance}
+h1,h2{
+  letter-spacing:-.055em;
+  line-height:1.06}
+h2{
+  font-size:clamp(40px,5.2vw,76px)}
+h3{
+  font-size:28px;
+  line-height:1.2;
+  letter-spacing:-.035em}
+em{
+  font:inherit}
+button,a{
+  touch-action:manipulation}
+button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--peach);
+  outline-offset:6px}
+::selection{
+  background:var(--peach);
+  color:var(--dark)}
+[hidden]{
+  display:none!important}
+.skip{
+  position:fixed;
+  left:24px;
+  top:-100px;
+  z-index:100;
+  padding:14px 24px;
+  background:var(--cream);
+  color:var(--dark)}
+.skip:focus{
+  top:15px}
+.section-wrap{
+  max-width:var(--content);
+  margin-inline:auto;
+  padding-inline:var(--gutter)}
+main>section:not(.hero){
+  padding-top:140px;
+  padding-bottom:0}
+main>section.contact{
+  padding-bottom:110px}
+section{
+  scroll-margin-top:35px}
+.text-link{
+  display:inline-flex;
+  align-items:center;
+  gap:20px;
+  padding:10px 0;
+  font-size:16px;
+  text-decoration:underline;
+  text-underline-offset:7px;
+  text-decoration-color:currentColor}
+.text-link:hover{
+  color:var(--peach)}
+.button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:32px;
+  min-height:54px;
+  padding:15px 24px;
+  border:0;
+  border-radius:999px;
+  background:var(--peach);
+  color:var(--dark);
+  font-size:15px;
+  font-weight:600;
+  transition:transform .2s,background .2s}
+.button:hover{
+  background:var(--cream);
+  transform:translateY(-3px)}
+.button:active{
+  transform:scale(.97)}
+.button>span{
+  font-size:24px;
+  line-height:1}
+.tag{
+  display:inline-block;
+  font-size:14px;
+  color:var(--secondary);
+  margin-bottom:22px;
+  text-transform:none}
+/* A plain, readable frame over the original orbital cover. */
+.header{
+  position:absolute;
+  z-index:20;
+  top:0;
+  left:0;
+  width:100%;
+  padding:28px var(--gutter);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:32px;
+  color:var(--ink)}
+.wordmark{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  white-space:nowrap}
+.logo{
+  font:500 44px/1 var(--display);
+  letter-spacing:-5px;
+  color:var(--dark)}
+.logo>span{
+  color:var(--dark)}
+.wordmark-name{
+  font-size:14px;
+  letter-spacing:0;
+  text-transform:none;
+  color:var(--dark)}
+.header nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  font-size:14px}
+.header nav>a{
+  padding-block:10px}
+.header nav>a:hover,.header nav>a[aria-current=location]{
+  color:var(--peach)}
+.header .nav-contact{
+  padding:12px 20px;
+  background:var(--peach);
+  color:var(--dark);
+  border-radius:999px;
+  font-weight:600;
+  white-space:nowrap}
+.nav-contact span{
+  margin-left:12px}
+.menu-button{
+  display:none}
+.reading-progress{
+  display:none}
+.header.is-scrolled{
+  position:fixed;
+  padding-block:14px;
+  background:var(--ground)}
+.is-scrolled .logo,.is-scrolled .logo>span,.is-scrolled .wordmark-name{
+  color:var(--ink)}
+
+/* The banner's peach-to-plum light is the one deliberate gradient. */
+.hero.hero-orbit{
+  position:relative;
+  isolation:isolate;
+  padding:170px var(--gutter) 32px;
+  overflow:hidden;
+  background:var(--ground)}
+.orbit-hero-grid{
+  max-width:1264px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:40px;
+  align-items:center;
+  min-height:510px}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  min-width:0;
+  padding-bottom:26px}
+.hero-name{
+  font-size:20px;
+  color:var(--dark);
+  margin-bottom:28px}
+.hero-orbit h1{
+  font-size:clamp(44px,4.75vw,72px);
+  letter-spacing:-.065em;
+  line-height:1.08;
+  color:var(--cream);
+  margin-bottom:32px;
+  white-space:nowrap}
+.hero-description{
+  max-width:450px;
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink);
+  margin-bottom:30px}
+.hero-actions{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  flex-wrap:wrap}
+.hero-actions .text-link{
+  font-size:15px}
+.hero-place{
+  margin-top:32px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  color:var(--ink);
+  font-size:14px}
+.hero-place>span:first-child{
+  display:none}
+.hero-place-divider{
+  opacity:.65}
+.connection-universe{
+  min-width:0;
+  text-align:center;
+  margin:0}
+.orbit-visual{
+  position:relative;
+  isolation:isolate;
+  aspect-ratio:1;
+  max-width:510px;
+  width:100%;
+  margin:auto}
+.orbit-rings{
+  position:absolute;
+  inset:0;
+  pointer-events:none}
+.orbit-ring{
+  position:absolute;
+  inset:6%;
+  /* taste-skill-ignore: preserved brand orbit rings, not content containers. */ border:1px solid #dac4ed36;
+  border-radius:50%}
+.orbit-ring-middle{
+  inset:17%}
+.orbit-ring-inner{
+  inset:28%}
+.orbit-ring:after{
+  content:'';
+  position:absolute;
+  top:14%;
+  right:14%;
+  width:5px;
+  height:5px;
+  background:var(--peach);
+  border-radius:50%}
+.orbit-ring-middle:after{
+  background:var(--violet)}
+.orbit-motion-enabled .orbit-ring{
+  animation:orbit-turn 55s linear infinite}
+.orbit-motion-enabled .orbit-ring-middle{
+  animation-direction:reverse;
+  animation-duration:43s}
+.orbit-motion-enabled .orbit-ring-inner{
+  animation-duration:34s}
+.orbit-is-paused .orbit-ring{
+  animation-play-state:paused}
+.orbit-centre{
+  position:absolute;
+  inset:31%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column}
+.orbit-monogram{
+  font:110px/1 Georgia,serif;
+  letter-spacing:-12px;
+  color:var(--cream)}
+.orbit-monogram>span{
+  color:var(--peach)}
+.orbit-centre-name{
+  font-size:14px;
+  letter-spacing:.02em;
+  margin-top:14px}
+.orbit-centre-caption{
+  font-size:14px;
+  line-height:1.4;
+  color:var(--secondary);
+  margin-top:10px}
+.orbit-brand{
+  position:absolute;
+  z-index:2;
+  width:80px;
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--cream);
+  padding:13px;
+  transition:transform .25s}
+.orbit-brand:hover{
+  transform:translateY(-5px) rotate(-5deg)}
+.orbit-brand img{
+  width:100%;
+  height:65%;
+  object-fit:contain}
+.orbit-brand-naturals{
+  left:4%;
+  top:24%}
+.orbit-brand-zenderma{
+  right:5%;
+  top:19%}
+.orbit-brand-redbull{
+  right:13%;
+  bottom:7%}
+.orbit-brand-hair{
+  left:12%;
+  bottom:14%}
+.orbit-brand-label{
+  display:none}
+.orbit-discipline{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  line-height:1.3;
+  text-align:left;
+  max-width:135px}
+.orbit-discipline-brand{
+  left:34%;
+  top:0}
+.orbit-discipline-lead{
+  right:-2%;
+  bottom:35%}
+.orbit-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  background:var(--ground);
+  border-radius:50%}
+.orbit-icon svg{
+  stroke:var(--peach);
+  stroke-width:1.4;
+  fill:none}
+.orbit-motion-toggle{
+  position:absolute;
+  bottom:-16px;
+  right:0;
+  padding:10px 0;
+  border:0;
+  background:transparent;
+  color:var(--secondary);
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:7px}
+.connection-universe figcaption{
+  font-size:14px;
+  margin-top:36px;
+  color:var(--secondary)}
+.universe-caption-dot{
+  display:none}
+.orbit-credential{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  font-size:14px;
+  color:var(--ink);
+  padding:10px 0}
+.orbit-credential svg{
+  fill:none;
+  stroke:var(--peach);
+  stroke-width:1.5}
+.orbit-credential>span:last-child{
+  display:none}
+.orbit-credential-divider{
+  margin-inline:4px}
+.brand-marquee{
+  max-width:1264px;
+  margin:70px auto 0;
+  padding-top:10px}
+.marquee-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px}
+.marquee-heading h2{
+  font:16px/1.4 var(--sans);
+  letter-spacing:0;
+  color:var(--secondary)}
+.marquee-toggle{
+  background:transparent;
+  color:var(--secondary);
+  border:0;
+  min-height:44px;
+  font-size:14px;
+  display:flex;
+  gap:8px;
+  align-items:center}
+.logo-window{
+  overflow:hidden}
+.logo-track{
+  display:flex;
+  width:max-content}
+.logo-group{
+  display:flex;
+  gap:14px;
+  margin:0;
+  padding:0 14px 0 0;
+  list-style:none}
+.logo-group[aria-hidden=true]{
+  display:none}
+.logo-card{
+  width:240px;
+  height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px 34px;
+  background:var(--cream)}
+.logo-card img{
+  width:160px;
+  max-height:45px;
+  object-fit:contain}
+.motion-enabled .logo-group[aria-hidden=true]{
+  display:flex}
+.motion-enabled .logo-track{
+  animation:brand-pass 35s linear infinite}
+.brand-marquee:hover .logo-track,.brand-marquee:focus-within .logo-track,.brand-marquee.is-paused .logo-track{
+  animation-play-state:paused}
+
+/* A considered introduction, open rather than boxed. */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:8vw;
+  align-items:start}
+.about-location{
+  font-size:14px;
+  color:var(--secondary);
+  margin-top:32px}
+.about-copy>p:first-child{
+  font-size:clamp(20px,2vw,28px);
+  line-height:1.55;
+  letter-spacing:-.025em}
+.about-copy strong{
+  font-weight:400;
+  color:var(--peach)}
+.about-copy>p+p{
+  margin-top:28px;
+  max-width:640px;
+  font-size:17px}
+.about-copy a{
+  text-decoration:underline;
+  text-decoration-color:var(--violet);
+  text-underline-offset:5px}
+.about-note{
+  margin-top:32px;
+  padding:28px 30px;
+  background:var(--surface);
+  font-size:17px;
+  color:var(--secondary)}
+
+/* Four disciplines form a stepping type composition, not a feature-card grid. */
+.focus-heading,.work-heading,.credential-heading,.approach-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:50px;
+  margin-bottom:58px}
+.focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  max-width:340px;
+  font-size:17px;
+  color:var(--secondary)}
+.focus-heading-note br{
+  display:none}
+.focus-board{
+  display:flex;
+  flex-direction:column;
+  gap:16px}
+.discipline{
+  position:relative;
+  padding:38px 42px;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:22px 50px;
+  align-items:center;
+  background:var(--surface);
+  transition:background .25s}
+.discipline:nth-child(2){
+  margin-left:8%;
+  background:var(--surface)}
+.discipline:nth-child(3){
+  margin-left:16%;
+  background:var(--surface)}
+.discipline:nth-child(4){
+  margin-left:8%;
+  background:var(--surface)}
+.discipline:hover{
+  background:var(--surface-light)}
+.discipline-main{
+  display:contents}
+.discipline-main>div{
+  display:contents}
+.discipline h3{
+  font-size:clamp(28px,3vw,44px);
+  max-width:430px;
+  grid-column:1;
+  grid-row:1/3}
+.discipline p{
+  font-size:17px;
+  grid-column:2;
+  grid-row:1}
+.discipline-tags{
+  display:none}
+.discipline-link{
+  grid-column:2;
+  grid-row:2;
+  font-size:14px;
+  color:var(--peach);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:44px}
+.discipline-link>span{
+  font-size:28px}
+.focus-closing{
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  gap:40px;
+  margin-top:35px}
+.focus-closing>p{
+  max-width:460px;
+  font-size:16px;
+  color:var(--secondary)}
+.focus-closing .text-link{
+  font-size:14px;
+  padding:0;
+  max-width:290px}
+
+/* Real brand assets, given room to be seen. */
+.work-navigation{
+  display:flex;
+  gap:32px;
+  flex-wrap:wrap;
+  margin:-24px 0 40px;
+  font-size:16px}
+.work-navigation a{
+  padding-block:10px;
+  color:var(--secondary)}
+.work-navigation a:hover{
+  color:var(--peach)}
+.work-navigation a>span{
+  margin-left:10px}
+.brand-project{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:55px;
+  align-items:center}
+.brand-visual{
+  aspect-ratio:1.14;
+  min-height:420px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:44px;
+  background:#dfcee8;
+  color:var(--dark);
+  overflow:hidden}
+.brand-pair{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  justify-content:space-between}
+.brand-pair img{
+  width:40%;
+  height:90px;
+  object-fit:contain;
+  mix-blend-mode:multiply}
+.brand-pair>span{
+  font:500 46px/1 var(--display)}
+.brand-visual>p{
+  font:500 clamp(30px,3.6vw,50px)/1.1 var(--display);
+  letter-spacing:-.05em;
+  margin-block:48px}
+.brand-visual-caption{
+  font-size:14px;
+  max-width:290px}
+.brand-project-copy h3{
+  font-size:clamp(28px,3vw,42px);
+  margin-bottom:24px}
+.brand-project-copy>p{
+  font-size:17px;
+  margin-bottom:28px}
+.brand-family>span,.portfolio-lens>span{
+  font-size:14px;
+  color:var(--secondary);
+  text-transform:none}
+.brand-family p,.portfolio-lens p{
+  font-size:16px;
+  margin-top:6px}
+.brand-family,.portfolio-lens{
+  margin-bottom:24px}
+.brand-project-copy .text-link{
+  color:var(--peach)}
+.project{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:55px;
+  align-items:start;
+  margin-top:100px}
+.project-art{
+  grid-column:2;
+  grid-row:1;
+  min-height:500px;
+  aspect-ratio:1.02;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:var(--peach);
+  color:var(--dark);
+  padding:44px}
+.project-art>img{
+  width:190px;
+  height:100px;
+  object-fit:contain;
+  align-self:end;
+  mix-blend-mode:multiply}
+.project-art>p{
+  font:500 clamp(35px,4vw,58px)/1.05 var(--display);
+  letter-spacing:-.05em;
+  margin-block:40px}
+.project-art-bottom{
+  font-size:14px}
+.project-copy{
+  grid-column:1;
+  grid-row:1;
+  padding-top:24px}
+.project-copy h3{
+  font-size:clamp(40px,4vw,56px);
+  margin-bottom:8px}
+.project-role{
+  font-size:20px;
+  margin-bottom:24px}
+.project-date{
+  font-size:14px;
+  color:var(--secondary);
+  margin-bottom:22px}
+.project-copy>p:not(.source-note):not(.project-date):not(.project-role){
+  font-size:17px}
+.project-copy dl{
+  font-size:15px;
+  margin:30px 0}
+.project-copy dl>div{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:16px;
+  margin-top:16px}
+.project-copy dt{
+  color:var(--secondary)}
+.project-copy dd{
+  margin:0}
+.project-copy details{
+  background:var(--surface);
+  padding-inline:22px}
+.project-detail{
+  padding-block:10px 24px}
+.project-detail h4{
+  font-size:18px;
+  margin-bottom:10px}
+.project-detail p{
+  font-size:16px;
+  margin-bottom:24px}
+.source-note{
+  font-size:14px;
+  color:var(--secondary);
+  margin-top:18px}
+.project-detail a{
+  font-size:14px}
+
+/* Credentials read as a collection: one feature and a complete register. */
+.credential-mosaic{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px}
+.credential-meta{
+  grid-column:1;
+  grid-row:1/3;
+  position:relative;
+  overflow:hidden;
+  min-height:600px;
+  background:var(--peach);
+  color:var(--dark);
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between}
+.credential-meta-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px}
+.credential-brand{
+  font-family:var(--display);
+  font-size:32px;
+  letter-spacing:-.05em}
+.credential-latest{
+  font-size:14px}
+.credential-symbol{
+  font:180px/1 var(--display);
+  color:#6f416a;
+  letter-spacing:-.1em;
+  margin-block:12px}
+.credential-meta-copy h3{
+  font-size:clamp(26px,2.8vw,38px);
+  max-width:400px;
+  margin-bottom:12px}
+.credential-provider{
+  font-size:16px}
+.credential-meta-footer{
+  margin-top:32px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:20px;
+  font-size:14px}
+.credential-link{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:underline;
+  text-underline-offset:5px;
+  font-size:14px}
+.credential-link:hover{
+  opacity:.75}
+.credential-google,.credential-canva{
+  padding:30px 36px;
+  background:var(--surface);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px 20px;
+  align-content:center}
+.credential-tile-top{
+  display:flex;
+  justify-content:space-between;
+  grid-column:1/-1;
+  margin-bottom:12px}
+.credential-tile-top>span:last-child{
+  display:none}
+.credential-google h3,.credential-canva h3{
+  grid-column:1/-1;
+  font-size:25px;
+  max-width:440px}
+.credential-google .credential-brand,.credential-canva .credential-brand{
+  font-size:20px;
+  color:var(--peach)}
+.credential-google .credential-provider,.credential-canva .credential-provider{
+  grid-column:1/-1;
+  font-size:14px;
+  color:var(--secondary)}
+.credential-date{
+  font-size:14px}
+.credential-code{
+  font-size:14px;
+  color:var(--secondary);
+  overflow-wrap:anywhere}
+.credential-google .credential-code,.credential-canva .credential-code{
+  grid-column:1;
+  grid-row:5}
+.credential-google .credential-link,.credential-canva .credential-link{
+  grid-column:2;
+  grid-row:4/6;
+  align-self:end;
+  color:var(--peach)}
+.credential-guvi{
+  grid-column:1/-1;
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:.7fr 1.7fr;
+  gap:55px}
+.credential-guvi-heading h3{
+  font-size:36px;
+  margin-bottom:12px}
+.credential-collection-label{
+  font-size:16px;
+  color:var(--secondary)}
+.credential-collection-label>span{
+  display:none}
+.credential-register{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:16px}
+.credential-register li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  background:var(--surface);
+  padding:24px 30px}
+.credential-row-copy h4{
+  font-size:18px;
+  line-height:1.4;
+  max-width:500px;
+  margin-bottom:8px}
+.credential-row-copy p{
+  font-size:14px;
+  color:var(--secondary)}
+.credential-row-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--surface-light);
+  color:var(--peach);
+  font-size:23px}
+.credential-source{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  margin-top:40px;
+  font-size:14px;
+  color:var(--secondary)}
+.credential-source .text-link{
+  font-size:14px;
+  padding:0;
+  color:var(--ink)}
+
+/* A working framework, selected by the visitor. */
+.approach>.section-wrap{
+  padding-top:0;
+  padding-bottom:0}
+.track-selector{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:44px}
+.track-selector button{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:15px 22px;
+  border:0;
+  border-radius:0;
+  background:var(--surface);
+  color:var(--ink);
+  min-height:56px;
+  font-size:15px;
+  transition:background .2s,color .2s}
+.track-selector button[aria-selected=true]{
+  background:var(--peach);
+  color:var(--dark)}
+.track-selector button:hover{
+  background:var(--surface-light)}
+.track-selector button[aria-selected=true]:hover{
+  background:var(--cream)}
+.track-selector button>span{
+  display:none}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:36px;
+  background:var(--surface);
+  padding:40px}
+.step-verb{
+  color:var(--peach);
+  font-size:16px;
+  margin-bottom:38px}
+.steps h3{
+  font-size:25px;
+  margin-bottom:20px}
+.steps article>p:last-child{
+  font-size:17px;
+  color:var(--ink)}
+
+/* Questions stay readable without turning into a wall of boxes. */
+.faq{
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:8vw;
+  align-items:start}
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px}
+details{
+  background:var(--surface);
+  padding-inline:26px}
+summary{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-block:23px;
+  font-size:17px;
+  line-height:1.45;
+  cursor:pointer}
+summary::-webkit-details-marker{
+  display:none}
+summary>span{
+  font-size:26px;
+  color:var(--peach);
+  transition:transform .2s;
+  flex-shrink:0}
+details[open] summary>span{
+  transform:rotate(45deg)}
+details>p{
+  padding-bottom:28px;
+  font-size:16px;
+  line-height:1.7}
+details>p a{
+  text-decoration:underline;
+  text-underline-offset:4px}
+
+/* The close repeats the banner's world, with a clear direct action. */
+.contact{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center}
+.contact h2{
+  font-size:clamp(44px,5.6vw,80px)}
+.contact-copy>p{
+  margin-top:30px;
+  max-width:440px;
+  font-size:17px}
+.contact-topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 20px;
+  margin-top:28px;
+  max-width:410px;
+  font-size:14px;
+  color:var(--secondary)}
+.contact-card{
+  background:var(--surface);
+  padding:44px}
+.contact-person{
+  font-size:18px;
+  color:var(--secondary);
+  margin-bottom:28px}
+.contact-email{
+  font-family:var(--display);
+  font-size:clamp(21px,2.15vw,32px);
+  line-height:1.4;
+  letter-spacing:-.04em;
+  display:block;
+  color:var(--peach);
+  overflow-wrap:anywhere}
+.contact-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  gap:20px;
+  margin-top:36px}
+.copy-email{
+  border:0;
+  background:none;
+  color:var(--ink);
+  padding:8px 0;
+  min-height:44px;
+  font-size:15px;
+  display:flex;
+  gap:15px;
+  align-items:center}
+.copy-email:hover{
+  color:var(--peach)}
+.contact-note{
+  margin-top:18px;
+  font-size:14px;
+  color:var(--secondary)}
+.footer{
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:24px 40px;
+  align-items:center;
+  padding-block:35px 40px;
+  font-size:14px;
+  background:var(--ground)}
+.footer-name{
+  grid-column:1/-1;
+  font-family:var(--display);
+  font-size:clamp(62px,12.4vw,178px);
+  letter-spacing:-.07em;
+  line-height:1.15;
+  color:var(--violet);
+  margin-bottom:25px}
+.footer-name>span{
+  font:14px/1.6 var(--sans);
+  letter-spacing:0;
+  display:block;
+  margin-top:25px;
+  color:var(--secondary)}
+.footer>a:not(.footer-name):hover{
+  color:var(--peach)}
+
+/* The existing greeting remains a real, cancellable dialog. */
+body.connection-active{
+  overflow:hidden}
+.connection-dialog{
+  --connection-duration:2800ms;
+  width:min(760px,calc(100% - 32px));
+  max-height:calc(100dvh - 32px);
+  padding:0;
+  border:0;
+  background:var(--surface);
+  color:var(--ink);
+  overflow:auto;
+  /* taste-skill-ignore: floating modal shadow is allowed. */ box-shadow:0 30px 100px #0008}
+.connection-dialog::backdrop{
+  background:#100d17c9}
+.connection-dialog[open]{
+  display:grid;
+  grid-template-columns:1fr 1.1fr}
+.connection-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:5;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:var(--ground);
+  color:var(--ink);
+  font-size:30px}
+.connection-scene{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  min-height:440px;
+  background:#dbc6e5;
+  overflow:hidden}
+.connection-bubble{
+  position:absolute;
+  left:24px;
+  top:28px;
+  font-size:25px;
+  color:var(--dark)}
+.connection-character{
+  height:330px;
+  padding:40px 12px 0}
+.connection-character img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:bottom}
+.connection-image-fallback{
+  display:none;
+  font-size:90px;
+  text-align:center;
+  color:var(--dark);
+  padding-top:100px}
+.image-failed img{
+  display:none}
+.image-failed .connection-image-fallback{
+  display:block}
+.connection-spark,.flying-envelope,.connection-orbit{
+  display:none}
+.connection-message{
+  padding:65px 30px 36px;
+  align-self:center}
+.connection-message h2{
+  font-size:32px;
+  line-height:1.15}
+.connection-message>p{
+  font-size:16px;
+  margin-top:20px}
+.connection-recipient{
+  font-size:14px!important;
+  overflow-wrap:anywhere;
+  color:var(--peach)}
+.connection-countdown{
+  height:3px;
+  background:var(--surface-light);
+  margin-block:28px}
+.connection-countdown>span{
+  display:block;
+  height:100%;
+  background:var(--peach);
+  transform-origin:left}
+.connection-dialog[open] .connection-countdown>span{
+  animation:countdown var(--connection-duration) linear forwards}
+.connection-dialog[open] .connection-character{
+  animation:hello-sway 1.3s ease-in-out infinite alternate}
+.connection-open{
+  font-size:14px;
+  gap:20px}
+.connection-alternatives{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-top:24px;
+  font-size:14px}
+.connection-cancel{
+  border:0;
+  background:none;
+  color:var(--ink);
+  padding:0;
+  font-size:inherit}
+.connection-alternatives a,.connection-cancel{
+  text-decoration:underline;
+  text-underline-offset:5px;
+  min-height:44px;
+  display:flex;
+  align-items:center}
+
+/* Motion is progressive: every piece remains visible without script. */
+@keyframes orbit-turn{
+  to{
+  transform:rotate(360deg)}
+}
+@keyframes brand-pass{
+  to{
+  transform:translateX(-50%)}
+}
+@keyframes countdown{
+  from{
+  transform:scaleX(0)}
+to{
+  transform:scaleX(1)}
+}
+@keyframes hello-sway{
+  from{
+  transform:rotate(-2deg)}
+to{
+  transform:rotate(2deg)}
+}
+@keyframes enter{
+  from{
+  opacity:.3;
+  transform:translateY(22px)}
+to{
+  opacity:1;
+  transform:translateY(0)}
+}
+.reveal-in{
+  animation:enter .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy{
+  animation:enter .65s ease-out both}
+.connection-universe{
+  animation:enter .85s ease-out both}
+
+@media(min-width:1600px){
+  .header{
+  padding-inline:max(var(--gutter),calc((100vw - 1264px)/2))}
+.hero-orbit h1{
+  font-size:76px}
+}
+
+@media(max-width:1100px){
+  .header nav{
+  gap:17px;
+  font-size:14px}
+.wordmark-name{
+  display:none}
+.orbit-hero-grid{
+  gap:24px;
+  grid-template-columns:1.2fr 1fr}
+.hero-orbit h1{
+  font-size:4.8vw}
+.orbit-monogram{
+  font-size:90px}
+.orbit-brand{
+  width:65px;
+  height:65px;
+  padding:10px}
+.orbit-discipline{
+  font-size:14px;
+  max-width:120px}
+.orbit-discipline-lead{
+  right:-3%}
+.orbit-centre-caption{
+  font-size:14px}
+.orbit-centre-name{
+  font-size:14px}
+.hero-actions{
+  gap:20px}
+.hero-actions .button{
+  font-size:14px;
+  padding-inline:20px}
+.hero-actions .text-link{
+  font-size:14px}
+.brand-project,.project{
+  gap:36px}
+.brand-visual,.project-art{
+  padding:30px}
+.brand-visual{
+  min-height:400px}
+.project-art{
+  min-height:460px}
+.credential-meta{
+  padding:30px}
+.credential-google,.credential-canva{
+  padding:26px}
+.credential-guvi{
+  gap:32px}
+.contact{
+  gap:32px}
+.contact-card{
+  padding:32px}
+}
+
+@media(max-width:800px){
+  :root{
+  --gutter:28px}
+.header{
+  padding-block:22px}
+.menu-button{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  border:0;
+  border-radius:999px;
+  background:var(--ground);
+  color:var(--ink);
+  padding:10px 18px;
+  min-height:44px;
+  font-size:14px}
+.menu-button>span{
+  font-size:22px;
+  line-height:1}
+.wordmark-name{
+  display:block}
+.header nav{
+  display:none;
+  position:absolute;
+  top:85px;
+  left:var(--gutter);
+  right:var(--gutter);
+  background:var(--cream);
+  color:var(--dark);
+  padding:18px 26px;
+  /* taste-skill-ignore: floating mobile menu shadow is allowed. */ box-shadow:0 20px 70px #0005;
+  max-height:calc(100dvh - 110px);
+  overflow:auto}
+.header nav.is-open{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0}
+.header nav>a{
+  font-size:16px;
+  padding:13px 0;
+  min-height:48px}
+.header nav>a:hover,.header nav>a[aria-current=location]{
+  color:#794788}
+.header .nav-contact{
+  margin-top:12px;
+  text-align:center;
+  padding:13px 20px}
+.header.is-scrolled{
+  padding-block:12px}
+.header.is-scrolled nav{
+  top:76px}
+.hero.hero-orbit{
+  padding-top:150px}
+.orbit-hero-grid{
+  grid-template-columns:1fr;
+  gap:35px}
+.hero-copy{
+  padding-bottom:0}
+.hero-orbit h1{
+  font-size:clamp(38px,7.6vw,66px)}
+.hero-description{
+  max-width:540px;
+  font-size:18px}
+.hero-name{
+  font-size:20px;
+  margin-bottom:24px}
+.connection-universe{
+  width:100%;
+  max-width:500px;
+  justify-self:center}
+.orbit-visual{
+  max-width:440px}
+.orbit-monogram{
+  font-size:110px}
+.orbit-brand{
+  width:77px;
+  height:77px;
+  padding:12px}
+.orbit-centre-name{
+  font-size:14px}
+.orbit-centre-caption{
+  font-size:14px}
+.orbit-discipline{
+  font-size:14px;
+  max-width:135px}
+.orbit-discipline-lead{
+  right:0}
+.brand-marquee{
+  margin-top:64px}
+.about{
+  gap:40px;
+  grid-template-columns:.85fr 1.15fr}
+.about-copy>p:first-child{
+  font-size:23px}
+.about-location{
+  font-size:14px}
+.focus-heading,.work-heading,.credential-heading,.approach-heading{
+  gap:32px}
+.focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  max-width:280px;
+  font-size:16px}
+.discipline{
+  padding:28px;
+  gap:18px 28px}
+.discipline h3{
+  font-size:29px}
+.discipline p{
+  font-size:16px}
+.discipline:nth-child(3){
+  margin-left:10%}
+.discipline:nth-child(2),.discipline:nth-child(4){
+  margin-left:5%}
+.brand-project,.project{
+  gap:28px}
+.brand-visual,.project-art{
+  min-height:390px;
+  padding:25px;
+  aspect-ratio:auto}
+.brand-visual>p{
+  font-size:34px}
+.brand-pair{
+  gap:12px}
+.brand-pair>span{
+  font-size:32px}
+.brand-pair img{
+  height:70px}
+.brand-project-copy h3{
+  font-size:28px}
+.brand-project-copy>p,.brand-family p,.portfolio-lens p{
+  font-size:16px}
+.project-art>p{
+  font-size:38px}
+.project-art>img{
+  width:150px}
+.project-copy h3{
+  font-size:40px}
+.project-copy{
+  padding-top:0}
+.project-copy dl>div{
+  grid-template-columns:1fr;
+  gap:4px}
+.credential-meta{
+  min-height:560px;
+  padding:26px}
+.credential-meta-top{
+  align-items:start;
+  flex-direction:column;
+  gap:8px}
+.credential-symbol{
+  font-size:145px}
+.credential-meta-copy h3{
+  font-size:29px}
+.credential-google,.credential-canva{
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  gap:8px}
+.credential-tile-top{
+  width:100%}
+.credential-google h3,.credential-canva h3{
+  font-size:22px}
+.credential-google .credential-link,.credential-canva .credential-link{
+  margin-top:8px}
+.credential-guvi{
+  grid-template-columns:1fr;
+  gap:26px}
+.credential-guvi-heading{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:30px}
+.credential-guvi-heading h3{
+  font-size:30px}
+.credential-register li{
+  padding:24px}
+.steps{
+  gap:26px;
+  padding:30px}
+.steps h3{
+  font-size:22px}
+.steps article>p:last-child{
+  font-size:16px}
+.step-verb{
+  margin-bottom:26px}
+.faq{
+  gap:35px;
+  grid-template-columns:.85fr 1.15fr}
+summary{
+  font-size:16px}
+.contact{
+  grid-template-columns:1fr 1fr;
+  gap:28px}
+.contact h2{
+  font-size:46px}
+.contact-card{
+  padding:28px}
+.contact-email{
+  font-size:24px}
+.contact-actions .button{
+  font-size:14px;
+  gap:18px;
+  padding-inline:18px}
+.footer{
+  gap:24px;
+  font-size:14px}
+}
+
+@media(max-width:600px){
+  :root{
+  --gutter:22px}
+html{
+  scroll-padding-top:95px}
+body{
+  font-size:16px}
+main>section:not(.hero){
+  padding-top:90px}
+.hero.hero-orbit{
+  padding-top:135px;
+  padding-bottom:24px;
+  background:var(--ground)}
+.hero-orbit h1{
+  font-size:clamp(29px,7.7vw,46px);
+  letter-spacing:-.055em;
+  line-height:1.13;
+  margin-bottom:26px}
+.hero-description{
+  font-size:16px;
+  max-width:430px}
+.hero-name{
+  font-size:18px;
+  color:var(--dark)}
+.hero-actions{
+  gap:20px}
+.hero-actions .button{
+  font-size:14px;
+  min-height:52px;
+  padding:13px 18px;
+  gap:20px}
+.hero-actions .text-link{
+  font-size:14px}
+.hero-place{
+  font-size:14px;
+  margin-top:26px}
+.orbit-hero-grid{
+  gap:45px}
+.orbit-visual{
+  max-width:360px}
+.orbit-monogram{
+  font-size:86px;
+  letter-spacing:-9px}
+.orbit-brand{
+  width:61px;
+  height:61px;
+  padding:9px}
+.orbit-centre-name{
+  font-size:14px}
+.orbit-centre-caption{
+  font-size:14px}
+.orbit-discipline{
+  font-size:14px;
+  gap:7px;
+  max-width:125px}
+.orbit-icon{
+  height:33px;
+  width:33px}
+.orbit-icon svg{
+  height:20px;
+  width:20px}
+.orbit-discipline-brand{
+  left:30%}
+.orbit-discipline-lead{
+  right:-1%}
+.orbit-motion-toggle{
+  bottom:-25px;
+  font-size:14px}
+.connection-universe figcaption{
+  font-size:14px;
+  margin-top:45px}
+.orbit-credential{
+  font-size:14px}
+.brand-marquee{
+  margin-top:44px}
+.marquee-heading h2{
+  font-size:14px}
+.marquee-toggle{
+  font-size:14px}
+.logo-card{
+  width:180px;
+  height:74px;
+  padding:17px 25px}
+.logo-card img{
+  width:130px;
+  max-height:37px}
+.logo-group{
+  gap:10px;
+  padding-right:10px}
+.about{
+  grid-template-columns:1fr;
+  gap:35px}
+.about h2{
+  font-size:46px}
+.about-location{
+  margin-top:24px}
+.about-copy>p:first-child{
+  font-size:23px;
+  line-height:1.55}
+.about-copy>p+p{
+  font-size:16px;
+  margin-top:24px}
+.about-note{
+  padding:24px;
+  font-size:16px}
+.focus-heading,.work-heading,.credential-heading,.approach-heading{
+  display:block;
+  margin-bottom:38px}
+.focus-heading h2,.work-heading h2,.credential-heading h2,.approach-heading h2,.faq h2{
+  font-size:46px}
+.focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  max-width:100%;
+  margin-top:25px;
+  font-size:16px}
+.work-heading>p br{
+  display:none}
+.focus-board{
+  gap:12px}
+.discipline{
+  display:block;
+  padding:28px 24px}
+.discipline:nth-child(n){
+  margin-left:0}
+.discipline-main,.discipline-main>div{
+  display:block}
+.discipline h3{
+  font-size:30px;
+  max-width:310px;
+  margin-bottom:24px}
+.discipline p{
+  font-size:16px}
+.discipline-link{
+  margin-top:20px;
+  font-size:14px;
+  gap:22px}
+.focus-closing{
+  flex-direction:column;
+  gap:20px;
+  margin-top:28px}
+.focus-closing>p{
+  font-size:15px}
+.focus-closing .text-link{
+  max-width:100%;
+  font-size:14px;
+  gap:15px}
+.work-navigation{
+  gap:20px;
+  margin:-12px 0 30px;
+  font-size:14px}
+.brand-project,.project{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+  align-items:stretch}
+.brand-visual{
+  min-height:370px;
+  padding:28px}
+.brand-visual>p{
+  font-size:42px;
+  margin-block:40px}
+.brand-pair img{
+  height:70px}
+.brand-pair>span{
+  font-size:36px}
+.brand-visual-caption{
+  font-size:14px}
+.brand-project-copy h3{
+  font-size:32px;
+  margin-bottom:20px}
+.tag{
+  margin-bottom:14px}
+.brand-project-copy>p{
+  margin-bottom:24px}
+.brand-family,.portfolio-lens{
+  margin-bottom:20px}
+.project{
+  margin-top:65px}
+.project-art{
+  min-height:400px;
+  padding:30px;
+  order:0}
+.project-art>p{
+  font-size:44px}
+.project-copy{
+  order:1}
+.project-copy h3{
+  font-size:42px}
+.project-role{
+  font-size:20px}
+.project-copy dl>div{
+  grid-template-columns:95px 1fr;
+  gap:16px}
+.credential-mosaic{
+  display:flex;
+  flex-direction:column;
+  gap:16px}
+.credential-meta{
+  min-height:510px;
+  padding:28px}
+.credential-meta-top{
+  flex-direction:row;
+  align-items:center}
+.credential-symbol{
+  font-size:170px;
+  margin-block:18px}
+.credential-meta-copy h3{
+  font-size:30px;
+  max-width:320px}
+.credential-meta-footer{
+  margin-top:28px;
+  gap:16px}
+.credential-google,.credential-canva{
+  padding:28px;
+  gap:10px}
+.credential-google h3,.credential-canva h3{
+  font-size:28px;
+  max-width:330px}
+.credential-google .credential-brand,.credential-canva .credential-brand{
+  font-size:24px}
+.credential-guvi{
+  display:block;
+  margin-top:32px}
+.credential-guvi-heading{
+  display:block;
+  margin-bottom:25px}
+.credential-guvi-heading h3{
+  margin-bottom:12px}
+.credential-register li{
+  padding:24px;
+  gap:15px}
+.credential-row-copy h4{
+  font-size:17px}
+.credential-row-copy p{
+  font-size:14px}
+.credential-row-link{
+  min-width:44px}
+.credential-source{
+  flex-direction:column;
+  gap:20px;
+  font-size:14px;
+  margin-top:28px}
+.track-selector{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:24px}
+.track-selector button{
+  padding:14px 16px;
+  font-size:14px;
+  line-height:1.35;
+  min-height:62px}
+.steps{
+  display:block;
+  padding:30px}
+.steps article+article{
+  margin-top:38px}
+.steps h3{
+  font-size:26px;
+  margin-bottom:14px}
+.step-verb{
+  font-size:15px;
+  margin-bottom:16px}
+.steps article>p:last-child{
+  font-size:16px}
+.faq{
+  display:block}
+.faq h2{
+  margin-bottom:35px}
+.faq-list{
+  gap:10px}
+details{
+  padding-inline:22px}
+summary{
+  font-size:16px;
+  gap:18px;
+  padding-block:23px}
+details>p{
+  font-size:16px}
+.contact{
+  display:block}
+.contact h2{
+  font-size:49px}
+.contact-copy>p{
+  font-size:16px;
+  margin-top:25px}
+.contact-topics{
+  font-size:14px;
+  gap:8px 18px;
+  margin-top:24px}
+.contact-card{
+  margin-top:38px;
+  padding:30px 25px}
+.contact-person{
+  font-size:17px;
+  margin-bottom:24px}
+.contact-email{
+  font-size:clamp(20px,5.5vw,28px)}
+.contact-actions{
+  margin-top:28px}
+.contact-actions .button{
+  font-size:14px;
+  padding-inline:21px;
+  gap:26px}
+.contact-note{
+  font-size:14px}
+main>section.contact{
+  padding-bottom:65px}
+.footer{
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  padding-block:20px 36px;
+  font-size:14px}
+.footer-name{
+  font-size:clamp(48px,12vw,75px);
+  white-space:nowrap;
+  margin-bottom:14px}
+.footer-name>span{
+  font-size:14px;
+  white-space:normal;
+  margin-top:20px}
+.footer>span{
+  grid-column:1/-1}
+.footer>a:last-child{
+  grid-column:1/-1;
+  margin-top:12px}
+.connection-dialog[open]{
+  grid-template-columns:1fr}
+.connection-dialog{
+  max-height:calc(100dvh - 24px)}
+.connection-scene{
+  min-height:235px}
+.connection-bubble{
+  top:18px;
+  left:22px;
+  font-size:22px}
+.connection-character{
+  height:235px;
+  padding:52px 40px 0}
+.connection-message{
+  padding:28px 24px}
+.connection-message h2{
+  font-size:30px}
+.connection-message>p{
+  font-size:15px;
+  margin-top:16px}
+.connection-countdown{
+  margin-block:20px}
+.connection-alternatives{
+  margin-top:15px;
+  gap:22px}
+}
+
+@media(max-width:360px){
+  :root{
+  --gutter:18px}
+.wordmark-name{
+  font-size:14px}
+.logo{
+  font-size:38px}
+.menu-button{
+  font-size:14px;
+  padding:10px 15px}
+.hero-actions{
+  gap:15px}
+.hero-actions .button{
+  font-size:14px;
+  padding-inline:16px;
+  gap:17px}
+.hero-actions .text-link{
+  font-size:14px}
+.hero-place{
+  font-size:14px}
+.orbit-brand{
+  width:53px;
+  height:53px}
+.orbit-monogram{
+  font-size:73px}
+.orbit-discipline{
+  font-size:14px;
+  max-width:108px}
+.orbit-centre-caption{
+  font-size:14px}
+.orbit-centre-name{
+  font-size:9px}
+.orbit-credential{
+  font-size:14px}
+.focus-heading h2,.work-heading h2,.credential-heading h2,.approach-heading h2,.faq h2,.about h2{
+  font-size:41px}
+.brand-visual>p{
+  font-size:35px}
+.credential-meta-copy h3{
+  font-size:26px}
+.credential-register li{
+  padding:20px}
+.contact h2{
+  font-size:43px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+  scroll-behavior:auto}
+*,*::before,*::after{
+  animation:none!important;
+  transition:none!important}
+.reveal-in{
+  opacity:1;
+  transform:none}
+.connection-countdown>span{
+  transform:scaleX(1)}
+.logo-track{
+  width:100%;
+  display:block}
+.logo-group{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:0}
+.logo-card{
+  width:100%}
+.logo-group[aria-hidden=true]{
+  display:none!important}
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0}
+
+@media(max-width:360px){
+  .credential-meta{
+  padding:24px 22px}
+.credential-meta-copy h3{
+  font-size:23px}
+.credential-google,.credential-canva{
+  padding:24px 22px}
+.credential-google h3,.credential-canva h3{
+  font-size:24px}
+.credential-register li{
+  display:grid;
+  grid-template-columns:1fr;
+  padding:22px;
+  gap:12px}
+.credential-row-link{
+  justify-self:end}
+.credential-row-copy h4{
+  font-size:16px}
+.steps{
+  padding:26px}
+.steps h3{
+  font-size:22px}
+}
+
+
+
+/* Shared typography and contrast system, 25 October 2026. */
+:root{
+  
+  --body-size:17px;
+  
+  --meta-size:14px;
+  
+  --section-title:clamp(42px,4.7vw,68px);
+  
+  --item-title:clamp(27px,2.5vw,36px);
+  
+}
+
+body{
+  font-size:var(--body-size);
+  line-height:1.75;
+  letter-spacing:0}
+
+button,a,summary{
+  font-family:var(--sans)}
+
+h1,h2,h3,h4{
+  font-weight:600;
+  letter-spacing:-.04em}
+
+h2,.about h2,.focus-heading h2,.work-heading h2,.credential-heading h2,.approach-heading h2,.faq h2,.contact h2{
+  font-size:var(--section-title);
+  line-height:1.12}
+
+p{
+  letter-spacing:0}
+
+.hero.hero-orbit{
+  
+  /* taste-skill-ignore: retain the requested orbital banner gradient with a dark reading surface. */ background:radial-gradient(ellipse 85% 100% at 100% 0,#d699b525 0,transparent 70%),radial-gradient(ellipse 90% 90% at 65% 0,#956bb74a 0,transparent 80%),linear-gradient(135deg,#33213f,var(--ground) 80%);
+  
+  padding-top:150px;
+  
+}
+
+.hero-name,.hero-place,.hero-description,.logo,.logo>span,.wordmark-name{
+  color:var(--ink)}
+
+.wordmark-name{
+  font-size:14px;
+  font-weight:600}
+
+.logo{
+  letter-spacing:-4px}
+
+.hero-name{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:24px}
+
+.hero-orbit h1{
+  font-size:clamp(44px,4.4vw,68px);
+  font-weight:600;
+  letter-spacing:-.05em;
+  line-height:1.13;
+  color:var(--ink);
+  margin-bottom:28px}
+
+.hero-description{
+  font-size:var(--body-size);
+  line-height:1.75;
+  max-width:480px}
+
+.hero-place,.hero-place-divider{
+  color:var(--secondary);
+  opacity:1}
+
+.hero-copy,.connection-universe{
+  animation:none}
+
+.hero-actions .text-link,.hero-actions .button{
+  font-size:15px}
+
+.hero-actions{
+  gap:18px 28px}
+
+.button{
+  font-size:15px;
+  font-weight:600;
+  min-height:54px}
+
+.header nav{
+  font-size:15px;
+  font-weight:500}
+
+.header .nav-contact{
+  color:var(--dark)}
+
+.text-link{
+  font-size:15px;
+  line-height:1.6;
+  text-underline-offset:5px;
+  text-decoration-thickness:1.5px}
+
+.text-link:hover{
+  color:var(--peach)}
+
+.hero-actions .text-link{
+  min-height:48px}
+
+.about-copy>p:first-child{
+  font-size:clamp(22px,1.9vw,27px);
+  line-height:1.65;
+  letter-spacing:-.015em}
+
+.about-copy strong{
+  color:var(--ink);
+  font-weight:600}
+
+.about-copy>p+p,.about-note,.discipline p,.brand-project-copy>p,.project-copy>p:not(.source-note):not(.project-date):not(.project-role),.steps article>p:last-child,details>p,.contact-copy>p{
+  font-size:var(--body-size);
+  line-height:1.75}
+
+.focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  font-size:var(--body-size);
+  line-height:1.7;
+  color:var(--secondary);
+  max-width:370px}
+
+.about-location,.tag,.brand-family>span,.portfolio-lens>span,.project-date,.source-note,.credential-latest,.credential-provider,.credential-date,.credential-code,.credential-row-copy p,.credential-source,.contact-topics,.contact-note,.footer-name>span{
+  font-size:var(--meta-size);
+  line-height:1.7}
+
+.about-note{
+  color:var(--ink);
+  padding:28px 30px}
+
+.discipline h3,.brand-project-copy h3{
+  font-size:var(--item-title);
+  line-height:1.25}
+
+.discipline-link,.focus-closing .text-link,.work-navigation,.brand-project-copy .text-link,.credential-link,.credential-source .text-link,.copy-email,.connection-alternatives{
+  font-size:15px;
+  line-height:1.6}
+
+.discipline-link{
+  min-height:48px}
+
+.brand-family p,.portfolio-lens p,.project-copy dl,.project-detail p{
+  font-size:16px;
+  line-height:1.7}
+
+.brand-visual,.project-art,.credential-meta{
+  color:var(--dark)}
+
+.brand-visual>p,.project-art>p{
+  font-weight:600;
+  letter-spacing:-.04em}
+
+.brand-visual-caption,.project-art-bottom{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--light-ink)}
+
+.credential-meta .credential-provider,.credential-meta .credential-meta-footer{
+  color:var(--dark)}
+
+.credential-symbol{
+  color:var(--light-ink)}
+
+.credential-link:hover{
+  opacity:1;
+  text-decoration-thickness:2px}
+
+.credential-google h3,.credential-canva h3{
+  font-size:27px;
+  line-height:1.3}
+
+.credential-meta-copy h3{
+  line-height:1.25}
+
+.credential-register li{
+  gap:20px}
+
+.credential-row-copy h4{
+  font-size:18px;
+  line-height:1.45;
+  font-weight:600;
+  letter-spacing:-.02em}
+
+.credential-row-link{
+  min-width:48px;
+  min-height:48px}
+
+.track-selector button{
+  min-height:56px;
+  font-size:15px;
+  line-height:1.45;
+  font-weight:600}
+
+.steps h3{
+  font-size:26px;
+  line-height:1.3;
+  letter-spacing:-.03em}
+
+.step-verb{
+  font-size:15px;
+  font-weight:600}
+
+summary{
+  font-size:17px;
+  line-height:1.6;
+  font-weight:600;
+  min-height:64px}
+
+.contact-email{
+  font-weight:600;
+  line-height:1.6}
+
+.contact-person{
+  color:var(--ink);
+  font-size:18px;
+  font-weight:600}
+
+.contact-actions .button,.connection-open{
+  font-size:15px}
+
+.contact-note{
+  min-height:24px}
+
+.copy-email{
+  min-height:48px}
+
+.footer{
+  font-size:15px}
+
+.footer>a:not(.footer-name){
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-height:48px}
+
+.footer-name{
+  font-weight:500}
+
+.orbit-centre-name{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0}
+
+.orbit-centre-caption{
+  font-size:14px;
+  line-height:1.6}
+
+.orbit-discipline{
+  font-size:14px;
+  line-height:1.4;
+  max-width:150px}
+
+.orbit-motion-toggle,.marquee-toggle{
+  font-size:14px;
+  min-height:48px}
+
+.connection-universe figcaption,.orbit-credential{
+  font-size:14px;
+  line-height:1.6}
+
+.orbit-credential{
+  min-height:48px}
+
+.connection-message>p{
+  font-size:16px;
+  line-height:1.7}
+
+.connection-recipient{
+  font-size:15px!important}
+
+.connection-scene{
+  background:#dfcee8}
+
+.connection-alternatives a,.connection-cancel{
+  min-height:48px}
+
+
+@media(max-width:1100px){
+  
+  .header nav{
+  font-size:14px;
+  gap:18px}
+
+  .hero-orbit h1{
+  font-size:4.4vw}
+
+  .hero-actions .button,.hero-actions .text-link{
+  font-size:15px}
+
+  .orbit-discipline{
+  font-size:14px;
+  max-width:132px;
+  gap:7px}
+
+  .orbit-icon{
+  width:34px;
+  height:34px}
+
+  .orbit-centre-caption{
+  font-size:14px}
+
+  .orbit-centre-name{
+  font-size:14px}
+
+}
+
+@media(max-width:800px){
+  
+  :root{
+  --section-title:clamp(40px,6.5vw,56px)}
+
+  .hero-orbit h1{
+  font-size:clamp(34px,7.2vw,58px)}
+
+  .hero.hero-orbit{
+  padding-top:135px}
+
+  .header nav{
+  background:var(--surface);
+  color:var(--ink);
+  padding:16px 24px}
+
+  .header nav>a,.header nav.is-open>a{
+  min-height:54px;
+  font-size:16px}
+
+  .header nav>a:hover,.header nav>a[aria-current=location]{
+  color:var(--peach)}
+
+  .header .nav-contact{
+  padding:15px 20px;
+  min-height:54px}
+
+  .menu-button{
+  font-size:15px;
+  font-weight:600;
+  min-height:48px;
+  gap:18px;
+  background:var(--surface-light)}
+
+  .header.is-scrolled{
+  padding-block:12px}
+
+  .header.is-scrolled nav{
+  top:80px}
+
+  .orbit-hero-grid{
+  gap:36px;
+  min-height:0}
+
+  .orbit-visual{
+  max-width:400px}
+
+  .connection-universe{
+  max-width:470px}
+
+  .brand-marquee{
+  margin-top:52px}
+
+  .focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  font-size:16px;
+  max-width:310px}
+
+  .credential-google h3,.credential-canva h3{
+  font-size:24px}
+
+  .credential-row-copy h4{
+  font-size:17px}
+
+  .contact-email{
+  font-size:23px;
+  letter-spacing:-.035em}
+
+  .contact-actions .button{
+  font-size:14px}
+
+}
+
+@media(max-width:600px){
+  
+  :root{
+  --body-size:16px;
+  --section-title:clamp(36px,10.4vw,46px);
+  --item-title:28px;
+  --gutter:24px}
+
+  body{
+  line-height:1.75}
+
+  main>section:not(.hero){
+  padding-top:80px}
+
+  .hero.hero-orbit{
+  padding:126px var(--gutter) 24px}
+
+  .hero-name{
+  font-size:17px;
+  margin-bottom:22px}
+
+  .hero-orbit h1{
+  font-size:clamp(29px,7.6vw,44px);
+  line-height:1.18;
+  letter-spacing:-.05em;
+  margin-bottom:25px;
+  white-space:normal}
+
+  .hero-description{
+  font-size:16px;
+  line-height:1.75;
+  margin-bottom:26px}
+
+  .hero-actions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+  justify-items:stretch}
+
+  .hero-actions .button{
+  min-height:56px;
+  justify-content:space-between;
+  padding:15px 22px;
+  font-size:15px}
+
+  .hero-actions .text-link{
+  font-size:15px;
+  justify-self:start;
+  min-height:48px;
+  padding-block:10px}
+
+  .hero-place{
+  font-size:14px;
+  line-height:1.6;
+  margin-top:20px;
+  gap:8px;
+  flex-wrap:wrap}
+
+  .orbit-hero-grid{
+  gap:30px}
+
+  .connection-universe{
+  width:100%;
+  max-width:400px}
+
+  .orbit-visual{
+  max-width:340px}
+
+  .orbit-monogram{
+  font-size:82px;
+  letter-spacing:-9px}
+
+  .orbit-centre{
+  inset:30%}
+
+  .orbit-centre-name{
+  font-size:14px;
+  line-height:1.4;
+  max-width:120px;
+  margin-top:12px}
+
+  .orbit-centre-caption{
+  font-size:14px;
+  line-height:1.5;
+  margin-top:9px}
+
+  .orbit-discipline{
+  font-size:14px;
+  line-height:1.4;
+  gap:7px;
+  max-width:138px}
+
+  .orbit-discipline-brand{
+  top:-1%;
+  left:25%}
+
+  .orbit-discipline-lead{
+  right:-2%;
+  bottom:28%}
+
+  .orbit-icon{
+  width:30px;
+  height:30px}
+
+  .orbit-icon svg{
+  width:19px;
+  height:19px}
+
+  .orbit-brand{
+  width:61px;
+  height:61px;
+  padding:10px}
+
+  .orbit-brand-naturals{
+  left:0;
+  top:23%}
+
+  .orbit-brand-zenderma{
+  right:0;
+  top:18%}
+
+  .orbit-brand-redbull{
+  right:10%;
+  bottom:4%}
+
+  .orbit-brand-hair{
+  left:8%;
+  bottom:12%}
+
+  .orbit-motion-toggle{
+  font-size:14px;
+  bottom:-36px;
+  min-height:48px}
+
+  .connection-universe figcaption{
+  font-size:14px;
+  margin-top:53px;
+  max-width:290px;
+  margin-inline:auto}
+
+  .orbit-credential{
+  font-size:14px;
+  gap:8px;
+  line-height:1.6;
+  margin-top:10px}
+
+  .orbit-credential-divider{
+  margin-inline:0}
+
+  .brand-marquee{
+  margin-top:30px}
+
+  .marquee-heading{
+  margin-bottom:16px;
+  gap:14px}
+
+  .marquee-heading h2{
+  font-size:15px;
+  line-height:1.6}
+
+  .marquee-toggle{
+  font-size:14px;
+  min-width:68px;
+  justify-content:end}
+
+  .logo-card{
+  height:78px;
+  width:180px}
+
+  .about{
+  gap:30px}
+
+  .about-copy>p:first-child{
+  font-size:21px;
+  line-height:1.7;
+  letter-spacing:-.01em}
+
+  .about-location{
+  font-size:14px;
+  line-height:1.8;
+  margin-top:22px}
+
+  .about-note{
+  padding:24px;
+  font-size:16px;
+  line-height:1.75}
+
+  .focus-heading-note,.work-heading>p,.credential-intro,.approach-heading>p{
+  max-width:100%;
+  font-size:16px;
+  line-height:1.75;
+  margin-top:24px}
+
+  .focus-heading,.work-heading,.credential-heading,.approach-heading{
+  margin-bottom:32px}
+
+  .discipline{
+  padding:28px 24px}
+
+  .discipline h3{
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:20px}
+
+  .discipline-link{
+  font-size:15px;
+  line-height:1.65;
+  margin-top:20px;
+  gap:12px}
+
+  .focus-closing>p,.focus-closing .text-link{
+  font-size:15px;
+  line-height:1.75}
+
+  .focus-closing .text-link{
+  min-height:48px}
+
+  .work-navigation{
+  font-size:15px;
+  gap:14px 24px;
+  margin-bottom:25px}
+
+  .work-navigation>a{
+  min-height:48px;
+  display:flex;
+  align-items:center}
+
+  .brand-visual{
+  padding:26px;
+  min-height:340px}
+
+  .brand-visual>p{
+  font-size:clamp(28px,8.2vw,38px);
+  line-height:1.25;
+  letter-spacing:-.035em}
+
+  .brand-visual-caption,.project-art-bottom{
+  font-size:14px;
+  line-height:1.7}
+
+  .brand-project,.project{
+  gap:28px}
+
+  .brand-project-copy h3{
+  font-size:28px;
+  line-height:1.3}
+
+  .project{
+  margin-top:56px}
+
+  .project-art{
+  min-height:350px;
+  padding:28px}
+
+  .project-art>p{
+  font-size:36px;
+  line-height:1.2}
+
+  .project-copy h3{
+  font-size:36px;
+  line-height:1.2}
+
+  .project-role{
+  font-size:19px}
+
+  .project-copy dl>div{
+  grid-template-columns:1fr;
+  gap:4px;
+  margin-top:18px}
+
+  .project-copy dl{
+  font-size:16px}
+
+  .project-copy dt{
+  font-size:14px;
+  font-weight:600}
+
+  .source-note{
+  font-size:14px;
+  line-height:1.75}
+
+  .credential-meta{
+  padding:28px;
+  min-height:490px}
+
+  .credential-symbol{
+  font-size:150px;
+  margin-block:12px}
+
+  .credential-meta-copy h3{
+  font-size:27px;
+  line-height:1.3}
+
+  .credential-meta-top{
+  gap:16px;
+  flex-wrap:wrap}
+
+  .credential-meta-footer{
+  font-size:14px;
+  line-height:1.7;
+  gap:16px;
+  margin-top:24px}
+
+  .credential-meta-footer .credential-link{
+  min-height:48px}
+
+  .credential-google,.credential-canva{
+  padding:28px;
+  gap:10px}
+
+  .credential-google h3,.credential-canva h3{
+  font-size:26px;
+  line-height:1.3}
+
+  .credential-google .credential-provider,.credential-canva .credential-provider{
+  font-size:14px;
+  line-height:1.7}
+
+  .credential-link{
+  font-size:15px;
+  min-height:48px}
+
+  .credential-guvi-heading h3{
+  font-size:28px}
+
+  .credential-collection-label{
+  font-size:16px}
+
+  .credential-register li{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  padding:24px}
+
+  .credential-row-copy h4{
+  font-size:17px;
+  line-height:1.5;
+  letter-spacing:-.02em}
+
+  .credential-row-copy p,.credential-code{
+  font-size:14px;
+  line-height:1.75}
+
+  .credential-code{
+  overflow-wrap:anywhere}
+
+  .credential-row-link{
+  justify-self:end;
+  min-width:48px;
+  min-height:48px}
+
+  .credential-source,.credential-source .text-link{
+  font-size:14px;
+  line-height:1.75}
+
+  .track-selector{
+  gap:10px;
+  grid-template-columns:1fr 1fr}
+
+  .track-selector button{
+  font-size:15px;
+  line-height:1.5;
+  min-height:66px;
+  padding:14px 15px}
+
+  .steps{
+  padding:28px}
+
+  .steps h3{
+  font-size:24px;
+  line-height:1.35}
+
+  .steps article+article{
+  margin-top:36px}
+
+  .step-verb{
+  font-size:15px;
+  margin-bottom:14px}
+
+  details{
+  padding-inline:24px}
+
+  summary{
+  font-size:16px;
+  line-height:1.65;
+  padding-block:22px;
+  min-height:68px;
+  gap:18px}
+
+  details>p{
+  font-size:16px;
+  line-height:1.8}
+
+  .contact-card{
+  padding:28px 24px;
+  margin-top:32px}
+
+  .contact-person{
+  font-size:17px;
+  margin-bottom:20px}
+
+  .contact-email{
+  font-size:clamp(19px,5.2vw,26px);
+  letter-spacing:-.03em;
+  line-height:1.6}
+
+  .contact-topics{
+  font-size:14px;
+  line-height:1.8;
+  gap:8px 20px}
+
+  .contact-actions{
+  gap:10px;
+  align-items:stretch;
+  margin-top:26px}
+
+  .contact-actions .button{
+  width:100%;
+  font-size:15px;
+  min-height:56px;
+  gap:12px;
+  justify-content:space-between;
+  padding-inline:20px}
+
+  .copy-email{
+  align-self:start;
+  font-size:15px;
+  min-height:48px}
+
+  .contact-note{
+  font-size:14px;
+  line-height:1.7;
+  margin-top:12px}
+
+  .footer{
+  font-size:15px;
+  gap:16px 24px}
+
+  .footer-name{
+  font-size:clamp(43px,11.3vw,68px);
+  letter-spacing:-.05em}
+
+  .footer-name>span{
+  font-size:14px;
+  line-height:1.8}
+
+  .footer>a:last-child{
+  margin-top:0}
+
+  .connection-message{
+  padding:26px 24px}
+
+  .connection-message h2{
+  font-size:29px;
+  line-height:1.2}
+
+  .connection-open{
+  width:100%;
+  min-height:54px;
+  justify-content:space-between;
+  font-size:15px}
+
+  .connection-alternatives{
+  font-size:14px;
+  gap:10px 20px}
+
+}
+
+@media(max-width:360px){
+  
+  :root{
+  --gutter:20px;
+  --section-title:36px;
+  --item-title:26px}
+
+  .wordmark-name{
+  font-size:13px}
+
+  .menu-button{
+  font-size:14px;
+  min-height:48px;
+  gap:12px;
+  padding-inline:16px}
+
+  .hero-orbit h1{
+  font-size:28px;
+  letter-spacing:-.05em}
+
+  .hero-name{
+  font-size:17px}
+
+  .hero-place{
+  font-size:14px;
+  column-gap:7px}
+
+  .orbit-centre-caption{
+  display:none}
+
+  .orbit-centre-name{
+  font-size:14px;
+  max-width:110px}
+
+  .orbit-monogram{
+  font-size:72px}
+
+  .orbit-discipline{
+  font-size:14px;
+  gap:6px;
+  max-width:125px}
+
+  .orbit-discipline-brand{
+  left:25%;
+  top:-3%}
+
+  .orbit-discipline-lead{
+  right:0;
+  bottom:23%}
+
+  .orbit-brand{
+  width:56px;
+  height:56px;
+  padding:9px}
+
+  .orbit-brand-redbull{
+  bottom:0}
+
+  .orbit-brand-hair{
+  left:3%;
+  bottom:8%}
+
+  .orbit-credential{
+  font-size:14px;
+  flex-wrap:wrap;
+  column-gap:6px;
+  justify-content:center}
+
+  .orbit-credential>span{
+  max-width:225px}
+
+  .connection-universe figcaption{
+  font-size:14px}
+
+  .discipline h3,.brand-project-copy h3{
+  font-size:26px}
+
+  .discipline,.credential-google,.credential-canva,.credential-meta,.credential-register li,.steps{
+  padding:24px 22px}
+
+  .credential-meta-copy h3{
+  font-size:23px;
+  line-height:1.3}
+
+  .credential-google h3,.credential-canva h3{
+  font-size:24px;
+  line-height:1.3}
+
+  .credential-row-copy h4{
+  font-size:16px;
+  line-height:1.5}
+
+  .steps h3{
+  font-size:22px;
+  line-height:1.35}
+
+  .contact-card{
+  padding:26px 22px}
+
+  .contact-actions .button{
+  font-size:14px;
+  padding-inline:16px}
+
+  .contact-email{
+  font-size:19px}
+
+  .connection-message h2{
+  font-size:26px}
+
+}
+
+
+@media(max-width:600px){.orbit-centre-caption{display:none}}
+@media(max-width:600px){.orbit-discipline{display:none}}
+@media(min-width:601px) and (max-width:800px){.faq{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:800px){.orbit-discipline{display:none}}
