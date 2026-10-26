@@ -18,32 +18,11 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
-const tabs = [...document.querySelectorAll('#approach [role="tab"]')];
-function selectTab(tab, focus = false) {
-  tabs.forEach(item => {
-    const selected = item === tab;
-    item.setAttribute('aria-selected', String(selected));
-    item.tabIndex = selected ? 0 : -1;
-    document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
-  });
-  if (focus) tab.focus();
-}
-tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => selectTab(tab));
-  tab.addEventListener('keydown', event => {
-    const positions = { ArrowRight: (index + 1) % tabs.length, ArrowLeft: (index - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 };
-    if (event.key in positions) {
-      event.preventDefault();
-      selectTab(tabs[positions[event.key]], true);
-    }
-  });
-});
-
+// Expertise links select the matching priority in the connected approach.
 document.querySelectorAll('[data-approach]').forEach(link => {
   link.addEventListener('click', event => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const tab = document.getElementById(link.dataset.approach);
-    if (tab) selectTab(tab);
+    document.getElementById(link.dataset.approach)?.click();
   });
 });
 
