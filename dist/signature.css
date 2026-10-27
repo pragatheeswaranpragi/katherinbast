@@ -736,3 +736,79 @@ html{scroll-padding-top:90px}
 .collaboration-with-portrait>.peek-number{position:absolute}
 .collaboration-with-portrait>.peek-spark{position:absolute}
 @media(max-width:600px){.collaboration-with-portrait{min-height:240px;padding-top:150px}.collaboration-with-portrait>.peek-monogram{top:20px;left:14px}.collaboration-portrait{width:95%;height:96%;right:-8%}}
+
+/* Tighter page rhythm, with shared easing for deliberate interactions. */
+:root{--ui-ease:cubic-bezier(.22,1,.36,1);--ui-duration:320ms}
+.signature-ui main>.section-wrap:not(.signature-hero){padding-block:clamp(36px,3vw,48px)}
+.signature-ui .approach .section-wrap{padding-block:clamp(36px,3vw,48px)}
+.signature-ui .split-hero{min-height:0;padding-top:116px;padding-bottom:24px;gap:clamp(24px,4vw,56px)}
+.hero-service-art{height:clamp(440px,36vw,540px);margin-bottom:16px}
+.service-pills-pause{bottom:-28px}
+.signature-ui main>#work{padding-top:30px;padding-bottom:16px}
+.signature-ui .work-heading{align-items:center;gap:24px 40px;margin-bottom:18px}
+.signature-ui .experience-tiles{padding-top:10px;padding-bottom:16px}
+.experience-swatch{min-height:174px;padding:22px}
+.experience-enhanced .experience-stage{padding-top:8px;padding-bottom:0}
+.experience-enhanced .experience-panel{padding-block:8px}
+.experience-enhanced .experience-summary{margin-top:12px}
+.experience-enhanced .experience-details{margin-top:16px}
+.experience-enhanced .experience-details summary{min-height:44px}
+.signature-ui main>#selected-work{padding-top:18px;padding-bottom:14px}
+.signature-ui .selected-heading{margin-bottom:14px}
+.brand-window{padding-block:12px}
+.brand-logo{height:72px}
+.brand-logo img{max-height:56px}
+.brand-motion-controls{margin-top:0;min-height:44px}
+.signature-ui main>#focus{padding-top:32px}
+.signature-ui .learning-heading{margin-bottom:28px}
+.signature-ui .partnership-bento{margin-top:26px}
+.signature-ui .review-section-heading{gap:28px 48px}
+.signature-ui .team-directory-row{padding-block:22px}
+/* Stable transforms and consistent timing keep hover feedback calm. */
+.signature-ui .experience-tiles button,
+.signature-ui .collaboration-tile,
+.signature-ui .hero-actions .button,
+.signature-ui .floating-service a,
+.signature-ui .strategy-feature,
+.signature-ui .service-choice,
+.signature-ui .partnership-card,
+.signature-ui .header nav>a.nav-contact{
+  transition:transform var(--ui-duration) var(--ui-ease),background-color 220ms ease,border-color 220ms ease,box-shadow var(--ui-duration) ease;
+}
+.collaboration-tile::before,.collaboration-tile::after,.peek-spark,.learning-card::before{transition-duration:280ms;transition-timing-function:var(--ui-ease)}
+.signature-ui .experience-tiles button[aria-pressed=true]{transform:translateY(-4px)}
+@media(hover:hover) and (min-width:601px){
+  .signature-ui .experience-tiles button:hover{transform:translateY(-5px) scale(1.015)}
+}
+.signature-ui .experience-tiles button:focus-visible{transform:translateY(-5px) scale(1.015)}
+.signature-ui .collaboration-tile:hover,.signature-ui .collaboration-tile:focus-visible{transform:translateY(-3px)}
+@media(max-width:1100px){
+  .hero-service-art{height:480px;max-width:560px}
+  .signature-ui .split-hero{gap:24px}
+}
+@media(max-width:700px){
+  .signature-ui .split-hero{padding-top:104px;padding-bottom:16px;gap:22px}
+  .hero-service-art{height:clamp(380px,105vw,460px);margin-bottom:20px}
+  .service-pills-pause{bottom:-32px}
+  .signature-ui main>#work{padding-top:24px}
+  .signature-ui .work-heading{gap:16px;margin-bottom:12px}
+  .experience-swatch{min-height:160px;padding:20px}
+  .signature-ui .experience-tiles{padding-bottom:18px}
+  .signature-ui .selected-heading{margin-bottom:10px}
+  .signature-ui main>#selected-work{padding-top:14px;padding-bottom:10px}
+  .signature-ui main>#focus{padding-top:26px}
+  .signature-ui .learning-heading{margin-bottom:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 28px}
+  .brand-group .brand-logo{width:100%;max-width:210px;justify-self:center}
+}
+@media(prefers-reduced-motion:reduce) and (max-width:600px){
+  .brand-group{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}
+  .brand-group .brand-logo{height:64px}
+}
+@media(prefers-reduced-motion:reduce){
+  .signature-ui :is(.experience-tiles button,.collaboration-tile,.hero-actions .button,.floating-service a,.strategy-feature,.service-choice,.partnership-card){transition:none;transform:none!important}
+  .collaboration-tile::before,.collaboration-tile::after,.peek-spark,.learning-card::before{transition:none}
+}
+.motion-paused .signature-ui :is(.experience-tiles button,.collaboration-tile,.hero-actions .button,.floating-service a,.strategy-feature,.service-choice,.partnership-card){transition:none}
