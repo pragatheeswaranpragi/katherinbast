@@ -696,3 +696,32 @@ html{scroll-padding-top:90px}
 @media(max-width:700px){.hero-service-art{height:600px}.hero-cutout{inset:0;width:100%;max-width:none;transform:none}}
 .floating-service-3{--pill-x:5%;--pill-y:25%}
 @media(max-width:700px){.floating-service-3{--pill-x:42%;--pill-y:36%}}
+
+/* Keep the contact action prominent in desktop and mobile navigation. */
+.signature-ui .header nav>a.nav-contact{
+  justify-content:center;
+  gap:9px;
+  padding:10px 18px;
+  min-height:44px;
+  margin:0;
+  border:1px solid var(--accent);
+  border-radius:999px;
+  background:var(--lavender);
+  color:var(--ink);
+  box-shadow:0 0 0 3px #a6607210,0 0 18px #a6607240;
+  text-decoration:none;
+  transition:background 180ms ease,box-shadow 180ms ease;
+}
+.signature-ui .header nav>a.nav-contact:hover,
+.signature-ui .header nav>a.nav-contact:focus-visible{
+  background:#ecd0d7;
+  color:var(--ink);
+  box-shadow:0 0 0 3px #a6607220,0 0 24px #a6607260;
+  text-decoration:none;
+}
+@media(max-width:800px){
+  .signature-ui .header nav>a.nav-contact{align-self:flex-start;margin-top:12px;padding-inline:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .signature-ui .header nav>a.nav-contact{transition:none}
+}
