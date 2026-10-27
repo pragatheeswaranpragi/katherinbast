@@ -30,3 +30,9 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - Website asset: dist/assets/celebrity-collection.de52f02ed4.webp.
 - Portraits map from left to right in the user's supplied order: Vijay Sethupathi, Rabiya Khatoon, Mirnaa Menon, R. Parthiban.
 - Each card uses an SVG viewBox to crop the shared image without regenerating the portraits. WebP conversion preserves transparency. Jason Sanjay's existing portrait is retained.
+
+
+## Anchor Nandhini card portrait
+- Source: user-supplied photograph in this conversation.
+- Background removed with the image editing tool to match the cutout card style.
+- Website asset: dist/assets/anchor-nandhini.08656a5123.webp; optimized WebP with transparency.
