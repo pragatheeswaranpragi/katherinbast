@@ -50,3 +50,63 @@
 [data-theme=colourful] .contact{background:linear-gradient(115deg,#ffe1d5,#fff0c9 55%,#ddf1e5)}
 [data-theme=colourful] .connection-scene{background:#fff0d9}
 [data-theme=colourful] .service-coming{color:#4c6071}
+/* Festival mode: saturated colour moments, balanced with readable neutral surfaces. */
+[data-theme=colourful] .theme-switch{background:linear-gradient(110deg,#ffe9a1,#ffd7e9,#d8eaff);border-color:#bd94c3}
+[data-theme=colourful] .theme-switch button[aria-pressed=true]{background:linear-gradient(120deg,#304bb4,#97256b);color:#fff}
+[data-theme=colourful] .studio-logo>.studio-emblem{background:linear-gradient(145deg,#e21d75,#c44516);box-shadow:inset 0 0 0 3px #ffffff33}
+[data-theme=colourful] .studio-logo .studio-logo-suffix{color:#9d255f}
+[data-theme=colourful] .split-hero::before{inset:0;mask-image:none;background-image:linear-gradient(#ffffff0c 1px,transparent 1px),linear-gradient(90deg,#ffffff0c 1px,transparent 1px),radial-gradient(ellipse at 88% 72%,#e47717b3,transparent 48%),radial-gradient(ellipse at 72% 12%,#bd1682bb,transparent 48%),linear-gradient(125deg,#21164f,#5a145f 60%,#8b234e);background-size:40px 40px,40px 40px,100% 100%,100% 100%,100% 100%}
+[data-theme=colourful] .hero-copy h1{color:#fff9f2}
+[data-theme=colourful] .hero-copy h1 em{color:#ffe281}
+[data-theme=colourful] .hero-identity,[data-theme=colourful] .hero-description,[data-theme=colourful] .hero-caption{color:#f6e9f7}
+[data-theme=colourful] .hero-identity>span{color:#ffc570}
+[data-theme=colourful] .hero-badge{background:#ffe382;color:#391945;border-color:#ffe382}
+[data-theme=colourful] .hero-actions .button.primary{background:linear-gradient(110deg,#ffe57a,#ffb766);color:#341c38}
+[data-theme=colourful] .hero-actions .hero-connect{background:#fff9f2;color:#381b47;border-color:#fff9f2}
+[data-theme=colourful] .service-pills-pause{color:#fff4fa}
+[data-theme=colourful] .floating-service:nth-child(3n+1) a{background:linear-gradient(115deg,#184ebc,#43309b);color:#fff;border-color:#9ba8ff}
+[data-theme=colourful] .floating-service:nth-child(3n+2) a{background:linear-gradient(115deg,#af1d68,#b84027);color:#fff;border-color:#ffa5c1}
+[data-theme=colourful] .floating-service:nth-child(3n) a{background:linear-gradient(110deg,#ffe477,#ffb96d);color:#38213e;border-color:#ffe477}
+[data-theme=colourful] .floating-service .service-pill-dot{background:#ffe281}
+[data-theme=colourful] .floating-service:nth-child(3n) .service-pill-dot{background:#8c2555}
+[data-theme=colourful] .experience-swatch-beauty{background:linear-gradient(135deg,#ffcfaa,#ffe5f1)}
+[data-theme=colourful] .experience-swatch-media{background:linear-gradient(135deg,#b3ead5,#e2f8bd)}
+[data-theme=colourful] .experience-swatch-digital{background:linear-gradient(135deg,#bed8ff,#e9ccff)}
+[data-theme=colourful] .experience-tiles button[aria-pressed=true]{border-color:#b12b72;box-shadow:0 8px 24px #b12b721c}
+[data-theme=colourful] .focus{background:linear-gradient(130deg,#fff1b2,#ffe1c8 55%,#ffe3f0)}
+[data-theme=colourful] .strategy-icon{background:linear-gradient(135deg,#244faf,#6c36a5);color:#fff;border-color:#244faf}
+[data-theme=colourful] .strategy-feature:nth-child(2) .strategy-icon{background:linear-gradient(135deg,#b93c15,#b1225c);color:#fff}
+[data-theme=colourful] .strategy-feature:nth-child(3) .strategy-icon{background:linear-gradient(135deg,#087859,#226274);color:#fff}
+[data-theme=colourful] .strategy-feature:nth-child(4) .strategy-icon{background:linear-gradient(135deg,#8b298b,#b8265a);color:#fff}
+[data-theme=colourful] .strategy-grid,[data-theme=colourful] .strategy-feature{border-color:#d9b9a6}
+[data-theme=colourful] .approach-studio{background:linear-gradient(130deg,#bef1df,#bee9f4 55%,#d8ddff)}
+[data-theme=colourful] .approach-elements,[data-theme=colourful] .approach-priorities{background:#fffdf8;border-color:#99c8cb}
+[data-theme=colourful] .capability-tile.is-active{background:linear-gradient(135deg,#2c49a3,#6d3297);border-color:#6d3297;color:#fff}
+[data-theme=colourful] .capability-tile.is-active:nth-child(2n){background:linear-gradient(135deg,#0e7255,#245f82);border-color:#0e7255}
+[data-theme=colourful] .capability-tile.is-active .capability-symbol,[data-theme=colourful] .capability-tile.is-active .capability-name,[data-theme=colourful] .capability-tile.is-active .capability-detail{color:#fff}
+[data-theme=colourful] .capability-tile.is-active .capability-dot{background:#ffe281}
+[data-theme=colourful] .priority-progress{background:linear-gradient(90deg,#255fc0,#bb286b,#d76a0e)}
+[data-theme=colourful] .collaborations.collaboration-showcase{background:linear-gradient(115deg,#ffd7d7,#ffe7ab 65%,#f8d5eb)}
+[data-theme=colourful] .collaboration-tile{background:#fffaf3;border-color:#e6b0bb}
+[data-theme=colourful] .partnership-showcase{background:linear-gradient(130deg,#303b99,#69267a 65%,#9a275f)}
+[data-theme=colourful] .partnership-heading h2{color:#fff}
+[data-theme=colourful] .partnership-heading>p:last-child,[data-theme=colourful] .partnership-hint{color:#f2e8ff}
+[data-theme=colourful] .partnership-kicker{background:#ffffff18;border-color:#ffffff55;color:#fff}
+[data-theme=colourful] .partnership-bento .partnership-violet{--card-tint:#d8c7ff;--card-accent:#6531ad}
+[data-theme=colourful] .partnership-bento .partnership-mint{--card-tint:#b7efd7;--card-accent:#086a4d}
+[data-theme=colourful] .partnership-bento .partnership-apricot{--card-tint:#ffcf9e;--card-accent:#9a3c0a}
+[data-theme=colourful] .partnership-bento .partnership-pink{--card-tint:#ffc2dc;--card-accent:#a51254}
+[data-theme=colourful] .partnership-bento .partnership-blue{--card-tint:#bbd8ff;--card-accent:#1e55b9}
+[data-theme=colourful] .operations.team-section{background:linear-gradient(115deg,#fff5ce,#e6f5e8)}
+[data-theme=colourful] .certifications{background:linear-gradient(130deg,#e2d7ff,#dceaff 55%,#d9f2f1)}
+[data-theme=colourful] .credential-group .learning-card{background:#fffdf8;border-color:#b4a9d6;box-shadow:inset 4px 0 #9a3fa1}
+[data-theme=colourful] .credential-group .learning-card:nth-child(2){box-shadow:inset 4px 0 #236bb5}
+[data-theme=colourful] .credential-group .learning-card:nth-child(3){box-shadow:inset 4px 0 #087966}
+[data-theme=colourful] .credential-group .learning-featured{background:#fff1b8;border-color:#d4af52}
+[data-theme=colourful] .faq{background:linear-gradient(115deg,#fff9e0,#ffedf1)}
+[data-theme=colourful] .contact{background:linear-gradient(115deg,#243ba0,#6c247d 60%,#9e2458);color:#fff}
+[data-theme=colourful] .contact h2,[data-theme=colourful] .contact-email,[data-theme=colourful] .contact .copy-email,[data-theme=colourful] .contact .contact-note{color:#fff}
+[data-theme=colourful] .contact .button.primary{background:linear-gradient(110deg,#ffe577,#ffbd72);color:#331c40}
+[data-theme=colourful] .footer{background:#1f2048;color:#f4edf9}
+[data-theme=colourful] .footer a,[data-theme=colourful] .footer p,[data-theme=colourful] .footer button{color:#f4edf9}
+[data-theme=colourful] .service-placeholder{background:radial-gradient(ellipse at 100% 0,#ffd6c8,transparent 55%),radial-gradient(ellipse at 0 100%,#c8eeeb,transparent 55%)}
