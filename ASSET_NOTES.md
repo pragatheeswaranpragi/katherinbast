@@ -15,3 +15,7 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 # Uploaded homepage banner — 27 October 2026
 
 `dist/assets/marketing-banner.*.jpg` is an unchanged copy of the user's supplied illustration, uploaded as `file_00000000ee4482118522c7b6cbe76c16.jpg`. It replaces the service flowchart on the right side of the homepage banner. The complete image is displayed without cropping; its embedded text is part of the supplied artwork. The alt text describes an illustration without asserting that it is a photograph of Katherin.
+
+# Transparent banner portrait — 27 October 2026
+
+`dist/assets/marketing-cutout.*.png` is the unmodified, transparent user upload `file_00000000bc5c8211870ab5a2c938799a.png`. It replaces the earlier banner illustration; service pills are HTML links around the image, not edits to the artwork. The original alpha channel is retained.

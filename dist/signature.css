@@ -653,3 +653,31 @@ html{scroll-padding-top:90px}
 .hero-portrait img{display:block;width:100%;height:100%;object-fit:contain}
 @media(max-width:1100px){.hero-portrait{max-width:580px}}
 @media(max-width:700px){.hero-portrait{max-width:480px;border-radius:16px}.signature-ui .split-hero{gap:28px}}
+/* Transparent portrait and gently floating service links. */
+.hero-service-art{position:relative;isolation:isolate;width:100%;max-width:680px;min-width:0;height:610px;justify-self:center;margin-bottom:28px}
+.hero-cutout{position:absolute;bottom:0;left:10%;width:80%;z-index:0}
+.hero-cutout img{display:block;width:100%;height:auto;object-fit:contain}
+.floating-services{position:absolute;inset:0;z-index:1;pointer-events:none}
+.floating-service{position:absolute;width:31%;max-width:180px;pointer-events:auto}
+.floating-service:nth-child(odd){left:0}.floating-service:nth-child(even){right:0}
+.floating-service:nth-child(1){top:2%}.floating-service:nth-child(2){top:7%}.floating-service:nth-child(3){top:17%}.floating-service:nth-child(4){top:22%}.floating-service:nth-child(5){top:32%}.floating-service:nth-child(6){top:37%}.floating-service:nth-child(7){top:47%}.floating-service:nth-child(8){top:52%}.floating-service:nth-child(9){top:62%}.floating-service:nth-child(10){top:67%}.floating-service:nth-child(11){top:77%}
+.floating-service a{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:44px;padding:10px 12px;border-radius:28px;background:#fbf7f5f5;border:1px solid #dfc6d0;box-shadow:0 4px 12px #40283107;font-size:11px;line-height:1.4;text-align:center;text-decoration:none;color:var(--ink)}
+.floating-service:nth-child(3n+2) a{background:#f3e6eaf5}.floating-service:nth-child(3n) a{background:#f7ede5f5}
+.service-pill-dot{width:4px;height:4px;flex-shrink:0;border-radius:50%;background:#a66072}
+.floating-service a svg{flex-shrink:0}
+.floating-service a:hover{border-color:#91465d;text-decoration:underline;text-underline-offset:3px}
+.service-pills-pause{position:absolute;right:0;bottom:-24px;background:none;color:var(--muted);min-height:44px;font-size:10px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1100px){.hero-service-art{max-width:620px}.hero-cutout{max-width:500px}}
+@media(max-width:700px){.hero-service-art{height:auto;margin-bottom:0}.hero-cutout{position:relative;left:auto;bottom:auto;width:90%;max-width:400px;margin-inline:auto}.floating-services{position:relative;inset:auto;display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;pointer-events:auto}.floating-service:nth-child(n){position:relative;left:auto;right:auto;top:auto;width:auto;max-width:none;flex:0 0 calc(50% - 5px)}.floating-service a{font-size:11px;padding:9px 10px;height:100%;min-height:48px;gap:6px}.floating-service a svg{display:none}.service-pills-pause{position:static;display:block;margin:10px 0 0 auto}}
+/* Seven scattered pills, with varied tilt and independent drift. */
+.floating-services .floating-service:nth-child(n){left:var(--pill-x);right:auto;top:var(--pill-y);width:max-content;max-width:40%;rotate:var(--pill-angle);position:absolute;flex:none}
+.floating-service-1{--pill-x:6%;--pill-y:6%;--pill-angle:-6deg}
+.floating-service-2{--pill-x:64%;--pill-y:2%;--pill-angle:7deg}
+.floating-service-3{--pill-x:30%;--pill-y:20%;--pill-angle:-3deg}
+.floating-service-4{--pill-x:1%;--pill-y:40%;--pill-angle:5deg}
+.floating-service-5{--pill-x:69%;--pill-y:51%;--pill-angle:-7deg}
+.floating-service-6{--pill-x:5%;--pill-y:70%;--pill-angle:-4deg}
+.floating-service-7{--pill-x:63%;--pill-y:83%;--pill-angle:6deg}
+.floating-service a{font-size:11px;white-space:normal}
+@media(max-width:700px){.hero-service-art{height:660px;margin-bottom:42px}.hero-cutout{position:absolute;left:5%;top:30%;bottom:auto;width:90%;max-width:400px}.floating-services{position:absolute;inset:0;display:block;margin:0;pointer-events:none}.floating-services .floating-service:nth-child(n){max-width:60%;width:max-content;pointer-events:auto}.floating-service-1{--pill-x:2%;--pill-y:0%}.floating-service-2{--pill-x:52%;--pill-y:10%}.floating-service-3{--pill-x:14%;--pill-y:20%}.floating-service-4{--pill-x:0%;--pill-y:52%}.floating-service-5{--pill-x:51%;--pill-y:64%}.floating-service-6{--pill-x:5%;--pill-y:80%}.floating-service-7{--pill-x:43%;--pill-y:89%}.service-pills-pause{position:absolute;right:0;bottom:-35px;margin:0}}
+@media(max-width:700px){.hero-cutout{left:50%;transform:translateX(-50%)}.floating-service-5{--pill-x:44%}}
