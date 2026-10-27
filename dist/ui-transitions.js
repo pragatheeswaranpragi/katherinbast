@@ -16,7 +16,7 @@
   reduced.addEventListener('change', () => { if (quiet()) settle(); });
   new MutationObserver(() => { if (quiet()) settle(); }).observe(document.documentElement, {attributes:true,attributeFilter:['class']});
   window.addEventListener('resize', settle, {passive:true});
-  document.querySelectorAll('.experience-details, .faq-list>details, .partnership-card, .learning-details').forEach(details => {
+  document.querySelectorAll('.experience-details, .expertise-disclosure, .faq-list>details, .partnership-card, .learning-details').forEach(details => {
     const summary = details.querySelector(':scope>summary');
     if (!summary) return;
     summary.addEventListener('click', event => {

@@ -812,3 +812,51 @@ html{scroll-padding-top:90px}
   .collaboration-tile::before,.collaboration-tile::after,.peek-spark,.learning-card::before{transition:none}
 }
 .motion-paused .signature-ui :is(.experience-tiles button,.collaboration-tile,.hero-actions .button,.floating-service a,.strategy-feature,.service-choice,.partnership-card){transition:none}
+
+/* Compact expertise: four focused cards instead of oversized quadrants. */
+.signature-ui .expertise-compact .strategy-heading{display:flex;max-width:none;align-items:flex-end;justify-content:space-between;gap:24px 48px;margin-bottom:24px}
+.expertise-compact .strategy-heading .learning-eyebrow{margin-bottom:10px;font-size:11px;letter-spacing:.14em}
+.signature-ui .expertise-compact #focus-heading{font-size:clamp(30px,3vw,46px);line-height:1.1;letter-spacing:-.045em}
+.expertise-compact .strategy-heading .section-intro{width:34%;flex-shrink:0;max-width:340px;margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+.expertise-compact .strategy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;border:0}
+.expertise-compact .strategy-feature{align-items:flex-start;text-align:left;min-height:206px;padding:22px 20px 18px;border:1px solid #e7d8de;border-radius:16px;background:#f7eef1;box-shadow:0 2px 6px #40283103;overflow:hidden}
+.expertise-compact .strategy-feature:nth-child(2){background:#f8f0e9}
+.expertise-compact .strategy-feature:nth-child(3){background:#f2edf6}
+.expertise-compact .strategy-feature:nth-child(4){background:#edf3f0}
+.expertise-compact .strategy-index{position:absolute;right:18px;top:20px;font-size:10px;letter-spacing:.08em;color:#937e87;font-variant-numeric:tabular-nums}
+.expertise-compact .strategy-icon{width:40px;height:40px;border-radius:12px;margin-bottom:18px;background:#ffffffb3;border-color:#ffffffa6;box-shadow:none}
+.expertise-compact .strategy-icon>svg{width:24px;height:24px}
+.expertise-compact .strategy-sparks i{left:18px;top:18px}
+.signature-ui .expertise-compact .strategy-feature h3{font-size:17px;line-height:1.35;letter-spacing:-.025em;text-wrap:initial}
+.expertise-compact .strategy-feature>p{max-width:none;margin-top:8px;margin-bottom:16px;font-size:12px;line-height:1.65}
+.expertise-compact .strategy-action{margin-top:auto;font-size:11px;min-height:24px;justify-content:space-between;width:100%}
+.expertise-compact .strategy-action>svg{width:14px;height:14px;flex-shrink:0;transition:transform var(--ui-duration) var(--ui-ease)}
+.expertise-compact .strategy-feature:hover,.expertise-compact .strategy-feature:focus-visible{border-color:#bc8b9b;box-shadow:0 8px 20px #40283109;transform:translateY(-3px)}
+.expertise-compact .strategy-feature:hover .strategy-action>svg{transform:translate(2px,-2px)}
+.expertise-compact .strategy-feature:focus-visible{outline:2px solid #91465d;outline-offset:3px}
+.signature-ui .expertise-compact>.expertise-disclosure{margin-top:10px;padding:0;border:0}
+.expertise-compact>.expertise-disclosure>summary{display:flex;justify-content:flex-start;gap:14px;width:max-content;max-width:100%;min-height:44px;padding:8px 0;font-size:12px;font-weight:600;color:#794457}
+.expertise-compact>.expertise-disclosure>summary>span{font:18px/1 Arial,sans-serif}
+.expertise-compact>.expertise-disclosure[open]>.service-filters{margin-top:18px}
+@media(max-width:1000px){
+  .expertise-compact .strategy-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .expertise-compact .strategy-feature{min-height:182px;padding:20px}
+  .expertise-compact .strategy-icon{margin-bottom:14px}
+}
+@media(max-width:600px){
+  .signature-ui .expertise-compact .strategy-heading{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:20px}
+  .signature-ui .expertise-compact #focus-heading{font-size:32px}
+  .expertise-compact .strategy-heading .section-intro{width:100%;max-width:340px;font-size:13px}
+  .expertise-compact .strategy-feature{min-height:194px;padding:16px 14px}
+  .signature-ui .expertise-compact .strategy-feature h3{font-size:15px}
+  .expertise-compact .strategy-feature>p{font-size:11px;margin-top:7px;margin-bottom:12px}
+  .expertise-compact .strategy-icon{width:36px;height:36px;margin-bottom:14px;border-radius:10px}
+  .expertise-compact .strategy-icon>svg{width:22px;height:22px}
+  .expertise-compact .strategy-index{right:14px;top:16px;font-size:9px}
+  .expertise-compact .strategy-action{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .expertise-compact .strategy-feature:hover,.expertise-compact .strategy-feature:focus-visible,.expertise-compact .strategy-feature:hover .strategy-action>svg{transform:none}
+  .expertise-compact .strategy-action>svg{transition:none}
+}
+.motion-paused .expertise-compact .strategy-action>svg{transition:none}
