@@ -250,8 +250,8 @@ html{scroll-padding-top:90px}
 .signature-ui .experience-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:24px;border:0;padding:16px 4px 20px}
 .signature-ui .experience-tiles button{display:flex;flex-direction:column;gap:0;padding:10px;min-height:0;border:1px solid #e8cfd5;border-radius:4px;background:var(--paper);color:var(--ink);text-align:left;transform:none;transition:transform 180ms ease-out,box-shadow 180ms ease-out;box-shadow:0 2px 5px #40283108}
 .signature-ui .experience-tiles button[aria-pressed=true]{transform:translateY(-8px);border-color:#be858f;box-shadow:0 8px 18px #4028310d}
-.experience-swatch{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;align-content:center;gap:20px;min-height:210px;width:100%;padding:28px;background:#f4ecee;transition:background 180ms ease-out}
-[aria-pressed=true]>.experience-swatch{background:#ecd0d7}
+.experience-swatch{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;align-content:center;gap:20px;min-height:210px;width:100%;padding:28px;background:#f4ecee}
+[aria-pressed=true]>.experience-swatch{background:#f4ecee}
 .experience-swatch img{max-width:180px;width:75%;max-height:72px;object-fit:contain;mix-blend-mode:multiply}
 .experience-swatch-beauty{gap:18px}
 .experience-swatch-beauty img{width:44%;max-height:46px}
@@ -681,3 +681,11 @@ html{scroll-padding-top:90px}
 .floating-service a{font-size:11px;white-space:normal}
 @media(max-width:700px){.hero-service-art{height:660px;margin-bottom:42px}.hero-cutout{position:absolute;left:5%;top:30%;bottom:auto;width:90%;max-width:400px}.floating-services{position:absolute;inset:0;display:block;margin:0;pointer-events:none}.floating-services .floating-service:nth-child(n){max-width:60%;width:max-content;pointer-events:auto}.floating-service-1{--pill-x:2%;--pill-y:0%}.floating-service-2{--pill-x:52%;--pill-y:10%}.floating-service-3{--pill-x:14%;--pill-y:20%}.floating-service-4{--pill-x:0%;--pill-y:52%}.floating-service-5{--pill-x:51%;--pill-y:64%}.floating-service-6{--pill-x:5%;--pill-y:80%}.floating-service-7{--pill-x:43%;--pill-y:89%}.service-pills-pause{position:absolute;right:0;bottom:-35px;margin:0}}
 @media(max-width:700px){.hero-cutout{left:50%;transform:translateX(-50%)}.floating-service-5{--pill-x:44%}}
+
+/* Brand cards: stronger hover zoom; colour feedback stays on the border. */
+.signature-ui .experience-tiles button{position:relative;transform-origin:center;transition:transform 240ms ease-out,border-color 180ms ease-out,box-shadow 240ms ease-out}
+@media(hover:hover) and (min-width:601px){.signature-ui .experience-tiles button:hover{z-index:2;transform:translateY(-10px) scale(1.045);border-color:#99536a;box-shadow:0 0 0 2px #e7b7c8,0 12px 24px #40213912}}
+.signature-ui .experience-tiles button:focus-visible{z-index:2;transform:translateY(-10px) scale(1.045);border-color:#99536a;box-shadow:0 0 0 2px #e7b7c8,0 12px 24px #40213912}
+@media(max-width:600px){.signature-ui .experience-tiles button:focus-visible{transform:translateY(-6px) scale(1.02)}}
+@media(prefers-reduced-motion:reduce){.signature-ui .experience-tiles button{transition:none}.signature-ui .experience-tiles button:hover,.signature-ui .experience-tiles button:focus-visible{transform:none}}
+.motion-paused .experience-tiles button{transition:none}
