@@ -19,3 +19,7 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 # Transparent banner portrait — 27 October 2026
 
 `dist/assets/marketing-cutout.*.png` is the unmodified, transparent user upload `file_00000000bc5c8211870ab5a2c938799a.png`. It replaces the earlier banner illustration; service pills are HTML links around the image, not edits to the artwork. The original alpha channel is retained.
+
+# Thoughtful banner portrait — 28 October 2026
+
+`dist/assets/thoughtful-banner.df71aff6c7.png` is the unchanged PNG supplied in `Thoughtful 3D Cartoon Woman.zip` (`file_00000000c43c82118809152e6516828c`). Its original transparency and glow are retained. The full standing illustration replaces the seated banner portrait; the seven floating service links remain separate HTML elements.

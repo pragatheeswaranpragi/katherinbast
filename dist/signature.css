@@ -689,3 +689,10 @@ html{scroll-padding-top:90px}
 @media(max-width:600px){.signature-ui .experience-tiles button:focus-visible{transform:translateY(-6px) scale(1.02)}}
 @media(prefers-reduced-motion:reduce){.signature-ui .experience-tiles button{transition:none}.signature-ui .experience-tiles button:hover,.signature-ui .experience-tiles button:focus-visible{transform:none}}
 .motion-paused .experience-tiles button{transition:none}
+
+/* Keep the complete standing portrait inside the banner at every width. */
+.hero-cutout{inset:0;left:0;top:0;bottom:0;width:100%;height:100%;max-width:none;margin:0;transform:none}
+.hero-cutout img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+@media(max-width:700px){.hero-service-art{height:600px}.hero-cutout{inset:0;width:100%;max-width:none;transform:none}}
+.floating-service-3{--pill-x:5%;--pill-y:25%}
+@media(max-width:700px){.floating-service-3{--pill-x:42%;--pill-y:36%}}
