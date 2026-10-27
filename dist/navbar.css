@@ -1,0 +1,171 @@
+/* Shared navigation: a quiet floating frame with a clear contact action. */
+.signature-ui .header,
+.signature-ui .header.is-scrolled {
+  inset:14px clamp(16px,3vw,48px) auto;
+  width:auto;
+  height:76px;
+  padding:12px 18px 12px 24px;
+  border:1px solid #ead9df;
+  border-radius:22px;
+  background:#fbf7f5f5;
+  box-shadow:0 4px 24px #40283108,inset 0 1px 0 #fff;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  transition:box-shadow 200ms ease,background 200ms ease;
+}
+.signature-ui .header.is-scrolled {
+  background:#fbf7f5ed;
+  box-shadow:0 8px 32px #40283112,inset 0 1px 0 #fff;
+}
+.signature-ui .wordmark {flex-shrink:0}
+.signature-ui .header nav {gap:4px}
+.signature-ui .header nav>a:not(.nav-contact),
+.signature-ui .services-menu>summary {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:44px;
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.005em;
+  text-decoration:none;
+  transition:background 180ms ease,color 180ms ease;
+}
+.signature-ui .header nav>a:not(.nav-contact):hover,
+.signature-ui .header nav>a[aria-current]:not(.nav-contact),
+.signature-ui .services-menu>summary:hover,
+.signature-ui .services-menu[open]>summary {background:#f0e2e6;color:#794457;text-decoration:none}
+.signature-ui .header nav>a[aria-current]:not(.nav-contact)::after {
+  content:"";
+  position:absolute;
+  bottom:5px;
+  left:calc(50% - 7px);
+  width:14px;
+  height:2px;
+  border-radius:2px;
+  background:var(--accent);
+}
+.signature-ui .services-menu>summary {gap:8px}
+.signature-ui .services-menu>summary>span {font-size:17px;line-height:1;color:var(--accent)}
+.signature-ui .header nav>a.nav-contact {
+  flex-shrink:0;
+  gap:14px;
+  padding:9px 10px 9px 20px;
+  margin:0 0 0 12px;
+  min-height:46px;
+  border:1px solid #bb8192;
+  border-radius:999px;
+  background:linear-gradient(110deg,#4d303d,#703f53);
+  color:#fff7fa;
+  box-shadow:0 0 0 3px #a6607210,0 0 20px #a6607238;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  transition:box-shadow 180ms ease,transform 180ms ease;
+}
+.signature-ui .header nav>a.nav-contact>span {
+  display:grid;
+  place-items:center;
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  background:#ffffff1a;
+  font-size:17px;
+  line-height:1;
+  transition:transform 180ms ease;
+}
+.signature-ui .header nav>a.nav-contact:hover,
+.signature-ui .header nav>a.nav-contact:focus-visible {
+  background:linear-gradient(110deg,#4d303d,#703f53);
+  color:#fff7fa;
+  box-shadow:0 0 0 4px #a6607218,0 0 28px #a6607260;
+  text-decoration:none;
+  transform:translateY(-1px);
+}
+.signature-ui .header nav>a.nav-contact:hover>span {transform:rotate(45deg)}
+.signature-ui .services-dropdown {
+  top:calc(100% + 20px);
+  width:540px;
+  padding:14px;
+  gap:5px;
+  border:1px solid #e5d1d9;
+  border-radius:18px;
+  background:#fbf7f5;
+  box-shadow:0 16px 40px #40283116;
+}
+.signature-ui .header nav .services-dropdown a {
+  justify-content:space-between;
+  gap:12px;
+  padding:12px;
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.5;
+}
+.signature-ui .services-dropdown a::after {
+  content:"";
+  flex-shrink:0;
+  width:10px;
+  height:10px;
+  border-top:1.5px solid #a66072;
+  border-right:1.5px solid #a66072;
+  background:linear-gradient(135deg,transparent 44%,#a66072 46%,#a66072 54%,transparent 56%);
+}
+.signature-ui .header nav .services-dropdown a:hover,
+.signature-ui .header nav .services-dropdown a:focus-visible {background:#f0e2e6}
+.signature-ui .header :is(a,button,summary):focus-visible {outline:2px solid #91465d;outline-offset:3px}
+@media(min-width:961px) {
+  .signature-ui .header nav {display:flex;position:static;flex-direction:row;background:none;overflow:visible}
+  .signature-ui .header .menu-button {display:none}
+  .signature-ui .services-dropdown {position:absolute}
+}
+@media(max-width:960px) {
+  .signature-ui .header,
+  .signature-ui .header.is-scrolled {inset:12px 16px auto;height:68px;padding:10px 14px 10px 18px;border-radius:18px}
+  .signature-ui .header .menu-button {
+    display:flex;
+    position:static;
+    gap:12px;
+    min-height:44px;
+    padding:8px 14px;
+    border:1px solid #e5d1d9;
+    border-radius:12px;
+    background:#f4e9ed;
+    color:var(--ink);
+    font-size:12px;
+    font-weight:600;
+  }
+  .signature-ui .menu-button>span {font-size:20px;line-height:1}
+  .signature-ui .menu-button[aria-expanded=true] {background:#ead5de;border-color:#be8b9c}
+  .signature-ui .header nav {
+    display:none;
+    position:absolute;
+    inset:calc(100% + 10px) -1px auto;
+    max-height:calc(100dvh - 108px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:14px;
+    border:1px solid #e5d1d9;
+    border-radius:18px;
+    background:#fbf7f5;
+    box-shadow:0 16px 36px #4028311a;
+  }
+  .signature-ui .header nav.is-open {display:flex;flex-direction:column;align-items:stretch;gap:4px;max-height:calc(100dvh - 108px)}
+  .signature-ui .header nav>a:not(.nav-contact),
+  .signature-ui .services-menu>summary {padding:12px 16px;font-size:16px;min-height:48px}
+  .signature-ui .services-menu>summary {justify-content:space-between}
+  .signature-ui .header nav>a[aria-current]:not(.nav-contact)::after {left:5px;top:calc(50% - 7px);bottom:auto;width:2px;height:14px}
+  .signature-ui .header nav>a.nav-contact {align-self:stretch;justify-content:space-between;margin:12px 0 0;padding:10px 12px 10px 18px;font-size:14px}
+  .signature-ui .services-dropdown {position:static;width:100%;max-width:none;margin:6px 0 10px;padding:6px;background:#f6edf0;border:0;box-shadow:none;border-radius:12px}
+}
+@media(max-width:480px) {
+  .signature-ui .header,.signature-ui .header.is-scrolled {inset:10px 12px auto;padding-left:14px}
+  .signature-ui .services-dropdown {grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce) {
+  .signature-ui .header,.signature-ui .header :is(a,summary,span) {transition:none!important;animation:none!important}
+  .signature-ui .header nav>a.nav-contact:hover,.signature-ui .header nav>a.nav-contact:hover>span {transform:none}
+}
+.motion-paused .signature-ui .header,
+.motion-paused .signature-ui .header :is(a,summary,span) {transition:none!important;animation:none!important}

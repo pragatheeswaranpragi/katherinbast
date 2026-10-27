@@ -10,12 +10,30 @@ servicesMenus.forEach(menu => {
 if (document.body.classList.contains('service-page')) {
   const button = document.querySelector('.menu-button');
   const navigation = document.querySelector('#navigation');
-  const close = () => { navigation.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); };
+  const close = () => { navigation.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); button.querySelector('span').textContent = '+'; navigation.querySelectorAll('details[open]').forEach(menu => { menu.open = false; }); };
   button.addEventListener('click', () => {
     const open = button.getAttribute('aria-expanded') !== 'true';
-    button.setAttribute('aria-expanded', String(open)); navigation.classList.toggle('is-open', open);
+    if (!open) { close(); return; }
+    button.setAttribute('aria-expanded', 'true'); navigation.classList.add('is-open'); button.querySelector('span').textContent = '−';
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') { close(); button.focus(); } });
+}
+// Keep both versions of the navigation tidy when moving between viewports.
+const sharedHeader = document.querySelector('.header');
+const sharedMenuButton = sharedHeader?.querySelector('.menu-button');
+const closeSharedNavigation = () => {
+  if (sharedMenuButton?.getAttribute('aria-expanded') === 'true') sharedMenuButton.click();
+};
+document.addEventListener('click', event => {
+  if (sharedHeader && !sharedHeader.contains(event.target)) closeSharedNavigation();
+});
+matchMedia('(min-width: 961px)').addEventListener('change', event => {
+  if (event.matches) closeSharedNavigation();
+});
+if (document.body.classList.contains('service-page') && sharedHeader) {
+  const syncHeader = () => sharedHeader.classList.toggle('is-scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', syncHeader, {passive:true});
+  syncHeader();
 }
 const explorer = document.querySelector('.service-explorer');
 if (explorer) {

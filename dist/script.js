@@ -4,6 +4,7 @@ function closeMenu() {
   menuButton.setAttribute('aria-expanded', 'false');
   navigation.classList.remove('is-open');
   menuButton.querySelector('span').textContent = '+';
+  navigation.querySelectorAll('details[open]').forEach(menu => { menu.open = false; });
 }
 menuButton.addEventListener('click', () => {
   const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
@@ -35,8 +36,13 @@ function updateHeader() {
   const availableScroll = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.transform = `scaleX(${availableScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / availableScroll)) : 0})`;
   let active;
+  let nearestTop = -Infinity;
   sections.forEach(item => {
-    if (item.section.getBoundingClientRect().top <= header.offsetHeight + 100) active = item.link;
+    const top = item.section.getBoundingClientRect().top;
+    if (top <= header.getBoundingClientRect().bottom + 100 && top > nearestTop) {
+      nearestTop = top;
+      active = item.link;
+    }
   });
   sectionLinks.forEach(link => {
     if (link === active) link.setAttribute('aria-current', 'location');
