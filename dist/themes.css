@@ -1,0 +1,52 @@
+/* Classic preserves the current palette; Colourful changes colour, not content or layout. */
+.theme-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;background:#ffffff60;border:1px solid #d9c5cd;border-radius:30px;flex-shrink:0}
+.theme-switch button{min-height:38px;padding:7px 11px;border-radius:24px;background:none;font-family:Manrope,Arial,sans-serif;font-size:11px;line-height:1.4;color:var(--ink);white-space:nowrap}
+.theme-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.theme-switch button:focus-visible{outline-offset:2px}
+@media(max-width:1000px){.signature-ui .header nav .theme-switch{align-self:flex-start;margin-block:8px}.theme-switch button{min-height:44px;padding-inline:15px}}
+:root[data-theme=colourful]{--ink:#18344b;--dark:#18344b;--paper:#fffdf8;--ground:#fffdf8;--muted:#4c6071;--peach:#ffe1b8;--lavender:#e0edff;--onion:#ffe3de;--rose:#c55332;--burgundy:#18344b}
+[data-theme=colourful] body{background:#fffdf8;color:#18344b}
+[data-theme=colourful] .header{background:#fffdf8}
+[data-theme=colourful] .studio-logo>.studio-emblem{background:linear-gradient(135deg,#c63269,#b85010)}
+[data-theme=colourful] .studio-logo .studio-logo-suffix{color:#17685d}
+[data-theme=colourful] .theme-switch{border-color:#cadcd8;background:#edf5ed}
+[data-theme=colourful] a:focus-visible,[data-theme=colourful] button:focus-visible,[data-theme=colourful] summary:focus-visible{outline-color:#1b6bc1}
+[data-theme=colourful] .split-hero::before{background-image:linear-gradient(#1b6bc10b 1px,transparent 1px),linear-gradient(90deg,#1b6bc10b 1px,transparent 1px),radial-gradient(ellipse at 82% 35%,#ffd5b5aa,transparent 55%),radial-gradient(ellipse at 20% 60%,#bfeae980,transparent 60%);background-size:40px 40px,40px 40px,100% 100%,100% 100%}
+[data-theme=colourful] .hero-copy h1 em{color:#146a65}
+[data-theme=colourful] .hero-badge{background:#ffe7b9;border-color:#e7ca92}
+[data-theme=colourful] .button.primary{background:#155aa2;color:#fff}
+[data-theme=colourful] .hero-actions .hero-connect{background:#fffdf8;border-color:#9fc4cb}
+[data-theme=colourful] .floating-service:nth-child(3n+1) a{background:#e1edff;border-color:#adc8e7}
+[data-theme=colourful] .floating-service:nth-child(3n+2) a{background:#e1f4e6;border-color:#b0d1b9}
+[data-theme=colourful] .floating-service:nth-child(3n) a{background:#fff0c9;border-color:#e1c689}
+[data-theme=colourful] .service-pill-dot{background:#196b62}
+[data-theme=colourful] .experience-swatch-beauty{background:#ffe5d9}
+[data-theme=colourful] .experience-swatch-media{background:#e0f2e9}
+[data-theme=colourful] .experience-swatch-digital{background:#e4ecff}
+[data-theme=colourful] .experience-tiles button[aria-pressed=true]{border-color:#1b6bc1;box-shadow:0 6px 18px #1b6bc112}
+[data-theme=colourful] .focus{background:#eef7ff}
+[data-theme=colourful] .strategy-icon{color:#1668b2;border-color:#c7ddf2}
+[data-theme=colourful] .strategy-feature:nth-child(2) .strategy-icon{color:#9d481d;background:#fff0d9}
+[data-theme=colourful] .strategy-feature:nth-child(3) .strategy-icon{color:#226a4c;background:#e1f4e6}
+[data-theme=colourful] .strategy-feature:nth-child(4) .strategy-icon{color:#9b3464;background:#fbe5ee}
+[data-theme=colourful] .strategy-action,[data-theme=colourful] .learning-eyebrow{color:#17685d}
+[data-theme=colourful] .approach-studio{background:#fff5e1}
+[data-theme=colourful] .approach-elements,[data-theme=colourful] .approach-priorities{background:#fffdf8;border-color:#e9d9bb}
+[data-theme=colourful] .capability-tile{background:#e9f0fa}
+[data-theme=colourful] .capability-tile:nth-child(2n){background:#e5f3e8}
+[data-theme=colourful] .capability-tile:nth-child(3n){background:#fbe8e1}
+[data-theme=colourful] .capability-tile.is-active{background:#fff;border-color:#7baaa3}
+[data-theme=colourful] .capability-symbol,[data-theme=colourful] .capability-dot{color:#17685d}
+[data-theme=colourful] .priority-progress{background:#17685d}
+[data-theme=colourful] .collaborations.collaboration-showcase{background:#edf8f0}
+[data-theme=colourful] .collaboration-tile{border-color:#caddd1;background:#fffdf8}
+[data-theme=colourful] .partnership-showcase{background:#f1efff}
+[data-theme=colourful] .operations.team-section{background:#fff9e9}
+[data-theme=colourful] .certifications{background:#eef3ff}
+[data-theme=colourful] .credential-group .learning-card{background:#fffdf8;border-color:#c7d7ec}
+[data-theme=colourful] .credential-group .learning-featured{background:#fff0c9;border-color:#d8be7a}
+[data-theme=colourful] .learning-link{color:#155aa2}
+[data-theme=colourful] .faq{background:#fffdf8}
+[data-theme=colourful] .contact{background:linear-gradient(115deg,#ffe1d5,#fff0c9 55%,#ddf1e5)}
+[data-theme=colourful] .connection-scene{background:#fff0d9}
+[data-theme=colourful] .service-coming{color:#4c6071}
