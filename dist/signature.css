@@ -725,3 +725,14 @@ html{scroll-padding-top:90px}
 @media(prefers-reduced-motion:reduce){
   .signature-ui .header nav>a.nav-contact{transition:none}
 }
+
+/* Supplied celebrity portraits sit behind a clear, readable caption. */
+.collaboration-with-portrait{display:flex;flex-direction:column;justify-content:flex-end;min-height:250px}
+.collaboration-portrait{position:absolute;right:-3%;bottom:0;width:73%;height:100%;object-fit:contain;object-position:right bottom;z-index:-1;pointer-events:none}
+.collaboration-with-portrait::after{inset:0;z-index:0;background:linear-gradient(0deg,#fbf7f5 0%,#fbf7f5f2 19%,#fbf7f590 38%,transparent 64%);mask-image:none;opacity:1;pointer-events:none}
+.collaboration-with-portrait:hover::after,.collaboration-with-portrait:focus-visible::after{opacity:1}
+.collaboration-with-portrait>.peek-monogram{position:absolute;top:24px;left:20px;z-index:1}
+.collaboration-with-portrait>:is(h3,p,.peek-number,.peek-spark){position:relative;z-index:1}
+.collaboration-with-portrait>.peek-number{position:absolute}
+.collaboration-with-portrait>.peek-spark{position:absolute}
+@media(max-width:600px){.collaboration-with-portrait{min-height:240px;padding-top:150px}.collaboration-with-portrait>.peek-monogram{top:20px;left:14px}.collaboration-portrait{width:95%;height:96%;right:-8%}}
