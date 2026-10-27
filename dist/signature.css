@@ -860,3 +860,7 @@ html{scroll-padding-top:90px}
   .expertise-compact .strategy-action>svg{transition:none}
 }
 .motion-paused .expertise-compact .strategy-action>svg{transition:none}
+
+/* Viewboxes crop each supplied portrait from one shared original asset. */
+.collaboration-portrait.portrait-from-collection{width:90%;right:-4%;overflow:hidden}
+@media(max-width:600px){.collaboration-portrait.portrait-from-collection{width:105%;right:-10%}}

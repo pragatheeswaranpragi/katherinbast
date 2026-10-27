@@ -23,3 +23,10 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 # Thoughtful banner portrait — 28 October 2026
 
 `dist/assets/thoughtful-banner.df71aff6c7.png` is the unchanged PNG supplied in `Thoughtful 3D Cartoon Woman.zip` (`file_00000000c43c82118809152e6516828c`). Its original transparency and glow are retained. The full standing illustration replaces the seated banner portrait; the seven floating service links remain separate HTML elements.
+
+
+## Supplied celebrity portrait collection
+- Source: user upload, Indian Portrait Cutout Collection.zip / Indian Portrait Cutout Collection.png.
+- Website asset: dist/assets/celebrity-collection.de52f02ed4.webp.
+- Portraits map from left to right in the user's supplied order: Vijay Sethupathi, Rabiya Khatoon, Mirnaa Menon, R. Parthiban.
+- Each card uses an SVG viewBox to crop the shared image without regenerating the portraits. WebP conversion preserves transparency. Jason Sanjay's existing portrait is retained.
