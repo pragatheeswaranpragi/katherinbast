@@ -648,3 +648,8 @@ html{scroll-padding-top:90px}
 .team-directory-content .team-footnote{color:var(--muted);border:0;padding:0;margin-top:16px;font-size:12px}
 @media(max-width:800px){.team-directory-row{gap:24px}.signature-ui .team-directory-row h3{flex-basis:190px;font-size:24px}}
 @media(max-width:600px){.team-directory-row{flex-direction:column;gap:16px;padding-block:22px}.signature-ui .team-directory-row h3{flex:auto;font-size:25px}.team-directory-content ul{gap:12px 22px}.team-directory-content li{font-size:14px}}
+/* User-supplied banner artwork, shown in full without cropping. */
+.hero-portrait{width:100%;max-width:620px;justify-self:center;aspect-ratio:1;overflow:hidden;border-radius:22px;border:1px solid #e8cfd5;background:#f1dfe1}
+.hero-portrait img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:1100px){.hero-portrait{max-width:580px}}
+@media(max-width:700px){.hero-portrait{max-width:480px;border-radius:16px}.signature-ui .split-hero{gap:28px}}

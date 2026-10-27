@@ -11,3 +11,7 @@ Naturals (dist/assets/naturals.f9b9f4eca6.jpg), Zenderma (dist/assets/zenderma.1
 # Signature-cover illustration
 
 dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector illustration created for this portfolio. Cream and lavender rings surround a kb disc, with a lime sphere and star accents. It is decorative brand artwork, not a certification badge, portrait or project deliverable. The SVG contains no scripts or external resource references.
+
+# Uploaded homepage banner — 27 October 2026
+
+`dist/assets/marketing-banner.*.jpg` is an unchanged copy of the user's supplied illustration, uploaded as `file_00000000ee4482118522c7b6cbe76c16.jpg`. It replaces the service flowchart on the right side of the homepage banner. The complete image is displayed without cropping; its embedded text is part of the supplied artwork. The alt text describes an illustration without asserting that it is a photograph of Katherin.
