@@ -869,12 +869,10 @@ html{scroll-padding-top:90px}
 .signature-ui .hero-copy h1{font-size:clamp(40px,4.3vw,68px);line-height:1.06;letter-spacing:-.045em;max-width:100%}
 .hero-copy .hero-description{max-width:540px}
 .brand-logo-alphatauri{width:160px}
-.alphatauri-logo-crop{position:relative;display:block;overflow:hidden;width:112px;height:75px;flex-shrink:0}
-.brand-logo-alphatauri .alphatauri-logo-crop img{position:absolute;width:110.06%;max-width:none;height:auto;max-height:none;left:-5.16%;top:-73.08%;object-fit:initial}
 .brand-logo-ninestars{width:210px}
 .brand-logo-ninestars img{mix-blend-mode:multiply}
 @media(max-width:700px){.signature-ui .hero-copy h1{font-size:clamp(32px,8.5vw,44px)}}
-@media(max-width:600px){.brand-logo-alphatauri{width:140px}.brand-logo-ninestars{width:180px}.alphatauri-logo-crop{width:100px;height:67px}}
+@media(max-width:600px){.brand-logo-alphatauri{width:140px}.brand-logo-ninestars{width:180px}}
 
 /* The banner is now the About destination; the introduction stays together. */
 .signature-ui .hero-about{row-gap:28px;padding-bottom:30px;scroll-margin-top:0}
@@ -902,3 +900,7 @@ html{scroll-padding-top:90px}
 /* Close the banner with its two actions, after all introductory content. */
 .hero-about>.hero-actions{grid-column:1/-1;justify-content:center;margin:0;gap:12px}
 .hero-about>.hero-actions .button{min-width:160px}
+
+/* Supplied transparent AlphaTauri logo, displayed without cropping. */
+.brand-logo-alphatauri img{width:auto;height:auto;max-width:112px;max-height:72px}
+@media(max-width:600px){.brand-logo-alphatauri img{max-height:64px}}

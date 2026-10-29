@@ -40,5 +40,5 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 
 ## AlphaTauri and NineStars marquee logos
 - Supplied by the user as IMG-20261029-WA0007.jpg and IMG-20261029-WA0008.jpg.
-- Assets: alphatauri.6beaea125f.jpg, ninestars.08f619edf1.jpg. Original JPEG bytes preserved.
-- The AlphaTauri photograph is cropped in CSS to exclude its white margins; the logo artwork is unchanged.
+- Current assets: alphatauri.efd6493b2f.png and ninestars.08f619edf1.jpg. Supplied image bytes preserved.
+- AlphaTauri was replaced with the user-supplied transparent Logotipo_da_Scuderia_AlphaTauri.png. The old photograph and cropping styles were removed; the full logo is displayed without cropping.
