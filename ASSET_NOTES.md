@@ -36,3 +36,9 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - Source: user-supplied photograph in this conversation.
 - Background removed with the image editing tool to match the cutout card style.
 - Website asset: dist/assets/anchor-nandhini.08656a5123.webp; optimized WebP with transparency.
+
+
+## AlphaTauri and NineStars marquee logos
+- Supplied by the user as IMG-20261029-WA0007.jpg and IMG-20261029-WA0008.jpg.
+- Assets: alphatauri.6beaea125f.jpg, ninestars.08f619edf1.jpg. Original JPEG bytes preserved.
+- The AlphaTauri photograph is cropped in CSS to exclude its white margins; the logo artwork is unchanged.

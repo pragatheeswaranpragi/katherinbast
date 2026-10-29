@@ -59,67 +59,6 @@ if (explorer) {
   });
 }
 
-// Brand experience: one shared area, with all content available without JS.
-const experienceSelector = document.querySelector('.experience-selector');
-if (experienceSelector) {
-  const choices = [...experienceSelector.querySelectorAll('button')];
-  const panels = choices.map(button => document.getElementById(button.getAttribute('aria-controls')));
-  const stage = experienceSelector.parentElement.querySelector('.experience-stage');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const quiet = () => reduced.matches || document.documentElement.classList.contains('motion-paused');
-  let stageAnimation, panelAnimation;
-  const settleStage = () => {
-    stageAnimation?.cancel(); panelAnimation?.cancel();
-    stageAnimation = panelAnimation = undefined;
-    stage.style.overflow = '';
-  };
-  reduced.addEventListener('change', () => { if (quiet()) settleStage(); });
-  new MutationObserver(() => { if (quiet()) settleStage(); }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
-  window.addEventListener('resize', settleStage, {passive:true});
-  const choose = (index, animate = false) => {
-    const panel = panels[index];
-    const changed = panel.hidden;
-    if (!changed && animate) return;
-    const previousHeight = stage.getBoundingClientRect().height;
-    settleStage();
-    choices.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
-    panels.forEach((item, i) => { item.hidden = i !== index; });
-    if (matchMedia('(max-width: 600px)').matches) {
-      experienceSelector.scrollTo({left: choices[index].offsetLeft - experienceSelector.offsetLeft - 4, behavior: quiet() || !animate ? 'instant' : 'smooth'});
-    }
-    if (animate && changed && !quiet()) {
-      const nextHeight = stage.getBoundingClientRect().height;
-      stage.style.overflow = 'hidden';
-      stageAnimation = stage.animate([{height:`${previousHeight}px`},{height:`${nextHeight}px`}], {duration:320,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'});
-      panelAnimation = panel.animate([{opacity:.6,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}], {duration:300,easing:'cubic-bezier(.22,1,.36,1)'});
-      const current = stageAnimation;
-      current.finished.then(() => { if (stageAnimation === current) settleStage(); }).catch(() => {});
-    }
-  };
-  experienceSelector.hidden = false;
-  experienceSelector.closest('#work').classList.add('experience-enhanced');
-  const fromHash = () => {
-    const index = panels.findIndex(panel => '#' + panel.id === location.hash);
-    if (index !== -1) choose(index);
-  };
-  choose(0);
-  fromHash();
-  window.addEventListener('hashchange', fromHash);
-  // Reveal before native fragment navigation measures the target.
-  document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
-    const index = panels.findIndex(panel => '#' + panel.id === link.hash);
-    if (index !== -1) choose(index);
-  }));
-  choices.forEach((button, index) => {
-    button.addEventListener('click', () => choose(index, true));
-    button.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') choose(index, true); });
-    button.addEventListener('focus', () => choose(index, true));
-    button.addEventListener('keydown', event => {
-      const keys = {ArrowRight:(index+1)%choices.length,ArrowLeft:(index+choices.length-1)%choices.length,Home:0,End:choices.length-1};
-      if (event.key in keys) { event.preventDefault(); choices[keys[event.key]].focus(); choose(keys[event.key], true); }
-    });
-  });
-}
 // Decorative looping motion runs only while the brands are in view.
 const movingBrands = document.querySelector('.brand-marquee');
 if (movingBrands && 'IntersectionObserver' in window) {

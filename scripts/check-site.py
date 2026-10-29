@@ -64,9 +64,7 @@ assert "noindex" in page.meta["robots"] if "--private-review" in sys.argv else "
 assert 100 <= len(page.meta["description"]) <= 180
 assert page.meta["og:url"] == page.canonical
 assert all(reference in page.ids for reference in page.references)
-assert "naturals-zenderma-work" in page.ids and "red-bull-work" in page.ids
-assert "Naturals | Zenderma" in html and "Web Media Analyst" in html
-assert "https://zenderma.clinic/" in page.links
+assert "selected-work" in page.ids and "focus" in page.ids, "Missing main portfolio section"
 
 schema = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S).group(1))
 graph = {node["@id"]: node for node in schema["@graph"]}
