@@ -52,3 +52,9 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - `Mirna.png` → `dist/assets/mirna.80fafe1c66.png` (390×435).
 - `Rabhiya.png` → `dist/assets/rabhiya.c8afac3c2d.png` (411×523).
 - These replace the earlier portraits in the four matching cards. Jason Sanjay and R. Parthiban retain their existing images.
+
+
+## White background and portrait framing — 30 October 2026
+- Rabhiya’s supplied red-background portrait was edited with the image editing tool to use a white background.
+- Optimized website asset: `dist/assets/rabhiya-white.5018acefe3.webp` (1111×1415 WebP). The original uploaded photo remains retained.
+- All six celebrity portraits now use a contained white image area, with captions below the image to avoid cropping and text covering faces.
