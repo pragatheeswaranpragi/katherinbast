@@ -876,7 +876,11 @@ html{scroll-padding-top:90px}
 
 /* Keep the full introduction and both actions together in the banner. */
 .signature-ui .hero-about{row-gap:28px;padding-bottom:30px;scroll-margin-top:0}
-.hero-about .hero-description{font-size:16px;line-height:1.8;max-width:640px;margin-top:18px}
+.hero-about .hero-heading-line{display:inline;white-space:nowrap}
+.hero-about .hero-description{font-size:15px;line-height:1.85;max-width:62ch;margin-top:22px;text-wrap:pretty}
+.hero-intro-lead{display:block;font-size:17px;line-height:1.65;font-weight:500;color:var(--ink);margin-bottom:14px}
+.hero-intro-body{display:block}
+.hero-intro-belief{display:block;margin-top:16px;font-family:var(--display);font-size:21px;line-height:1.45;letter-spacing:-.02em;color:#794457}
 .hero-about .hero-actions{justify-content:flex-start;margin-top:24px;gap:12px}
 .hero-about .hero-actions .button{min-width:160px}
 #approach{scroll-margin-top:110px}
@@ -884,7 +888,10 @@ html{scroll-padding-top:90px}
 .signature-ui .header nav .services-dropdown .services-overview{grid-column:1/-1;border-bottom:1px solid #e7d8de;border-radius:0;margin-bottom:4px;font-weight:600;color:#794457}
 @media(max-width:600px){
  .signature-ui .hero-about{row-gap:22px;padding-bottom:22px}
- .hero-about .hero-description{font-size:15px;line-height:1.8}
+ .signature-ui .hero-about .hero-copy h1{font-size:clamp(26px,7.7vw,44px)}
+ .hero-about .hero-description{font-size:14px;line-height:1.85;margin-top:20px}
+ .hero-intro-lead{font-size:16px;margin-bottom:12px}
+ .hero-intro-belief{font-size:20px;margin-top:14px}
 }
 
 
