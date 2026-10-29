@@ -42,3 +42,13 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - Supplied by the user as IMG-20261029-WA0007.jpg and IMG-20261029-WA0008.jpg.
 - Current assets: alphatauri.efd6493b2f.png and ninestars.08f619edf1.jpg. Supplied image bytes preserved.
 - AlphaTauri was replaced with the user-supplied transparent Logotipo_da_Scuderia_AlphaTauri.png. The old photograph and cropping styles were removed; the full logo is displayed without cropping.
+
+
+## Individual celebrity photographs — 30 October 2026
+- Source: user upload `Celebritiesworkedwith.zip` (`file_000000007ea48211a64739c13957c209`).
+- All four PNGs retain their original pixels and backgrounds; only CSS framing is applied.
+- `Nandhini.png` → `dist/assets/anchor-nandhini.88ccb7e248.png` (520×496).
+- `vijaysethupathi.png` → `dist/assets/vijay-sethupathi.330e202791.png` (344×351).
+- `Mirna.png` → `dist/assets/mirna.80fafe1c66.png` (390×435).
+- `Rabhiya.png` → `dist/assets/rabhiya.c8afac3c2d.png` (411×523).
+- These replace the earlier portraits in the four matching cards. Jason Sanjay and R. Parthiban retain their existing images.
