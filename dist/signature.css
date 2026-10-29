@@ -898,3 +898,7 @@ html{scroll-padding-top:90px}
  .hero-story>p{font-size:13px;line-height:1.8}
  .hero-story>.hero-story-belief{font-size:20px;padding-left:16px}
 }
+
+/* Close the banner with its two actions, after all introductory content. */
+.hero-about>.hero-actions{grid-column:1/-1;justify-content:center;margin:0;gap:12px}
+.hero-about>.hero-actions .button{min-width:160px}
