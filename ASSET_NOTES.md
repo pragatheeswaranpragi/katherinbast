@@ -57,4 +57,4 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 ## White background and portrait framing — 30 October 2026
 - Rabhiya’s supplied red-background portrait was edited with the image editing tool to use a white background.
 - Optimized website asset: `dist/assets/rabhiya-white.5018acefe3.webp` (1111×1415 WebP). The original uploaded photo remains retained.
-- All six celebrity portraits now use a contained white image area, with captions below the image to avoid cropping and text covering faces.
+- The previous celebrity card design is retained, with portraits filling the cards, gradient captions, and monogram badges. Rabhiya retains the white-background version.

@@ -931,22 +931,3 @@ html{scroll-padding-top:90px}
  .hero-about .hero-actions{margin-top:22px}
  .hero-about .hero-service-art{height:clamp(380px,105vw,460px);margin-bottom:20px}
 }
-
-/* Give each portrait its own frame; captions remain below the photograph. */
-.collaboration-with-portrait{padding:0 0 18px;min-height:0;justify-content:flex-start;background:#fff}
-.collaboration-with-portrait::before,.collaboration-with-portrait::after{display:none}
-.collaboration-with-portrait .collaboration-portrait,
-.collaboration-with-photo .collaboration-portrait,
-.collaboration-with-portrait .portrait-from-collection{position:relative;inset:auto;z-index:0;display:block;flex:none;width:100%;height:clamp(190px,18vw,240px);object-fit:contain;object-position:center;background:#fff;overflow:hidden;border-bottom:1px solid #efe6e9}
-.collaboration-with-portrait>.peek-monogram{display:none}
-.collaboration-with-portrait>.peek-number{top:10px;right:10px;padding:3px 7px;border:1px solid #eee2e7;border-radius:20px;background:#fffffff0;z-index:1}
-.signature-ui .collaboration-with-portrait h3{margin:16px 16px 0;font-size:21px;line-height:1.2;text-wrap:initial}
-.collaboration-with-portrait>p{margin:8px 16px 0}
-.collaboration-with-portrait>.peek-spark{right:12px;bottom:12px}
-@media(max-width:600px){
- .collaboration-with-portrait{padding-bottom:16px}
- .collaboration-with-portrait .collaboration-portrait{height:200px}
- .signature-ui .collaboration-with-portrait h3{margin:14px 12px 0;font-size:19px}
- .collaboration-with-portrait>p{margin:7px 12px 0}
-}
-@media(max-width:359px){.collaboration-with-portrait .collaboration-portrait{height:230px}}
