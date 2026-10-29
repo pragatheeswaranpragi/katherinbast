@@ -874,32 +874,19 @@ html{scroll-padding-top:90px}
 @media(max-width:700px){.signature-ui .hero-copy h1{font-size:clamp(32px,8.5vw,44px)}}
 @media(max-width:600px){.brand-logo-alphatauri{width:140px}.brand-logo-ninestars{width:180px}}
 
-/* The banner is now the About destination; the introduction stays together. */
+/* Keep the full introduction and both actions together in the banner. */
 .signature-ui .hero-about{row-gap:28px;padding-bottom:30px;scroll-margin-top:0}
-.hero-about .hero-description{font-size:18px;line-height:1.7;max-width:520px}
-.hero-story{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.1fr .95fr;gap:28px;padding:26px 28px;border:1px solid #e7d8de;border-radius:20px;background:#fbf7f5e8;align-items:start}
-.hero-story>p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
-.hero-story>.hero-story-belief{font-family:var(--display);font-size:22px;line-height:1.45;letter-spacing:-.025em;color:var(--ink);border-left:2px solid #c898a8;padding-left:24px}
+.hero-about .hero-description{font-size:16px;line-height:1.8;max-width:640px;margin-top:18px}
+.hero-about .hero-actions{justify-content:flex-start;margin-top:24px;gap:12px}
+.hero-about .hero-actions .button{min-width:160px}
 #approach{scroll-margin-top:110px}
 .signature-ui .services-menu:has(a[aria-current])>summary{background:#f0e2e6;color:#794457}
 .signature-ui .header nav .services-dropdown .services-overview{grid-column:1/-1;border-bottom:1px solid #e7d8de;border-radius:0;margin-bottom:4px;font-weight:600;color:#794457}
-@media(max-width:1100px){
- .hero-about .hero-story{grid-row:2}
- .hero-about .hero-service-art{grid-row:3}
- .hero-story{grid-template-columns:1fr 1fr;gap:20px;padding:24px}
- .hero-story>.hero-story-belief{grid-column:1/-1;font-size:22px;padding-left:20px}
-}
 @media(max-width:600px){
  .signature-ui .hero-about{row-gap:22px;padding-bottom:22px}
- .hero-about .hero-description{font-size:16px;line-height:1.75}
- .hero-story{grid-template-columns:1fr;padding:20px;gap:18px;border-radius:16px}
- .hero-story>p{font-size:13px;line-height:1.8}
- .hero-story>.hero-story-belief{font-size:20px;padding-left:16px}
+ .hero-about .hero-description{font-size:15px;line-height:1.8}
 }
 
-/* Close the banner with its two actions, after all introductory content. */
-.hero-about>.hero-actions{grid-column:1/-1;justify-content:center;margin:0;gap:12px}
-.hero-about>.hero-actions .button{min-width:160px}
 
 /* Supplied transparent AlphaTauri logo, displayed without cropping. */
 .brand-logo-alphatauri img{width:auto;height:auto;max-width:112px;max-height:72px}
