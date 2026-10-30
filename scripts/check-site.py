@@ -84,7 +84,7 @@ else:
     assert "Sitemap: " + ORIGIN + "/sitemap.xml" in robots
 tree = ET.parse(DIST / "sitemap.xml")
 namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-assert [node.text for node in tree.findall(".//s:loc", namespace)] == [page.canonical]
+assert [node.text for node in tree.findall(".//s:loc", namespace)] == [page.canonical, ORIGIN + "/services/"]
 
 stylesheets = re.findall(r'<link rel="stylesheet" href="([^"]+)"', html)
 assert stylesheets, "Missing stylesheets"

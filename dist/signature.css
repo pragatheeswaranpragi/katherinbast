@@ -931,3 +931,7 @@ html{scroll-padding-top:90px}
  .hero-about .hero-actions{margin-top:22px}
  .hero-about .hero-service-art{height:clamp(380px,105vw,460px);margin-bottom:20px}
 }
+
+/* The full services catalog now lives on its own page. */
+.expertise-directory-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;margin-top:10px;font-size:12px;font-weight:600;color:#794457}
+.approach-services-link{display:inline-flex;align-items:center;gap:12px;margin-top:14px;font-size:13px}

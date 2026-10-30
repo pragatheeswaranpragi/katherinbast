@@ -1,0 +1,43 @@
+/* A dedicated catalog using the portfolio's cream, rose and plum palette. */
+.signature-ui .services-directory-main{max-width:1600px;margin-inline:auto;padding-top:132px;padding-bottom:48px}
+.services-directory-intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:end;gap:36px 72px;padding-bottom:40px;border-bottom:1px solid #e5d5dc}
+.services-back{display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-decoration:none;color:var(--muted);margin-bottom:14px}
+.services-back:hover{text-decoration:underline}
+.services-directory-intro .learning-eyebrow{margin-bottom:16px}
+.signature-ui .services-directory h1,.services-directory h1{font-family:var(--display);font-size:clamp(42px,4.6vw,70px);font-weight:700;line-height:1.05;letter-spacing:-.045em;text-wrap:initial}
+.services-directory h1 em{font-style:normal;color:#91465d}
+.services-directory-summary{max-width:420px;padding-bottom:4px}
+.services-directory-summary>p{font-size:15px;line-height:1.85;color:var(--muted)}
+.services-directory .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:48px;padding:12px 20px;border-radius:10px;font-size:13px;text-decoration:none}
+.services-directory-summary>.button{margin-top:24px}
+.services-catalog{padding-top:32px}
+.services-catalog-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+.signature-ui .services-catalog-heading>h2{font-family:var(--display);font-size:30px;font-weight:600;letter-spacing:-.03em}
+.services-catalog-heading>p{font-size:12px;color:var(--muted)}
+.services-catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.service-catalog-item{min-width:0;scroll-margin-top:114px}
+.service-catalog-card{display:flex;flex-direction:column;gap:20px;min-height:190px;height:100%;padding:22px;border:1px solid #e4d5dc;border-radius:16px;background:#f6edf0;text-decoration:none;transition:transform 220ms ease,border-color 220ms ease,box-shadow 220ms ease}
+.service-category-creative .service-catalog-card{background:#f6efe8}
+.service-category-websites .service-catalog-card{background:#eef2f0}
+.service-category-events .service-catalog-card{background:#f1edf5}
+.service-category-strategy .service-catalog-card{background:#f3e9ee}
+.service-card-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.service-card-category{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:600;letter-spacing:.025em;color:#8b5367}
+.service-card-category svg{flex-shrink:0}
+.service-card-number{font-size:10px;font-variant-numeric:tabular-nums;color:#917c85}
+.signature-ui .service-catalog-card h2{font-family:Manrope,Arial,sans-serif;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:-.025em;text-wrap:initial}
+.service-card-action{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;font-size:11px;color:#794457}
+.service-card-action svg{flex-shrink:0;transition:transform 220ms ease}
+.service-catalog-card:hover{border-color:#b77e92;box-shadow:0 8px 24px #4028310c;transform:translateY(-3px)}
+.service-catalog-card:hover .service-card-action svg{transform:translate(2px,-2px)}
+.service-catalog-card:focus-visible{outline:2px solid #91465d;outline-offset:4px;border-color:#b77e92}
+.service-catalog-item:target .service-catalog-card{border-color:#91465d;box-shadow:0 0 0 2px #be8b9c38}
+.services-directory-contact{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:40px;padding:32px 0 8px;border-top:1px solid #e5d5dc}
+.signature-ui .services-directory-contact h2{font-family:var(--display);font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:-.035em;margin-top:10px}
+.services-directory-contact p:last-child{margin-top:12px;font-size:14px;color:var(--muted)}
+.services-directory-contact>.button{flex-shrink:0}
+@media(min-width:1440px){.services-catalog-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px){.services-directory-intro{gap:28px;grid-template-columns:1fr 1fr}.services-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-catalog-card{min-height:180px}}
+@media(max-width:700px){.signature-ui .services-directory-main{padding-top:104px;padding-bottom:32px}.services-directory-intro{grid-template-columns:1fr;gap:20px;padding-bottom:28px}.services-directory-summary{max-width:540px}.services-directory-summary>p{font-size:14px}.services-back{margin-bottom:8px}.services-directory h1{font-size:clamp(38px,7vw,52px)}.services-catalog-heading{align-items:flex-start;flex-direction:column;gap:8px}.services-catalog{padding-top:26px}.services-directory-contact{align-items:flex-start;flex-direction:column;margin-top:28px;padding-top:26px}.service-catalog-card{padding:18px;gap:18px}.signature-ui .service-catalog-card h2{font-size:15px}.services-catalog-grid{gap:12px}}
+@media(max-width:480px){.services-catalog-grid{grid-template-columns:1fr}.service-catalog-card{min-height:166px}.signature-ui .service-catalog-card h2{font-size:17px}.services-directory h1{font-size:clamp(32px,9vw,42px)}}
+@media(prefers-reduced-motion:reduce){.service-catalog-card,.service-card-action svg{transition:none}.service-catalog-card:hover,.service-catalog-card:hover .service-card-action svg{transform:none}}

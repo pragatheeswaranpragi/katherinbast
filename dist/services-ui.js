@@ -1,11 +1,3 @@
-// Native disclosure keeps Services usable without JavaScript.
-const servicesMenus = [...document.querySelectorAll('.services-menu')];
-servicesMenus.forEach(menu => {
-  menu.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { menu.open = false; menu.querySelector('summary').focus(); }
-  });
-  document.addEventListener('click', event => { if (!menu.contains(event.target)) menu.open = false; });
-});
 // Service pages use the same mobile navigation without loading home-only scripts.
 if (document.body.classList.contains('service-page')) {
   const button = document.querySelector('.menu-button');
@@ -16,6 +8,7 @@ if (document.body.classList.contains('service-page')) {
     if (!open) { close(); return; }
     button.setAttribute('aria-expanded', 'true'); navigation.classList.add('is-open'); button.querySelector('span').textContent = '−';
   });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') { close(); button.focus(); } });
 }
 // Keep both versions of the navigation tidy when moving between viewports.
