@@ -193,3 +193,33 @@
 @media(prefers-reduced-motion:reduce){
  .video-carousel.is-ready .service-video-card,.video-carousel-arrows>button,.video-carousel-dot>span{transition:none}
 }
+
+/* A luminous frame keeps the selected reel at the center of attention. */
+.video-carousel{border-color:#a77791;border-radius:28px;background:radial-gradient(ellipse at 50% 40%,#92587555,transparent 58%),radial-gradient(ellipse at 50% 0%,#d38faa1a,transparent 65%),linear-gradient(150deg,#211821,#332331 55%,#1c1620);box-shadow:0 0 0 1px #b9879b20,0 0 38px #80546b1a,0 20px 54px #3d23331a}
+.video-carousel.is-ready .service-video-card{transition:border-color 240ms ease,box-shadow 240ms ease,filter 240ms ease}
+.video-carousel.is-ready .service-video-card:not(.is-selected){border-color:#b2829b55;filter:saturate(.8);box-shadow:0 14px 32px #09050e66}
+.video-carousel.is-ready .service-video-card:not(.is-selected):hover{border-color:#d9a6be;filter:saturate(1)}
+.video-carousel.is-ready .service-video-card.is-selected{border-color:transparent;background:linear-gradient(#30212e,#30212e) padding-box,linear-gradient(135deg,#ffe2b6,#f6a4c1 32%,#b99ae9 68%,#ffd3ae) border-box;outline:1px solid #edb4cd90;outline-offset:3px;box-shadow:0 0 0 6px #d983a412,0 0 24px #efaac34d,0 0 70px #d47eac38,0 24px 54px #0b061c88;filter:saturate(1)}
+.video-carousel.is-ready .service-video-card.is-selected::before{content:'';position:absolute;inset:4px;z-index:2;border:1px solid #fff0e714;border-radius:14px;pointer-events:none}
+.video-carousel .reel-frame-header{background:linear-gradient(115deg,#382634,#2a1e2b);border-bottom:1px solid #d9a8bc14}
+.video-carousel .is-selected .reel-frame-header{background:linear-gradient(115deg,#58364b,#302331);border-bottom-color:#e2adc03b}
+.video-carousel .reel-avatar{border-color:transparent;background:linear-gradient(#4b3042,#4b3042) padding-box,linear-gradient(135deg,#f9d3a4,#eda4c4,#b8a0ec) border-box;color:#ffe9d8}
+.video-carousel .is-selected .reel-avatar{box-shadow:0 0 12px #eca5c733}
+.video-carousel .is-selected .reel-account>span{color:#dfbdce}
+.video-carousel .reel-index{padding:4px 6px;border:1px solid #d4a0bb30;border-radius:20px;background:#ffffff05;color:#d9bacb;font-size:7px}
+.video-carousel.is-ready .service-video-caption{background:linear-gradient(150deg,#362432,#281e2a);border-top:1px solid #d6a3b520}
+.video-carousel.is-ready .is-selected .service-video-caption{background:linear-gradient(150deg,#503044,#302231);border-top-color:#edb6cf38}
+.video-carousel.is-ready .is-selected .service-video-label{color:#edbdce;letter-spacing:.13em}
+.video-carousel.is-ready .is-selected .service-video-duration{border-color:#e1a9c05c;background:#d68ba51a;color:#ffdde5;box-shadow:inset 0 1px 0 #ffffff08}
+.video-carousel-arrows{width:max-content;max-width:100%;margin-inline:auto;padding:7px;gap:14px;border:1px solid #c18ea23a;border-radius:99px;background:linear-gradient(135deg,#ffffff08,#ffffff02);box-shadow:inset 0 1px 0 #ffffff08,0 8px 24px #0a061c25}
+.video-carousel-arrows>button{border-color:#bf92aa99;background:linear-gradient(135deg,#a16e8626,#ffffff06);color:#f8ddd0;box-shadow:0 0 0 3px #b4879c09,inset 0 1px 0 #ffffff12;transition:transform 180ms ease,background 180ms ease,color 180ms ease,box-shadow 180ms ease}
+.video-carousel-arrows>button:not(:disabled):hover{transform:translateY(-2px);background:#f2d4c4;border-color:#f2d4c4;color:#402831;box-shadow:0 0 22px #edacc244}
+.video-carousel-arrows>button:disabled{background:transparent;border-color:#95708260;box-shadow:none}
+.video-carousel-status{min-width:58px;padding:6px 8px;color:#f7dce5;font-size:11px;font-weight:600;letter-spacing:.1em}
+.video-carousel-dots{margin-top:6px}
+.video-carousel-dot>span{background:#a17d91}
+.video-carousel-dot[aria-current=true]>span{width:23px;background:linear-gradient(90deg,#f5d5bb,#e9a9cc);box-shadow:0 0 12px #ecadc9a0}
+#video-carousel-hint{color:#d5b4c5;font-size:9px;letter-spacing:.025em}
+@media(max-width:760px){.video-carousel{border-radius:24px}#video-carousel-hint{font-size:9px;max-width:230px;margin-inline:auto}}
+@media(prefers-reduced-motion:reduce){.video-carousel.is-ready .service-video-card,.video-carousel-arrows>button{transition:none}.video-carousel-arrows>button:not(:disabled):hover{transform:none}}
+.video-carousel:not(.is-ready) .service-video-card{color:var(--ink)}
