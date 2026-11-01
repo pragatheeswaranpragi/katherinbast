@@ -234,3 +234,11 @@
  .video-carousel.is-ready .service-video-card,.video-carousel-arrows>button,.video-carousel-dot>span{transition:none}
  .video-carousel-arrows>button:not(:disabled):hover{transform:none}
 }
+
+/* Instagram-inspired color follows the active reel; video controls stay clear. */
+.video-carousel.is-ready .service-video-card.is-selected{border:3px solid transparent;background:linear-gradient(#fffdfa,#fffdfa) padding-box,linear-gradient(35deg,#feda75 0%,#fa7e1e 25%,#d62976 52%,#962fbf 76%,#4f5bd5 100%) border-box;outline:0;box-shadow:0 0 0 4px #fff,0 0 0 7px #f0dce9,0 0 32px #d629761c,0 18px 40px #876c8426}
+.video-carousel.is-ready .service-video-card.is-selected .reel-avatar{border-color:transparent;background:linear-gradient(#fff6ef,#fff6ef) padding-box,linear-gradient(35deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5) border-box;color:#98577b}
+.video-autoplay-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;margin:10px auto 0;padding:7px 12px;border:1px solid #e4ccdd;border-radius:30px;background:#fffafc;color:#8b5a7c;font-size:9px;line-height:1.4}
+.video-autoplay-toggle:hover{background:#f8eaf3;border-color:#c497b4}
+.video-autoplay-toggle[aria-pressed=true] .autoplay-play-icon,.video-autoplay-toggle[aria-pressed=false] .autoplay-pause-icon{display:none}
+.video-autoplay-toggle svg{flex-shrink:0;width:10px;height:10px}
