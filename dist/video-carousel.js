@@ -48,9 +48,9 @@
       const delta = (centers[i] - center) / (card.offsetWidth + 22);
       const distance = Math.abs(delta);
       if (distance < smallest) { smallest = distance; nearest = i; }
-      card.style.setProperty('--reel-scale', quiet() ? '1' : String(Math.max(.76, 1 - distance * .12)));
-      card.style.setProperty('--reel-tilt', quiet() ? '0deg' : `${Math.max(-16, Math.min(16, -delta * 12))}deg`);
-      card.style.setProperty('--reel-opacity', String(Math.max(.32, 1 - distance * .22)));
+      card.style.setProperty('--reel-scale', quiet() ? '1' : String(1 + Math.min(2.8, distance) * .075));
+      card.style.setProperty('--reel-tilt', quiet() ? '0deg' : `${Math.max(-22, Math.min(22, -delta * 9))}deg`);
+      card.style.setProperty('--reel-opacity', String(Math.max(.58, 1 - distance * .09)));
       card.style.zIndex = String(100 - Math.min(99, Math.round(distance * 10)));
     });
     if (nearest !== current) activate(nearest);
@@ -71,7 +71,7 @@
     if (!measured || measured === width) return;
     width = measured;
     carousel.style.setProperty('--carousel-width', `${width}px`);
-    carousel.style.setProperty('--reel-width', `${Math.min(300, Math.max(196, width * .68))}px`);
+    carousel.style.setProperty('--reel-width', `${Math.min(250, Math.max(180, width * .63))}px`);
     carousel.classList.add('is-ready');
     centers = cards.map(card => card.offsetLeft + card.offsetWidth / 2);
     viewport.scrollLeft = centers[current] - width / 2;
