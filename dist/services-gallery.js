@@ -25,6 +25,14 @@
   window.addEventListener('hashchange', revealHashTarget);
   revealHashTarget();
 
+  // Browser-level saving deterrents stay scoped to the Services Gallery.
+  // These do not prevent OS screenshots, recording, or direct media requests.
+  const gallery = document.querySelector('.service-video-gallery');
+  gallery?.addEventListener('contextmenu', event => event.preventDefault());
+  gallery?.addEventListener('dragstart', event => {
+    if (event.target.closest('.service-video-card')) event.preventDefault();
+  });
+
   // Avoid overlapping sound during automatic or manual playback.
   const videos = [...document.querySelectorAll('.service-gallery-video')];
   videos.forEach(video => video.addEventListener('play', () => {

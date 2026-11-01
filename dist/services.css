@@ -242,3 +242,6 @@
 .video-autoplay-toggle:hover{background:#f8eaf3;border-color:#c497b4}
 .video-autoplay-toggle[aria-pressed=true] .autoplay-play-icon,.video-autoplay-toggle[aria-pressed=false] .autoplay-pause-icon{display:none}
 .video-autoplay-toggle svg{flex-shrink:0;width:10px;height:10px}
+
+/* Reduce native saving and drag actions without blocking playback or swipes. */
+.service-video-gallery video{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
