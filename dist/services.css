@@ -177,7 +177,7 @@
 .reel-index{margin-left:auto;flex-shrink:0;padding:4px 6px;border-radius:20px;background:#f5edf8;color:#946a9f;font-size:7px;font-variant-numeric:tabular-nums}
 .video-carousel-viewport{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
 .video-carousel-viewport::-webkit-scrollbar{display:none}
-.video-carousel.is-ready .video-carousel-viewport{scroll-snap-type:x mandatory;scroll-padding-inline:0;perspective:1000px;touch-action:pan-x pan-y;padding-block:84px 78px}
+.video-carousel.is-ready .video-carousel-viewport{scroll-snap-type:x mandatory;scroll-padding-inline:0;perspective:1000px;touch-action:pan-x pan-y;padding-block:38px 34px}
 .video-carousel.is-ready .service-video-grid{position:relative;display:flex;align-items:center;gap:22px;max-width:none;min-width:100%;width:max-content;margin:0;padding-inline:calc((var(--carousel-width) - var(--reel-width)) / 2)}
 .video-carousel.is-ready .service-video-card{position:relative;flex:0 0 var(--reel-width);width:var(--reel-width);overflow:hidden;scroll-snap-align:center;scroll-snap-stop:always;border:1px solid #e9dfe6;border-radius:20px;background:#fffdfa;color:#493242;transform:rotateY(var(--reel-tilt,0deg)) scale(var(--reel-scale,1));opacity:var(--reel-opacity,1);box-shadow:0 12px 24px #795c7520;transform-origin:center;transition:border-color 220ms ease,box-shadow 220ms ease}
 .video-carousel.is-ready .service-video-card.is-selected{border-color:#c591b0;outline:3px solid #f2dce7;outline-offset:4px;box-shadow:0 0 0 8px #fff9,0 0 42px #d6b9d436,0 18px 40px #876c8426}
@@ -208,7 +208,7 @@
 .video-carousel:not(.is-ready) .service-video-card{color:var(--ink)}
 @media(max-width:760px){
  .video-carousel{border-radius:26px}
- .video-carousel.is-ready .video-carousel-viewport{padding-block:66px 60px}
+ .video-carousel.is-ready .video-carousel-viewport{padding-block:30px 28px}
  .video-carousel.is-ready .service-video-grid{gap:22px}
  .video-carousel.is-ready .service-video-caption{height:92px;min-height:92px;padding:12px}
  .signature-ui .video-carousel.is-ready .service-video-caption h3{font-size:20px}

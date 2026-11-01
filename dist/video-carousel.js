@@ -48,7 +48,7 @@
       const delta = (centers[i] - center) / (card.offsetWidth + 22);
       const distance = Math.abs(delta);
       if (distance < smallest) { smallest = distance; nearest = i; }
-      card.style.setProperty('--reel-scale', quiet() ? '1' : String(1 + Math.min(2.8, distance) * .075));
+      card.style.setProperty('--reel-scale', quiet() ? '1' : String(Math.max(.72, 1 - distance * .13)));
       card.style.setProperty('--reel-tilt', quiet() ? '0deg' : `${Math.max(-22, Math.min(22, -delta * 9))}deg`);
       card.style.setProperty('--reel-opacity', String(Math.max(.58, 1 - distance * .09)));
       card.style.zIndex = String(100 - Math.min(99, Math.round(distance * 10)));
