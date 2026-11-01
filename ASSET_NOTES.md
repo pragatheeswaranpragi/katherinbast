@@ -77,3 +77,9 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - `2-VID_20261030_033325_879.mp4` → `dist/assets/videos/shoot-preparation.429478b109.mp4`; poster `shoot-preparation-poster.5bcb30782a.jpg`. Duration 5.566667 seconds; 720×1280.
 - `3-VID_20261030_033331_654.mp4` → `dist/assets/videos/behind-the-scenes.ec402693ab.mp4`; poster `behind-the-scenes-poster.f20635c123.jpg`. Duration 2.454533 seconds; 716×1280.
 - `4-VID_20261030_033407_695.mp4` → `dist/assets/videos/clinic-shoot.53e4daaeb7.mp4`; poster `clinic-shoot-poster.ca62dc9ef9.jpg`. Duration 2.571823 seconds; 716×1274.
+
+
+## Lato typography
+- Locally hosted Lato normal and italic, weights 400 and 700, applied to navigation, headings, body content, buttons and Gallery captions through the shared stylesheet.
+- Original, unmodified WOFF2 assets from Fontsource Lato 5.3.0 (`@fontsource/lato`), Latin character set.
+- License: `dist/assets/fonts/lato-OFL.txt` (SIL Open Font License 1.1). Earlier font assets and licenses are retained.
