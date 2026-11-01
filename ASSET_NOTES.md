@@ -68,3 +68,12 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - `2-VID_20261030_033120_776.mp4` → `dist/assets/videos/naturals-moments.3078efe0a3.mp4`; poster: `naturals-moments-poster.b1aa5f9e31.jpg`. Duration 26.033333 seconds; 720×1280.
 - `3-VID_20261030_033217_813.mp4` → `dist/assets/videos/shoot-day.64605a3aec.mp4`; poster: `shoot-day-poster.d9be3c176b.jpg`. Duration 1.633333 seconds; 720×1280.
 - These replace the images in the Services page Gallery. The portfolio celebrity section retains its six portraits.
+
+
+## Four additional Services Gallery videos
+- Supplied as a follow-up to the first three Gallery videos. The existing three are retained.
+- Original video streams were copied into fast-start MP4s without re-encoding. Thumbnails use still frames at one second.
+- `1-VID_20261030_033228_270.mp4` → `dist/assets/videos/naturals-digital-awards.963c3e97b9.mp4`; poster `naturals-digital-awards-poster.70fa7a72f5.jpg`. Duration 20.000000 seconds; 720×1280.
+- `2-VID_20261030_033325_879.mp4` → `dist/assets/videos/shoot-preparation.429478b109.mp4`; poster `shoot-preparation-poster.5bcb30782a.jpg`. Duration 5.566667 seconds; 720×1280.
+- `3-VID_20261030_033331_654.mp4` → `dist/assets/videos/behind-the-scenes.ec402693ab.mp4`; poster `behind-the-scenes-poster.f20635c123.jpg`. Duration 2.454533 seconds; 716×1280.
+- `4-VID_20261030_033407_695.mp4` → `dist/assets/videos/clinic-shoot.53e4daaeb7.mp4`; poster `clinic-shoot-poster.ca62dc9ef9.jpg`. Duration 2.571823 seconds; 716×1274.
