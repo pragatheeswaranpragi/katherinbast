@@ -58,3 +58,13 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - Rabhiya’s supplied red-background portrait was edited with the image editing tool to use a white background.
 - Optimized website asset: `dist/assets/rabhiya-white.5018acefe3.webp` (1111×1415 WebP). The original uploaded photo remains retained.
 - The previous celebrity card design is retained, with portraits filling the cards, gradient captions, and monogram badges. Rabhiya retains the white-background version.
+
+
+## Supplied Services Gallery videos
+- Source: the three user-uploaded MP4 files listed below.
+- MP4 files were remuxed with stream copy and fast-start metadata for browser playback; their video and audio were not re-encoded.
+- Poster thumbnails are still frames extracted at one second. Videos keep their full portrait frame and native controls; playback is user-initiated.
+- `1-VID_20261030_033102_205.mp4` → `dist/assets/videos/team-gathering.81345dd367.mp4`; poster: `team-gathering-poster.84255337d2.jpg`. Duration 25.331995 seconds; 360×640.
+- `2-VID_20261030_033120_776.mp4` → `dist/assets/videos/naturals-moments.3078efe0a3.mp4`; poster: `naturals-moments-poster.b1aa5f9e31.jpg`. Duration 26.033333 seconds; 720×1280.
+- `3-VID_20261030_033217_813.mp4` → `dist/assets/videos/shoot-day.64605a3aec.mp4`; poster: `shoot-day-poster.d9be3c176b.jpg`. Duration 1.633333 seconds; 720×1280.
+- These replace the images in the Services page Gallery. The portfolio celebrity section retains its six portraits.

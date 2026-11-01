@@ -25,4 +25,9 @@
   window.addEventListener('hashchange', revealHashTarget);
   revealHashTarget();
 
+  // Keep playback user-initiated and avoid overlapping sound.
+  const videos = [...document.querySelectorAll('.service-gallery-video')];
+  videos.forEach(video => video.addEventListener('play', () => {
+    videos.forEach(other => { if (other !== video) other.pause(); });
+  }));
 })();

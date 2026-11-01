@@ -135,3 +135,15 @@
 @media(prefers-reduced-motion:reduce){.service-catalog-card,.service-card-action svg,.services-filters button{transition:none}
 .service-catalog-card:hover,.service-catalog-card:hover .service-card-action svg{transform:none}
 }
+
+/* Three supplied portrait videos, with native controls and uncropped playback. */
+.service-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1080px;margin-inline:auto}
+.service-video-card{min-width:0;overflow:hidden;border:1px solid #e3d3dc;border-radius:18px;background:#fffdfa;box-shadow:0 4px 16px #40283108}
+.service-gallery-video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#241820}
+.service-gallery-video:focus-visible{outline:3px solid #b77e92;outline-offset:-3px}
+.service-video-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px 20px}
+.service-video-label{margin-bottom:7px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#8b5367}
+.signature-ui .service-video-caption h3{font-family:var(--display);font-size:25px;line-height:1.15;font-weight:500;letter-spacing:-.025em}
+.service-video-duration{flex-shrink:0;padding:5px 9px;border-radius:20px;border:1px solid #eadce3;background:#f7eef2;color:#794457;font-size:10px;font-variant-numeric:tabular-nums}
+@media(max-width:1000px){.service-video-grid{gap:14px}.service-video-caption{padding:16px}.signature-ui .service-video-caption h3{font-size:22px}}
+@media(max-width:760px){.service-video-grid{grid-template-columns:minmax(0,1fr);max-width:420px;gap:20px}.service-video-caption{padding:18px 20px}.signature-ui .service-video-caption h3{font-size:26px}}
