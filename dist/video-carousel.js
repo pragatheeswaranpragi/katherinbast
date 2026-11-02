@@ -120,7 +120,7 @@
     if (!measured || measured === width) return;
     width = measured;
     carousel.style.setProperty('--carousel-width', `${width}px`);
-    carousel.style.setProperty('--reel-width', `${Math.min(250, Math.max(180, width * .63))}px`);
+    carousel.style.setProperty('--reel-width', `${Math.min(220, Math.max(180, width * .63))}px`);
     carousel.classList.add('is-ready');
     centers = cards.map(card => card.offsetLeft + card.offsetWidth / 2);
     viewport.scrollLeft = centers[current] - width / 2;
@@ -163,13 +163,15 @@
     if (event.key === 'Home') { event.preventDefault(); select(0); }
     if (event.key === 'End') { event.preventDefault(); select(cards.length - 1); }
   });
-  reduced.addEventListener('change', () => {
-    if (reduced.matches) { autoplayEnabled = false; pauseAll(); }
+  function syncMotion() {
+    if (quiet()) { autoplayEnabled = false; pauseAll(); }
     updateAutoplay();
     resize();
     render();
     syncPlayback();
-  });
+  }
+  reduced.addEventListener('change', syncMotion);
+  new MutationObserver(syncMotion).observe(document.documentElement, {attributes:true,attributeFilter:['class']});
   document.addEventListener('visibilitychange', syncPlayback);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {

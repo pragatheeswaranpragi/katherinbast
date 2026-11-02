@@ -38,7 +38,7 @@
 .service-card-category{display:inline-flex;align-items:center;gap:9px;font-size:9px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#8b5367}
 .service-card-category svg{flex-shrink:0;width:18px;height:18px}
 .service-card-number{font-family:var(--display);font-size:26px;font-style:italic;line-height:1;color:#c1a9b4}
-.signature-ui .service-catalog-card h2{font-family:var(--display);font-size:24px;font-weight:500;line-height:1.16;letter-spacing:-.035em;text-wrap:initial;max-width:290px}
+.signature-ui .service-catalog-card h3{font-family:var(--display);font-size:24px;font-weight:500;line-height:1.16;letter-spacing:-.035em;text-wrap:initial;max-width:290px}
 .service-card-action{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;font-size:10px;color:#794457}
 .service-card-action svg{flex-shrink:0;box-sizing:content-box;border:1px solid #e2ccd6;border-radius:50%;padding:7px;width:13px;height:13px;transition:transform 240ms ease,background 240ms ease}
 .service-category-creative .service-catalog-card{background:#f8f0e7}
@@ -76,7 +76,7 @@
 .services-catalog-heading>p{font-size:12px}
 .services-filter-bar{align-items:flex-start;flex-direction:column;gap:12px}
 .service-catalog-card{padding:20px;gap:18px;min-height:190px}
-.signature-ui .service-catalog-card h2{font-size:22px}
+.signature-ui .service-catalog-card h3{font-size:22px}
 .services-directory-contact{align-items:flex-start;flex-direction:column;margin-top:34px;padding:30px}
 }
 @media(max-width:480px){.services-directory-intro{padding:24px 20px;border-radius:18px}
@@ -250,7 +250,7 @@
  #services-result{font-size:10px}
  .services-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .service-catalog-card{min-height:160px;padding:14px;gap:12px;border-radius:12px}
- .signature-ui .service-catalog-card h2{font-size:16px;line-height:1.3;letter-spacing:-.02em}
+ .signature-ui .service-catalog-card h3{font-size:16px;line-height:1.3;letter-spacing:-.02em}
  .service-card-meta{gap:7px}
  .service-card-category{font-size:8px;gap:5px;letter-spacing:0;text-transform:none}
  .service-card-category svg{width:14px;height:14px}
@@ -284,7 +284,7 @@
 }
 @media(max-width:359px){
  .service-catalog-card{padding:12px;min-height:166px}
- .signature-ui .service-catalog-card h2{font-size:14px;line-height:1.35}
+ .signature-ui .service-catalog-card h3{font-size:14px;line-height:1.35}
  .service-card-category{font-size:7px;gap:4px}
  .service-card-number{font-size:17px}
  .services-catalog-summary{align-items:flex-start;gap:8px}

@@ -6,19 +6,20 @@
   const services = [...catalog.querySelectorAll('.service-catalog-item')];
   const status = catalog.querySelector('#services-result');
   const compact = matchMedia('(max-width: 760px)');
+  const wide = matchMedia('(min-width: 1440px)');
   const expand = catalog.querySelector('.services-expand');
-  const mobileLimit = 8;
   let category = 'all';
   let expanded = false;
   function renderServices() {
     const matching = services.filter(item => category === 'all' || item.classList.contains(`service-category-${category}`));
-    const limited = compact.matches && category === 'all' && !expanded;
+    const limited = category === 'all' && !expanded;
+    const previewLimit = compact.matches || wide.matches ? 8 : 6;
     services.forEach(item => { item.hidden = true; });
-    const visible = limited ? matching.slice(0, mobileLimit) : matching;
+    const visible = limited ? matching.slice(0, previewLimit) : matching;
     visible.forEach(item => { item.hidden = false; });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
     status.textContent = limited ? `Showing ${visible.length} of ${matching.length} services` : `${matching.length} ${matching.length === 1 ? 'service' : 'services'}`;
-    expand.hidden = !compact.matches || category !== 'all';
+    expand.hidden = category !== 'all';
     expand.setAttribute('aria-expanded', String(expanded));
     expand.innerHTML = expanded ? 'Show fewer services <span aria-hidden="true">−</span>' : `View all ${services.length} services <span aria-hidden="true">+</span>`;
   }
@@ -34,7 +35,8 @@
     if (!expanded) filterBar.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
   });
   compact.addEventListener('change', renderServices);
-  function revealHashTarget() {
+  wide.addEventListener('change', renderServices);
+  function revealHashTarget(behavior = 'instant') {
     const item = services.find(service => `#${service.id}` === location.hash);
     if (!item) return;
     if (item.hidden) {
@@ -42,10 +44,19 @@
       expanded = true;
       renderServices();
     }
-    requestAnimationFrame(() => item.scrollIntoView({block:'start',behavior:'instant'}));
+    requestAnimationFrame(() => item.scrollIntoView({block:'start',behavior}));
   }
   renderServices();
-  window.addEventListener('hashchange', revealHashTarget);
+  window.addEventListener('hashchange', () => revealHashTarget());
+  document.addEventListener('click', event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || !services.some(service => `#${service.id}` === link.hash)) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    const quiet = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('motion-paused');
+    revealHashTarget(quiet ? 'instant' : 'smooth');
+  });
   revealHashTarget();
 
   // Browser-level saving deterrents stay scoped to the Services Gallery.
