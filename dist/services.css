@@ -214,3 +214,8 @@
  .services-hero-actions .button{padding:10px 9px;gap:8px;font-size:11px}
  .services-directory-intro .learning-eyebrow{margin-bottom:12px;font-size:9px}
 }
+
+/* The Gallery is intentionally silent; omit unused sound controls where supported. */
+.service-gallery-video::-webkit-media-controls-mute-button,
+.service-gallery-video::-webkit-media-controls-volume-slider,
+.service-gallery-video::-webkit-media-controls-volume-control-container{display:none}

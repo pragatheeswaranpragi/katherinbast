@@ -34,8 +34,8 @@
     autoplayToggle.setAttribute('aria-pressed', String(autoplayEnabled));
     autoplayToggle.querySelector('span').textContent = autoplayEnabled ? 'Pause autoplay' : 'Enable autoplay';
     hint.textContent = autoplayEnabled
-      ? 'Autoplays muted · Swipe to explore · Use player controls for sound'
-      : 'Autoplay paused · Play a video or enable autoplay';
+      ? 'Silent videos · Swipe to explore'
+      : 'Autoplay paused · Play a video to watch without sound';
   }
   function syncPlayback() {
     videos.forEach((video, index) => { if (index !== current) pause(video); });

@@ -83,3 +83,11 @@ dist/assets/brand-signature.16ee17d381.svg is an original code-authored vector i
 - Locally hosted Lato normal and italic, weights 400 and 700, applied to navigation, headings, body content, buttons and Gallery captions through the shared stylesheet.
 - Original, unmodified WOFF2 assets from Fontsource Lato 5.3.0 (`@fontsource/lato`), Latin character set.
 - License: `dist/assets/fonts/lato-OFL.txt` (SIL Open Font License 1.1). Earlier font assets and licenses are retained.
+
+
+## Silent nine-video Gallery
+- Two additional user-supplied videos are appended as clips 08 and 09.
+- `1-VID_20261102_070021_029.mp4` → `dist/assets/videos/live-event-coverage.2522690956.mp4`; poster `live-event-coverage-poster.d533529dad.jpg`. 8.833333 seconds; 720×1280; no audio stream.
+- `2-VID_20261102_070029_984.mp4` → `dist/assets/videos/industry-event-shoot.da9b0d231f.mp4`; poster `industry-event-shoot-poster.b4747dabb4.jpg`. 11.236311 seconds; 720×1280; no audio stream.
+- The audio-bearing team-gathering video was replaced by `dist/assets/videos/team-gathering-silent.577084932b.mp4`; the earlier public audio-bearing asset was removed from the current site output.
+- All nine Gallery MP4s contain video streams only. Video streams were copied without re-encoding; sound is also disabled in the player. Original user uploads are preserved outside the site output.

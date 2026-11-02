@@ -33,9 +33,20 @@
     if (event.target.closest('.service-video-card')) event.preventDefault();
   });
 
-  // Avoid overlapping sound during automatic or manual playback.
+  // Gallery assets contain no audio tracks; also keep the player locked silent.
+  function keepSilent(video) {
+    if (!video.muted) video.muted = true;
+    if (video.volume !== 0) video.volume = 0;
+    video.defaultMuted = true;
+  }
+  // Avoid simultaneous playback during automatic or manual viewing.
   const videos = [...document.querySelectorAll('.service-gallery-video')];
-  videos.forEach(video => video.addEventListener('play', () => {
-    videos.forEach(other => { if (other !== video) other.pause(); });
-  }));
+  videos.forEach(video => {
+    keepSilent(video);
+    video.addEventListener('volumechange', () => keepSilent(video));
+    video.addEventListener('play', () => {
+      keepSilent(video);
+      videos.forEach(other => { if (other !== video) other.pause(); });
+    });
+  });
 })();
