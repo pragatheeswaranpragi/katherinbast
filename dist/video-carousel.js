@@ -32,10 +32,10 @@
   function pauseAll() { videos.forEach(pause); }
   function updateAutoplay() {
     autoplayToggle.setAttribute('aria-pressed', String(autoplayEnabled));
-    autoplayToggle.querySelector('span').textContent = autoplayEnabled ? 'Pause autoplay' : 'Enable autoplay';
+    autoplayToggle.querySelector('span').textContent = autoplayEnabled ? 'Pause videos' : 'Play videos';
     hint.textContent = autoplayEnabled
       ? 'Silent videos · Swipe to explore'
-      : 'Autoplay paused · Play a video to watch without sound';
+      : 'Paused · Tap Play videos to continue';
   }
   function syncPlayback() {
     videos.forEach((video, index) => { if (index !== current) pause(video); });
@@ -44,8 +44,14 @@
     const video = videos[current];
     if (!video.paused) return;
     video.muted = true;
-    // Native controls remain available if the browser declines automatic playback.
-    video.play().catch(() => {});
+    // A visible play button offers a user gesture if automatic playback is declined.
+    const selected = current;
+    video.play().catch(error => {
+      if (error.name === 'NotAllowedError' && selected === current && inView && !scrolling) {
+        autoplayEnabled = false;
+        updateAutoplay();
+      }
+    });
   }
   function activate(index) {
     const changed = index !== current;
@@ -55,8 +61,8 @@
       const selected = i === current;
       card.classList.toggle('is-selected', selected);
       card.setAttribute('aria-hidden', String(!selected));
-      videos[i].controls = selected;
-      videos[i].tabIndex = selected ? 0 : -1;
+      videos[i].controls = false;
+      videos[i].tabIndex = -1;
       card.querySelector('.video-preview-select').hidden = selected;
       if (!selected) pause(videos[i]);
       dots[i].setAttribute('aria-current', String(selected));

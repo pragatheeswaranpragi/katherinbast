@@ -5,23 +5,46 @@
   const filters = [...catalog.querySelectorAll('[data-category]')];
   const services = [...catalog.querySelectorAll('.service-catalog-item')];
   const status = catalog.querySelector('#services-result');
-  function filterServices(category) {
+  const compact = matchMedia('(max-width: 760px)');
+  const expand = catalog.querySelector('.services-expand');
+  const mobileLimit = 8;
+  let category = 'all';
+  let expanded = false;
+  function renderServices() {
+    const matching = services.filter(item => category === 'all' || item.classList.contains(`service-category-${category}`));
+    const limited = compact.matches && category === 'all' && !expanded;
+    services.forEach(item => { item.hidden = true; });
+    const visible = limited ? matching.slice(0, mobileLimit) : matching;
+    visible.forEach(item => { item.hidden = false; });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
-    let count = 0;
-    services.forEach(item => {
-      item.hidden = category !== 'all' && !item.classList.contains(`service-category-${category}`);
-      if (!item.hidden) count++;
-    });
-    status.textContent = `${count} ${count === 1 ? 'service' : 'services'}`;
+    status.textContent = limited ? `Showing ${visible.length} of ${matching.length} services` : `${matching.length} ${matching.length === 1 ? 'service' : 'services'}`;
+    expand.hidden = !compact.matches || category !== 'all';
+    expand.setAttribute('aria-expanded', String(expanded));
+    expand.innerHTML = expanded ? 'Show fewer services <span aria-hidden="true">−</span>' : `View all ${services.length} services <span aria-hidden="true">+</span>`;
   }
   filterBar.hidden = false;
-  filters.forEach(button => button.addEventListener('click', () => filterServices(button.dataset.category)));
+  filters.forEach(button => button.addEventListener('click', () => {
+    category = button.dataset.category;
+    expanded = false;
+    renderServices();
+  }));
+  expand.addEventListener('click', () => {
+    expanded = !expanded;
+    renderServices();
+    if (!expanded) filterBar.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  });
+  compact.addEventListener('change', renderServices);
   function revealHashTarget() {
     const item = services.find(service => `#${service.id}` === location.hash);
-    if (!item?.hidden) return;
-    filterServices('all');
-    item.scrollIntoView({block:'start', behavior:'instant'});
+    if (!item) return;
+    if (item.hidden) {
+      category = 'all';
+      expanded = true;
+      renderServices();
+    }
+    requestAnimationFrame(() => item.scrollIntoView({block:'start',behavior:'instant'}));
   }
+  renderServices();
   window.addEventListener('hashchange', revealHashTarget);
   revealHashTarget();
 

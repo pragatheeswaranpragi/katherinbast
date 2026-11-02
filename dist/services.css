@@ -97,7 +97,7 @@
 .service-catalog-card:hover,.service-catalog-card:hover .service-card-action svg{transform:none}
 }
 
-/* Three supplied portrait videos, with native controls and uncropped playback. */
+/* Supplied portrait videos with uncropped playback. */
 .service-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1080px;margin-inline:auto}
 .service-video-card{min-width:0;overflow:hidden;border:1px solid #e3d3dc;border-radius:18px;background:#fffdfa;box-shadow:0 4px 16px #40283108}
 .service-gallery-video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#241820}
@@ -196,7 +196,7 @@
  .video-carousel-arrows>button:not(:disabled):hover{transform:none}
 }
 
-/* Instagram-inspired color follows the active reel; video controls stay clear. */
+/* Instagram-inspired color follows the active reel. */
 .video-carousel.is-ready .service-video-card.is-selected{border:3px solid transparent;background:linear-gradient(#fffdfa,#fffdfa) padding-box,linear-gradient(35deg,#feda75 0%,#fa7e1e 25%,#d62976 52%,#962fbf 76%,#4f5bd5 100%) border-box;outline:0;box-shadow:0 0 0 4px #fff,0 0 0 7px #f0dce9,0 0 32px #d629761c,0 18px 40px #876c8426}
 .video-carousel.is-ready .service-video-card.is-selected .reel-avatar{border-color:transparent;background:linear-gradient(#fff6ef,#fff6ef) padding-box,linear-gradient(35deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5) border-box;color:#98577b}
 .video-autoplay-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;margin:10px auto 0;padding:7px 12px;border:1px solid #e4ccdd;border-radius:30px;background:#fffafc;color:#8b5a7c;font-size:9px;line-height:1.4}
@@ -219,3 +219,74 @@
 .service-gallery-video::-webkit-media-controls-mute-button,
 .service-gallery-video::-webkit-media-controls-volume-slider,
 .service-gallery-video::-webkit-media-controls-volume-control-container{display:none}
+
+/* Services starts with useful content rather than an extra introduction card. */
+.services-catalog{padding-top:8px}
+.signature-ui .services-catalog-heading h1{font-family:var(--display);font-size:clamp(34px,3.8vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.035em}
+.services-catalog-heading h1 em{font-weight:400;font-style:italic;color:#91465d}
+.services-catalog-summary{max-width:330px}
+.services-catalog-summary>p{font-size:12px;line-height:1.8;color:var(--muted)}
+.services-gallery-shortcut{display:inline-flex;align-items:center;gap:10px;min-height:40px;margin-top:6px;font-size:12px;color:#794457}
+.services-expand{display:flex;align-items:center;justify-content:center;gap:18px;min-height:44px;width:100%;margin-top:14px;padding:10px 16px;border:1px solid #d7bdcb;border-radius:12px;background:#f5eaf0;color:#794457;font-size:12px;font-weight:700}
+.services-expand:hover{background:#ecd9e4;border-color:#b989a1}
+.services-expand>span{font-size:18px;font-weight:400}
+.services-filter-bar{scroll-margin-top:110px}
+.service-gallery-video::-webkit-media-controls,
+.service-gallery-video::-webkit-media-controls-start-playback-button{display:none}
+@media(max-width:760px){
+ .signature-ui .services-directory-main{padding-top:94px;padding-bottom:24px}
+ .services-back{margin-bottom:4px;font-size:11px}
+ .services-catalog{padding-top:2px}
+ .services-catalog-heading{gap:12px;margin-bottom:16px}
+ .services-catalog-heading .learning-eyebrow{font-size:9px;margin-bottom:8px}
+ .signature-ui .services-catalog-heading h1{font-size:clamp(30px,7.5vw,40px);line-height:1.08}
+ .services-catalog-summary{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:none;width:100%}
+ .services-catalog-summary>p{font-size:11px;line-height:1.6}
+ .services-gallery-shortcut{margin:0;flex-shrink:0;font-size:11px;gap:6px}
+ .services-filter-bar{gap:6px;margin-bottom:12px;min-width:0}
+ .services-filters{flex-wrap:nowrap;overflow-x:auto;max-width:100%;gap:6px;padding:2px 0 5px;scrollbar-width:none;overscroll-behavior-x:contain}
+ .services-filters::-webkit-scrollbar{display:none}
+ .services-filters button{flex-shrink:0;min-height:40px;font-size:11px;padding:8px 12px}
+ #services-result{font-size:10px}
+ .services-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .service-catalog-card{min-height:160px;padding:14px;gap:12px;border-radius:12px}
+ .signature-ui .service-catalog-card h2{font-size:16px;line-height:1.3;letter-spacing:-.02em}
+ .service-card-meta{gap:7px}
+ .service-card-category{font-size:8px;gap:5px;letter-spacing:0;text-transform:none}
+ .service-card-category svg{width:14px;height:14px}
+ .service-card-number{font-size:19px}
+ .service-card-action{font-size:9px;gap:6px}
+ .service-card-action svg{width:11px;height:11px;padding:5px}
+ .service-video-gallery{margin-top:26px;padding-top:26px}
+ .service-video-gallery .services-gallery-heading{gap:10px;margin-bottom:16px}
+ .service-video-gallery .services-gallery-heading .learning-eyebrow{margin-bottom:10px;font-size:8px;padding:5px 10px}
+ .signature-ui .service-video-gallery .services-gallery-heading h2{font-size:32px;line-height:1.05}
+ .service-video-gallery .services-gallery-heading>p{font-size:11px;line-height:1.6;max-width:280px}
+ .gallery-mood-notes,.gallery-stage-label,.gallery-stage-decoration{display:none}
+ .video-carousel{border-radius:20px}
+ .video-carousel.is-ready .video-carousel-viewport{padding-block:18px 16px}
+ .video-carousel.is-ready .service-gallery-video{max-height:48svh}
+ .video-carousel .reel-frame-header{padding:7px 9px}
+ .video-carousel .reel-avatar{width:22px;height:22px;font-size:9px}
+ .video-carousel .reel-account>span{display:none}
+ .video-carousel.is-ready .service-video-caption{height:78px;min-height:78px;padding:10px 12px}
+ .signature-ui .video-carousel.is-ready .service-video-caption h3{font-size:18px;line-height:1.15}
+ .video-carousel.is-ready .service-video-label{font-size:6px;margin-bottom:4px}
+ .video-carousel-navigation{display:grid;grid-template-columns:auto auto;align-items:center;justify-content:center;gap:2px 8px;padding:0 10px 12px}
+ .video-carousel-arrows{gap:6px;padding:5px;grid-column:1}
+ .video-carousel-arrows>button{width:38px;height:38px}
+ .video-carousel-status{min-width:34px;font-size:10px}
+ .video-autoplay-toggle{grid-column:2;min-height:38px;margin:0;padding:8px 10px;font-size:9px}
+ .video-carousel-dots{grid-column:1/-1;margin:0}
+ .video-carousel-dot{width:24px;height:30px}
+ #video-carousel-hint{display:none}
+ .services-directory-contact{margin-top:26px;padding:24px}
+}
+@media(max-width:359px){
+ .service-catalog-card{padding:12px;min-height:166px}
+ .signature-ui .service-catalog-card h2{font-size:14px;line-height:1.35}
+ .service-card-category{font-size:7px;gap:4px}
+ .service-card-number{font-size:17px}
+ .services-catalog-summary{align-items:flex-start;gap:8px}
+ .services-catalog-summary>p{font-size:10px}
+}
